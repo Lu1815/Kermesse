@@ -28,7 +28,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Kermesse!</span></a>
+                        <a href="index.html" class="site_title"><i class="fa fa-home"></i> <span>Kermesse!</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -63,12 +63,7 @@
                                 <li>
                                     <a><i class="fa fa-edit"></i> Forms <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
-                                        <li><a href="form.html">General Form</a></li>
-                                        <li><a href="form_advanced.html">Advanced Components</a></li>
-                                        <li><a href="form_validation.html">Form Validation</a></li>
-                                        <li><a href="form_wizards.html">Form Wizard</a></li>
-                                        <li><a href="form_upload.html">Form Upload</a></li>
-                                        <li><a href="form_buttons.html">Form Buttons</a></li>
+                                        <li>@Html.ActionLink("Categoría de Productos", "Index", "CategoriaProductoes")</li>
                                     </ul>
                                 </li>
                                 <li>
@@ -111,6 +106,7 @@
                                 </li>
                             </ul>
                         </div>
+
                         <div class="menu_section">
                             <h3>Live On</h3>
                             <ul class="nav side-menu">
@@ -303,5 +299,7 @@
     <script src="~/Vendors/bootstrap-daterangepicker/daterangepicker.js"></script>
 
     <script src="~/Content/AlelaTemplate/js/custom.js"></script>
+
+    @RenderSection("scripts", required: false)
 </body>
 </html>

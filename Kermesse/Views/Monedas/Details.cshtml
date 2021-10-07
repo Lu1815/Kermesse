@@ -1,14 +1,14 @@
-﻿@model Kermesse.Models.CategoriaProducto
+﻿@model Kermesse.Models.Moneda
 
 @{
-    ViewBag.Title = "Detalles";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detalles</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>Moneda</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -20,11 +20,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
+            @Html.DisplayNameFor(model => model.simbolo)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.descripcion)
+            @Html.DisplayFor(model => model.simbolo)
         </dd>
 
         <dt>
@@ -38,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.idCatProd }) |
-    @Html.ActionLink("Regresar", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idMoneda }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

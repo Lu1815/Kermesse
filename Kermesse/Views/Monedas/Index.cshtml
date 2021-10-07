@@ -1,14 +1,14 @@
-﻿@model IEnumerable<Kermesse.Models.CategoriaProducto>
+﻿@model IEnumerable<Kermesse.Models.Moneda>
 
 @{
-    ViewBag.Title = "Categoría de Productos";
+    ViewBag.Title = "Moneda";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Categoría de Productos</h2>
+<h2>Moneda</h2>
 
 <p>
-    @Html.ActionLink("Crear nueva categoría", "Create")
+    @Html.ActionLink("Crear nueva moneda", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,7 +16,7 @@
             @Html.DisplayNameFor(model => model.nombre)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.descripcion)
+            @Html.DisplayNameFor(model => model.simbolo)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.estado)
@@ -30,15 +30,15 @@
             @Html.DisplayFor(modelItem => item.nombre)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
+            @Html.DisplayFor(modelItem => item.simbolo)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.estado)
         </td>
         <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idCatProd }) |
-            @Html.ActionLink("Ver", "Details", new { id=item.idCatProd }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.idCatProd })
+            @Html.ActionLink("Editar", "Edit", new { id=item.idMoneda }) |
+            @Html.ActionLink("Ver", "Details", new { id=item.idMoneda }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idMoneda })
         </td>
     </tr>
 }

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Kermesse.Models.Opcion>
+
+@{
+    ViewBag.Title = "Opciones";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Opciones</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva opción", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.opcionDescripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.opcionDescripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idOpcion }) |
+            @Html.ActionLink("Ver", "Details", new { id=item.idOpcion }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idOpcion })
+        </td>
+    </tr>
+}
+
+</table>

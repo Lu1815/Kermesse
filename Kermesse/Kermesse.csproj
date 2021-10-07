@@ -130,8 +130,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoriaGastoesController.cs" />
     <Compile Include="Controllers\CategoriaProductoesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ListaPreciosController.cs" />
+    <Compile Include="Controllers\MonedasController.cs" />
+    <Compile Include="Controllers\OpcionsController.cs" />
+    <Compile Include="Controllers\ParroquiasController.cs" />
+    <Compile Include="Controllers\TasaCambioDetsController.cs" />
+    <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -877,6 +884,41 @@
     <Content Include="Views\CategoriaProductoes\Details.cshtml" />
     <Content Include="Views\CategoriaProductoes\Edit.cshtml" />
     <Content Include="Views\CategoriaProductoes\Index.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Create.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Delete.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Details.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Edit.cshtml" />
+    <Content Include="Views\CategoriaGastoes\Index.cshtml" />
+    <Content Include="Views\Parroquias\Create.cshtml" />
+    <Content Include="Views\Parroquias\Delete.cshtml" />
+    <Content Include="Views\Parroquias\Details.cshtml" />
+    <Content Include="Views\Parroquias\Edit.cshtml" />
+    <Content Include="Views\Parroquias\Index.cshtml" />
+    <Content Include="Views\Usuarios\Create.cshtml" />
+    <Content Include="Views\Usuarios\Delete.cshtml" />
+    <Content Include="Views\Usuarios\Details.cshtml" />
+    <Content Include="Views\Usuarios\Edit.cshtml" />
+    <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Opcions\Create.cshtml" />
+    <Content Include="Views\Opcions\Delete.cshtml" />
+    <Content Include="Views\Opcions\Details.cshtml" />
+    <Content Include="Views\Opcions\Edit.cshtml" />
+    <Content Include="Views\Opcions\Index.cshtml" />
+    <Content Include="Views\ListaPrecios\Create.cshtml" />
+    <Content Include="Views\ListaPrecios\Delete.cshtml" />
+    <Content Include="Views\ListaPrecios\Details.cshtml" />
+    <Content Include="Views\ListaPrecios\Edit.cshtml" />
+    <Content Include="Views\ListaPrecios\Index.cshtml" />
+    <Content Include="Views\TasaCambioDets\Create.cshtml" />
+    <Content Include="Views\TasaCambioDets\Delete.cshtml" />
+    <Content Include="Views\TasaCambioDets\Details.cshtml" />
+    <Content Include="Views\TasaCambioDets\Edit.cshtml" />
+    <Content Include="Views\TasaCambioDets\Index.cshtml" />
+    <Content Include="Views\Monedas\Create.cshtml" />
+    <Content Include="Views\Monedas\Delete.cshtml" />
+    <Content Include="Views\Monedas\Details.cshtml" />
+    <Content Include="Views\Monedas\Edit.cshtml" />
+    <Content Include="Views\Monedas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="Vendors\moment\moment.d.ts" />

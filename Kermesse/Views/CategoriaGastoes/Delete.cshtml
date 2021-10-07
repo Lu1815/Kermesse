@@ -1,23 +1,23 @@
-﻿@model Kermesse.Models.CategoriaProducto
+﻿@model Kermesse.Models.CategoriaGasto
 
 @{
-    ViewBag.Title = "Eliminar categoría de producto";
+    ViewBag.Title = "Eliminar categoria de gasto";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Eliminar</h2>
+<h2>Eliminar categoria de gasto</h2>
 
-<h3>¿Estas seguro que quieres eliminar esta categoría de producto?</h3>
+<h3>¿Estas seguro que quieres borrar esta categoría de gasto?</h3>
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>CategoriaGasto</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.nombreCategoria)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.nombreCategoria)
         </dd>
 
         <dt>

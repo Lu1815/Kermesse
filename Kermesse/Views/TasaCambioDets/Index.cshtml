@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Kermesse.Models.TasaCambioDet>
+
+@{
+    ViewBag.Title = "Tasa de Cambio Detalle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Tasa de Cambio Detalle</h2>
+
+<p>
+    @Html.ActionLink("Crear nuevo detalle de la tasa de cambio", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fecha)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoCambio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TasaCambio1.mes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fecha)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoCambio)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TasaCambio1.mes)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idTasaCambioDet }) |
+            @Html.ActionLink("Ver", "Details", new { id=item.idTasaCambioDet }) |
+            @Html.ActionLink("Eliminar", "Delete", new { id=item.idTasaCambioDet })
+        </td>
+    </tr>
+}
+
+</table>

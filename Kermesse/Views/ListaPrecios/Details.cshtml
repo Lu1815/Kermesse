@@ -1,14 +1,14 @@
-﻿@model Kermesse.Models.CategoriaProducto
+﻿@model Kermesse.Models.ListaPrecio
 
 @{
-    ViewBag.Title = "Detalles";
+    ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detalles</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>ListaPrecio</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -35,9 +35,17 @@
             @Html.DisplayFor(model => model.estado)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kermesse1.nombre)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.idCatProd }) |
-    @Html.ActionLink("Regresar", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idListaPrecio }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

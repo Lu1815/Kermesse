@@ -1,4 +1,4 @@
-﻿@model Kermesse.Models.CategoriaProducto
+﻿@model Kermesse.Models.CategoriaGasto
 
 @{
     ViewBag.Title = "Detalles";
@@ -8,15 +8,15 @@
 <h2>Detalles</h2>
 
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>CategoriaGasto</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.nombreCategoria)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.nombreCategoria)
         </dd>
 
         <dt>
@@ -38,6 +38,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Edit", new { id = Model.idCatProd }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.idCatGasto }) |
     @Html.ActionLink("Regresar", "Index")
 </p>

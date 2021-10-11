@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Kermesse
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,19 +23,32 @@ namespace Kermesse.Models
             this.IngresoComunidads = new HashSet<IngresoComunidad>();
             this.ListaPrecios = new HashSet<ListaPrecio>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idKermesse { get; set; }
+        [Display(Name = "Código de parroquia")]
         public int parroquia { get; set; }
+        [Display(Name = "Nombre de Kermesse")]
         public string nombre { get; set; }
+        [Display(Name = "Fecha de inicio")]
         public System.DateTime fInicio { get; set; }
+        [Display(Name = "Fecha de finalización")]
         public System.DateTime fFinal { get; set; }
+        [Display(Name = "Descripción")]
         public string descripcion { get; set; }
+        [Display(Name = "Estado")]
         public int estado { get; set; }
+        [Display(Name = "Usuario creador")]
         public int usuarioCreacion { get; set; }
+        [Display(Name = "Fecha de creación")]
         public System.DateTime fechaCreacion { get; set; }
+        [Display(Name = "Usuario que modificó")]
         public Nullable<int> usuarioModificacion { get; set; }
+        [Display(Name = "Fecha de modifición")]
         public Nullable<System.DateTime> fechaModificacion { get; set; }
+        [Display(Name = "Usuario que eliminó")]
         public Nullable<int> usuarioEliminacion { get; set; }
+        [Display(Name = "Fecha de eliminación")]
         public Nullable<System.DateTime> fechaEliminacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

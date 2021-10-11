@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ListaPrecio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,11 +20,17 @@ namespace Kermesse.Models
         {
             this.ListaPrecioDets = new HashSet<ListaPrecioDet>();
         }
-    
+
+        [Display(Name = "Código")]
         public int idListaPrecio { get; set; }
+        
+        [Display(Name = "Kermesse")]
         public Nullable<int> kermesse { get; set; }
+        [Display(Name = "Nombre"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string nombre { get; set; }
+        [Display(Name = "Descripción"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string descripcion { get; set; }
+        [Display(Name = "Estado"), Required(ErrorMessage = "Este campo es obligatorio")]
         public int estado { get; set; }
     
         public virtual Kermesse Kermesse1 { get; set; }

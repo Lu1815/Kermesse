@@ -8,33 +8,49 @@
 <h2>Opciones</h2>
 
 <p>
-    @Html.ActionLink("Crear nueva opción", "Create")
+    <button type="button" class="btn btn-primary">
+        <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Crear nueva opción", "Create", null, new { @class = "text-light" })
+    </button>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.opcionDescripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.opcionDescripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idOpcion }) |
-            @Html.ActionLink("Ver", "Details", new { id=item.idOpcion }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.idOpcion })
-        </td>
-    </tr>
-}
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr class="bg-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.opcionDescripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.estado)
+                </th>
+                <th></th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.opcionDescripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estado)
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idOpcion }, new { @class = "text-light" })
+                        </button>
+                        |
+                        <button class="btn btn-primary">
+                            @Html.ActionLink("Ver", "Details", new { id = item.idOpcion }, new { @class = "text-light" })
+                        </button>
+                        |
+                        <button class="btn btn-danger">
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idOpcion }, new { @class = "text-light" })
+                        </button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

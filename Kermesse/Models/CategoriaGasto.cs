@@ -9,9 +9,10 @@
 
 namespace Kermesse.Models
 {
-    using System;
+    using System; 
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class CategoriaGasto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,10 +20,13 @@ namespace Kermesse.Models
         {
             this.Gastoes = new HashSet<Gasto>();
         }
-    
+        [Display(Name = "Código")]
         public int idCatGasto { get; set; }
+        [Display(Name = "Nombre")]
         public string nombreCategoria { get; set; }
+        [Display(Name = "Descripción")]
         public string descripcion { get; set; }
+        [Display(Name = "Estado")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

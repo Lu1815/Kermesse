@@ -4,49 +4,71 @@
     ViewBag.Title = "Tasa de Cambio Detalle";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Tasa de Cambio Detalle</h2>
+ 
+<h2>Tasa de cambio detalle</h2>
 
 <p>
-    @Html.ActionLink("Crear nuevo detalle de la tasa de cambio", "Create")
+    <div class="mb-1">
+        <button type="button" class="btn btn-primary">
+            <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Crear nuevo detalle", "Create", null, new { @class = "text-light" })
+        </button>
+    </div>
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.fecha)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.tipoCambio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TasaCambio1.mes)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.fecha)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.tipoCambio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TasaCambio1.mes)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id=item.idTasaCambioDet }) |
-            @Html.ActionLink("Ver", "Details", new { id=item.idTasaCambioDet }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id=item.idTasaCambioDet })
-        </td>
-    </tr>
-}
+<div class="card">
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <tr class="bg-info">
+                <th>
+                    @Html.DisplayNameFor(model => model.fecha)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.tipoCambio)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.estado)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TasaCambio1.mes)
+                </th>
+                <th>
+                    Acciones
+                </th>
+            </tr>
 
-</table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fecha)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.tipoCambio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.estado)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TasaCambio1.mes)
+                    </td>
+                    <td>
+                      <button class="btn btn-secondary">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idTasaCambioDet }, new { @class = "text-light" })
+                        </button>
+                        |
+                        <button class="btn btn-primary">
+                            @Html.ActionLink("Ver", "Details", new { id = item.idTasaCambioDet },  new { @class = "text-light" } )
+                        </button>
+                        |
+                        <button class="btn btn-danger">
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idTasaCambioDet }, new { @class = "text-light" })
+                        </button>
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+        </div>
+
+        </div>

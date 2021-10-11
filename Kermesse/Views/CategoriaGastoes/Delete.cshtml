@@ -5,11 +5,11 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Eliminar categoria de gasto</h2>
+<h2>Eliminar categoria de gastos</h2>
 
-<h3>¿Estas seguro que quieres borrar esta categoría de gasto?</h3>
+<h3>¿Estás seguro que quieres borrar esta categoría de gasto?</h3>
 <div>
-    <h4>CategoriaGasto</h4>
+    <h4>Categoria de gastos</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,8 +42,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <button type="button" class="btn btn-primary">
+                @Html.ActionLink("Regresar", "Index", null, new { @style = "color: White;" })
+            </button>
         </div>
     }
 </div>

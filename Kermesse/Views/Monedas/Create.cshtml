@@ -1,56 +1,88 @@
 ﻿@model Kermesse.Models.Moneda
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Añadir Moneda";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h2>Create</h2>
 
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
-    <div class="form-horizontal">
-        <h4>Moneda</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.simbolo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.simbolo, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.simbolo, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.estado, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
+<div class="form-horizontal">
+    <h4>Añadir moneda</h4>
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.nombre, new
+            {
+                htmlAttributes = new
+                {
+                    @class = "form-control",
+                    @data_val = "true",
+           @required = "required",
+                    maxLength = "20"
+                }
+            })
+            @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+    <div class="form-group">
+        @Html.LabelFor(model => model.simbolo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.simbolo, new
+            {
+                htmlAttributes = new
+                {
+                    @class = "form-control",
+                    @data_val = "true",
+           @required = "required"
+                }
+            })
+            @Html.ValidationMessageFor(model => model.simbolo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.estado, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.estado, new
+            {
+                htmlAttributes = new
+                {
+                    @class = "form-control",
+                    @data_val = "true",
+           @required = "required",
+                    maxlenght = 1
+                }
+            })
+            @Html.ValidationMessageFor(model => model.estado, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            @Html.LabelFor(model => model.test)
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10" style="margin-top: 1rem;">
+            <button type="submit" value="Añadir" class="btn btn-success">
+                <i class="fa fa-plus icon" style="margin-right: .5rem;"></i>
+                Añadir
+            </button>
+            <button type="button" class="btn btn-info">
+                <i class="fa fa-arrow-left icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Regresar", "Index", null, new { @style = "color: white;" })
+            </button>
+        </div>
+    </div>
 </div>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

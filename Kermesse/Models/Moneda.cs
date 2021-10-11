@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Moneda
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +23,25 @@ namespace Kermesse.Models
             this.TasaCambios = new HashSet<TasaCambio>();
             this.TasaCambios1 = new HashSet<TasaCambio>();
         }
-    
+
         public int idMoneda { get; set; }
+
+        [Required]
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Máximo 20 caracteres, mínimo 5")]
+        [DataType(DataType.Text)]
         public string nombre { get; set; }
+
+        [Required]
+        [DataType(DataType.Text)]
         public string simbolo { get; set; }
+
+        [Required]
+        [Range(1,2)]
+        [DataType(DataType.Text)]
         public int estado { get; set; }
+
+        [Display(Name = "Prueba de display")]
+        public string test { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArqueoCajaDet> ArqueoCajaDets { get; set; }

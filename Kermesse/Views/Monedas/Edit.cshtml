@@ -5,15 +5,12 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
-
-
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Moneda</h4>
+        <h4>Editar moneda</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.idMoneda)
@@ -21,7 +18,9 @@
         <div class="form-group">
             @Html.LabelFor(model => model.nombre, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.nombre, new { htmlAttributes = new { @class = "form-control",
+                    maxLength = "20"
+           } })
                 @Html.ValidationMessageFor(model => model.nombre, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -43,16 +42,18 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+            <div class="col-md-offset-2 col-md-10" style="margin-top: 1rem;">
+                <button type="submit" value="Añadir" class="btn btn-secondary">
+                    <i class="fa fa-pencil icon" style="margin-right: .5rem;"></i>
+                    Guardar cambios
+                </button>
+                <div class="btn btn-info">
+                    <i class="fa fa-arrow-left icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Regresar", "Index", null, new { @style = "color: white;" })
+                </div>
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

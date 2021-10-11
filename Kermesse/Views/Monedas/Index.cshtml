@@ -16,7 +16,7 @@
 <div class="card">
     <div class="table-responsive">
         <table class="table table-bordered table-striped table-hover">
-            <tr>
+            <tr class="bg-info">
                 <th>
                     @Html.DisplayNameFor(model => model.nombre)
                 </th>
@@ -44,9 +44,15 @@
                         @Html.DisplayFor(modelItem => item.estado)
                     </td>
                     <td>
-                        @Html.ActionLink("Editar", "Edit", new { id = item.idMoneda }) |
-                        @Html.ActionLink("Ver", "Details", new { id = item.idMoneda }) |
-                        @Html.ActionLink("Eliminar", "Delete", new { id = item.idMoneda })
+                        <button type="button" class="btn btn-secondary">
+                            @Html.ActionLink("Editar", "Edit", new { id = item.idMoneda }, new { @style = "color: white" }) 
+                        </button>
+                        <button type="button" class="btn btn-info">
+                            @Html.ActionLink("Ver", "Details", new { id = item.idMoneda }, new { @style = "color: white" }) 
+                        </button>
+                        <button type="button" class="btn btn-danger">
+                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idMoneda }, new { @style = "color: white" })
+                        </button>
                     </td>
                 </tr>
             }

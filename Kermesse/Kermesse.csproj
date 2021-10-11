@@ -231,6 +231,7 @@
   <ItemGroup>
     <Content Include="Content\AlelaTemplate\css\custom.css" />
     <Content Include="Content\AlelaTemplate\css\custom.min.css" />
+    <Content Include="Content\AlelaTemplate\css\own.css" />
     <Content Include="Content\AlelaTemplate\images\back_disabled.png" />
     <Content Include="Content\AlelaTemplate\images\back_enabled.png" />
     <Content Include="Content\AlelaTemplate\images\back_enabled_hover.png" />
@@ -238,6 +239,7 @@
     <Content Include="Content\AlelaTemplate\images\forward_enabled.png" />
     <Content Include="Content\AlelaTemplate\images\forward_enabled_hover.png" />
     <Content Include="Content\AlelaTemplate\images\loading.gif" />
+    <Content Include="Content\AlelaTemplate\js\own.js" />
     <Content Include="Content\Images\strategy.png" />
     <Content Include="Content\index.html" />
     <Content Include="Content\AlelaTemplate\js\custom.js" />

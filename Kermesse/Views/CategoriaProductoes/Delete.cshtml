@@ -7,9 +7,9 @@
 
 <h2>Eliminar</h2>
 
-<h3>¿Estas seguro que quieres eliminar esta categoría de producto?</h3>
+<h3>¿Estás seguro que quieres eliminar esta categoría de producto?</h3>
 <div>
-    <h4>CategoriaProducto</h4>
+    <h4>Categoría de producto</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -42,8 +42,10 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Eliminar" class="btn btn-default" /> |
-            @Html.ActionLink("Regresar", "Index")
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <button type="button" class="btn btn-primary">
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "text-light" })
+            </button>
         </div>
     }
 </div>

@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Opcion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,9 +20,12 @@ namespace Kermesse.Models
         {
             this.RolOpcions = new HashSet<RolOpcion>();
         }
-    
+
+        [Display(Name = "Usuario")]
         public int idOpcion { get; set; }
+        [Display(Name = "Descripción"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string opcionDescripcion { get; set; }
+        [Display(Name = "Estado"), Required(ErrorMessage = "Este campo es obligatorio")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

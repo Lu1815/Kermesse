@@ -11,6 +11,7 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class CategoriaProducto
     {
@@ -20,9 +21,13 @@ namespace Kermesse.Models
             this.Productoes = new HashSet<Producto>();
         }
     
+        [Display(Name = "Código")]
         public int idCatProd { get; set; }
+        [Display(Name = "Nombre"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string nombre { get; set; }
+        [Display(Name = "Descripción"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string descripcion { get; set; }
+        [Display(Name = "Estado"), Required(ErrorMessage = "Este campo es obligatorio")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

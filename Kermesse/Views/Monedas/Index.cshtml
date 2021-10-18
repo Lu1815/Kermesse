@@ -11,6 +11,9 @@
     <button type="button" class="btn btn-primary">
         <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Añadir moneda", "Create", null, new { @style ="color: White;"})
     </button>
+    <button type="button" class="btn btn-secondary">
+        <i class="fa fa-print icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Exportar a PDF", "verReporte", new { tipo = "PDF" }, new { @style ="color: White;"})
+    </button>
 </div>
 
 <div class="card">

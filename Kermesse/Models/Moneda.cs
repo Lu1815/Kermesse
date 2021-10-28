@@ -35,9 +35,6 @@ namespace Kermesse.Models
         [DataType(DataType.Text)]
         public string simbolo { get; set; }
 
-        [Required]
-        [Range(1,2)]
-        [DataType(DataType.Text)]
         public int estado { get; set; }
 
         [Display(Name = "Prueba de display")]

@@ -17,9 +17,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Monedas
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.Monedas.ToList());
+            var moneda = from m in db.Monedas select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                moneda = moneda.Where(m => m.nombre.Contains(dato) || m.simbolo.Contains(dato));
+            }
+
+            return View(moneda.ToList());
         }
 
         // GET: Monedas/Details/5
@@ -47,12 +54,17 @@ namespace Kermesse.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idMoneda,nombre,simbolo,estado")] Moneda moneda)
+        //[ValidateAntiForgeryToken]
+        //[Bind(Include = "idMoneda,nombre,simbolo,estado")]
+        public ActionResult Create(Moneda moneda)
         {
             if (ModelState.IsValid)
             {
-                db.Monedas.Add(moneda);
+                Moneda m = new Moneda();
+                m.nombre = moneda.nombre;
+                m.simbolo = moneda.simbolo;
+                m.estado = 1;
+                db.Monedas.Add(m);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -85,6 +97,7 @@ namespace Kermesse.Controllers
         {
             if (ModelState.IsValid)
             {
+                moneda.estado = 2;
                 db.Entry(moneda).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

@@ -254,6 +254,22 @@
     <Property Name="email" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="estado" Type="int" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'BDKermesse.dbo.VwListaPrecio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwListaPrecio">
+    <Key>
+      <PropertyRef Name="idListaPrecio" />
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="descripcion" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="idListaPrecio" Type="int" Nullable="false" />
+    <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="estado" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
     <End Role="ArqueoCaja" Type="Self.ArqueoCaja" Multiplicity="1" />
     <End Role="ArqueoCajaDet" Type="Self.ArqueoCajaDet" Multiplicity="*" />
@@ -722,6 +738,15 @@
     <EntitySet Name="TasaCambio" EntityType="Self.TasaCambio" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TasaCambioDet" EntityType="Self.TasaCambioDet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VwListaPrecio" EntityType="Self.VwListaPrecio" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwListaPrecio].[idListaPrecio] AS [idListaPrecio], 
+    [VwListaPrecio].[kermesse] AS [kermesse], 
+    [VwListaPrecio].[nombre] AS [nombre], 
+    [VwListaPrecio].[descripcion] AS [descripcion], 
+    [VwListaPrecio].[estado] AS [estado]
+    FROM [dbo].[VwListaPrecio] AS [VwListaPrecio]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK__ArqueoCaj__arque__6FE99F9F" Association="Self.FK__ArqueoCaj__arque__6FE99F9F">
       <End Role="ArqueoCaja" EntitySet="ArqueoCaja" />
       <End Role="ArqueoCajaDet" EntitySet="ArqueoCajaDet" />

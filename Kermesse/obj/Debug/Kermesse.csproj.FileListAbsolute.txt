@@ -159,7 +159,6 @@ C:\Users\frank\Desktop\Kermesse\Kermesse\bin\System.Web.WebPages.Razor.xml
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Newtonsoft.Json.xml
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Antlr3.Runtime.pdb
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.AssemblyReference.cache
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CoreCompileInputs.cache
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CopyComplete
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.dll
@@ -242,3 +241,4 @@ C:\Users\frank\Desktop\Kermesse\Kermesse\bin\zh-CHS\Microsoft.ReportViewer.WinFo
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.cache
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.compiled
+C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.AssemblyReference.cache

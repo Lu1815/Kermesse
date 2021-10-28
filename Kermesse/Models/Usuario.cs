@@ -11,8 +11,7 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Usuario
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -32,19 +31,13 @@ namespace Kermesse.Models
             this.Kermesses2 = new HashSet<Kermesse>();
             this.RolUsuarios = new HashSet<RolUsuario>();
         }
-        [Display(Name = "Código")]
+    
         public int idUsuario { get; set; }
-        [Display(Name = "Usuario"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string userName { get; set; }
-        [Display(Name = "Contraseña"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string pwd { get; set; }
-        [Display(Name = "Nombres"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string nombres { get; set; }
-        [Display(Name = "Apellidos"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string apellidos { get; set; }
-        [Display(Name = "Correo"), Required(ErrorMessage = "Este campo es obligatorio")]
         public string email { get; set; }
-        [Display(Name = "Estado"), Required(ErrorMessage = "Este campo es obligatorio")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

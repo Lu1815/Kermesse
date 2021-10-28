@@ -944,5 +944,20 @@
       <End Role="TasaCambio" EntitySet="TasaCambios" />
       <End Role="TasaCambioDet" EntitySet="TasaCambioDets" />
     </AssociationSet>
+    <EntitySet Name="VwListaPrecios" EntityType="BDKermesseModel.VwListaPrecio" />
   </EntityContainer>
+  <EntityType Name="VwListaPrecio">
+    <Key>
+      <PropertyRef Name="idListaPrecio" />
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="descripcion" />
+      <PropertyRef Name="estado" />
+    </Key>
+    <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="estado" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

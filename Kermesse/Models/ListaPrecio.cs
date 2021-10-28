@@ -23,14 +23,16 @@ namespace Kermesse.Models
 
         [Display(Name = "Código")]
         public int idListaPrecio { get; set; }
-        
-        [Display(Name = "Kermesse")]
         public Nullable<int> kermesse { get; set; }
-        [Display(Name = "Nombre"), Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Lista de precio")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "El tamaño máximo es 100 caracteres")]
         public string nombre { get; set; }
-        [Display(Name = "Descripción"), Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "El tamaño máximo es 100 caracteres")]
         public string descripcion { get; set; }
-        [Display(Name = "Estado"), Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Estado")]
         public int estado { get; set; }
     
         public virtual Kermesse Kermesse1 { get; set; }

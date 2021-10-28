@@ -27,7 +27,7 @@ namespace Kermesse.Models
         public int idMoneda { get; set; }
 
         [Required]
-        [StringLength(20, MinimumLength = 5, ErrorMessage = "Máximo 20 caracteres, mínimo 5")]
+        [StringLength(20, MinimumLength = 5, ErrorMessage = "Mï¿½ximo 20 caracteres, mï¿½nimo 5")]
         [DataType(DataType.Text)]
         public string nombre { get; set; }
 

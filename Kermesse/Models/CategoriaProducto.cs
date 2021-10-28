@@ -12,7 +12,7 @@ namespace Kermesse.Models
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    
+
     public partial class CategoriaProducto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,13 +21,17 @@ namespace Kermesse.Models
             this.Productoes = new HashSet<Producto>();
         }
     
-        [Display(Name = "Código")]
+        [Display(Name="Código")]
         public int idCatProd { get; set; }
-        [Display(Name = "Nombre"), Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Categoría")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "El tamaño máximo es 45 caracteres")]
         public string nombre { get; set; }
-        [Display(Name = "Descripción"), Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "El tamaño máximo es 100 caracteres")]
         public string descripcion { get; set; }
-        [Display(Name = "Estado"), Required(ErrorMessage = "Este campo es obligatorio")]
+        [Display(Name = "Estado")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

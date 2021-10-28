@@ -48,5 +48,6 @@ namespace Kermesse.Models
         public virtual DbSet<TasaCambio> TasaCambios { get; set; }
         public virtual DbSet<TasaCambioDet> TasaCambioDets { get; set; }
         public virtual DbSet<Usuario> Usuarios { get; set; }
+        public virtual DbSet<VwListaPrecio> VwListaPrecios { get; set; }
     }
 }

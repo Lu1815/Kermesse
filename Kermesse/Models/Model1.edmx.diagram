@@ -65,6 +65,7 @@
         <AssociationConnector Association="BDKermesseModel.FK__RolUsuario__rol__300424B4" ManuallyRouted="false" />
         <AssociationConnector Association="BDKermesseModel.FK__RolUsuari__usuar__2F10007B" ManuallyRouted="false" />
         <AssociationConnector Association="BDKermesseModel.FK__TasaCambi__tasaC__571DF1D5" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BDKermesseModel.VwListaPrecio" Width="1.5" PointX="8.875" PointY="6" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

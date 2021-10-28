@@ -30,7 +30,6 @@
                             <TextRun>
                               <Value>Kermesse</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#000000</Color>
                               </Style>
@@ -51,7 +50,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -71,7 +70,6 @@
                             <TextRun>
                               <Value>Nombre de la lista</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#000000</Color>
                               </Style>
@@ -92,7 +90,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -112,7 +110,6 @@
                             <TextRun>
                               <Value>Descripción</Value>
                               <Style>
-                                <FontSize>11pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                                 <Color>#000000</Color>
                               </Style>
@@ -133,7 +130,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </BottomBorder>
-                        <BackgroundColor>White</BackgroundColor>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -159,7 +156,6 @@
                               <Value>=Fields!kermesse.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -192,7 +188,6 @@
                               <Value>=Fields!nombre.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -225,7 +220,6 @@
                               <Value>=Fields!descripcion.Value</Value>
                               <Style>
                                 <FontWeight>Normal</FontWeight>
-                                <Color>#333333</Color>
                               </Style>
                             </TextRun>
                           </TextRuns>
@@ -293,10 +287,6 @@
           <Paragraphs>
             <Paragraph>
               <TextRuns>
-                <TextRun>
-                  <Value>Fecha y hora: </Value>
-                  <Style />
-                </TextRun>
                 <TextRun>
                   <Value>=Globals!ExecutionTime</Value>
                   <Style />

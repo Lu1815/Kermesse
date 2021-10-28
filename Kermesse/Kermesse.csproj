@@ -970,8 +970,13 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\RptCategoriaGasto.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaProducto1.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecio1.rdlc" />
+    <EmbeddedResource Include="Reportes\RptOpciones.rdlc" />
+    <EmbeddedResource Include="Reportes\RptParroquia1.rdlc" />
+    <EmbeddedResource Include="Reportes\RptTasaCambio.rdlc" />
+    <EmbeddedResource Include="Reportes\RptUsuarios.rdlc" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

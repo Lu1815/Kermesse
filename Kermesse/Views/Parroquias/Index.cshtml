@@ -7,14 +7,29 @@
 
 <h2>Parroquia</h2> 
 
-<p>
+
     <div class="mb-1">
         <button type="button" class="btn btn-primary">
             <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Añadir nueva parroquia", "Create", null, new { @class = "text-light" })
         </button>
+        <button type="button" class="btn btn-secondary">
+            <i class="fa fa-print icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Exportar a PDF", "verReporte", new { tipo = "PDF" }, new { @class = "text-light", target = "_blank" })
+        </button>
+  
+
+    @using (Html.BeginForm("Index", "Parroquias", FormMethod.Post, new { @style = "width: 50%; float: right" }))
+    {
+<div class="form-group">
+    @Html.TextBox("dato", "", new { @class = "form-control col-md-8", style = "margin-left: 2rem;" })
+    <button type="submit" class="btn btn-success col-md-3" style=" float: right">
+        <i class="fa fa-search icon" style="margin-right: .5rem;"></i>Buscar
+    </button>
+
+</div>
+}
     </div>
 
-</p>
+
 <div class="card">
     <div class="table-responsive">
         <table class="table table-bordered table-striped">

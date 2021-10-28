@@ -1,18 +1,32 @@
 ﻿@model IEnumerable<Kermesse.Models.Usuario>
 
-@{
-    ViewBag.Title = "Usuarios";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+@{ ViewBag.Title = "Usuarios";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
 
 <h2>Usuarios</h2>
 
-<p>
-    
-    <button type="button" class="btn btn-primary">
-        <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Añadir usuario", "Create", null, new { @class = "text-light" })
+<div>
+
+<button type="button" class="btn btn-primary">
+    <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Añadir usuario", "Create", null, new { @class = "text-light" })
+</button>
+<button type="button" class="btn btn-secondary">
+    <i class="fa fa-print icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Exportar a PDF", "verReporte", new { tipo = "PDF" }, new { @class = "text-light", target = "_blank" })
+</button>
+
+
+
+@using (Html.BeginForm("Index", "Usuarios", FormMethod.Post, new { @style = "width: 50%; float: right" }))
+{
+<div class="form-group">
+    @Html.TextBox("dato", "", new { @class = "form-control col-md-8", style = "margin-left: 2rem;" })
+    <button type="submit" class="btn btn-success col-md-3" style=" float: right">
+        <i class="fa fa-search icon" style="margin-right: .5rem;"></i>Buscar
     </button>
-</p>
+
+</div>
+    }
+</div>
 
 <div class="card">
     <div class="table-responsive">
@@ -31,46 +45,39 @@
                     @Html.DisplayNameFor(model => model.email)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.estado)
-                </th>
-                <th>
                     Acciones
                 </th>
             </tr>
 
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.userName)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nombres)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.apellidos)
-                    </td>
-                    <td>
-                        <a href="mailto:@Html.DisplayFor(modelItem => item.email)" >@Html.DisplayFor(modelItem => item.email)</a>
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.estado)
-                    </td>
-                    <td>
-                        <button class="btn btn-secondary">
-                            @Html.ActionLink("Editar", "Edit", new { id = item.idUsuario }, new { @class = "text-light" })
-                        </button>
-                        |
-                        <button class="btn btn-primary">
-                            @Html.ActionLink("Ver", "Details", new { id = item.idUsuario }, new { @class = "text-light" })
-                        </button>
-                        |
-                        <button class="btn btn-danger">
-                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idUsuario }, new { @class = "text-light" })
-                        </button>
-                    </td>
-                </tr>
-            }
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.userName)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.nombres)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.apellidos)
+    </td>
+    <td>
+        <a href="mailto:@Html.DisplayFor(modelItem => item.email)">@Html.DisplayFor(modelItem => item.email)</a>
+    </td>
+    <td>
+        <button class="btn btn-secondary">
+            @Html.ActionLink("Editar", "Edit", new { id = item.idUsuario }, new { @class = "text-light" })
+        </button>
+        |
+        <button class="btn btn-primary">
+            @Html.ActionLink("Ver", "Details", new { id = item.idUsuario }, new { @class = "text-light" })
+        </button>
+        |
+        <button class="btn btn-danger">
+            @Html.ActionLink("Eliminar", "Delete", new { id = item.idUsuario }, new { @class = "text-light" })
+        </button>
+    </td>
+</tr>            }
 
         </table>
     </div>

@@ -17,10 +17,20 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: CategoriaProductoes
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.CategoriaProductoes.ToList());
+
+            var cp = from m in db.CategoriaProductoes select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                cp = cp.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato));
+            }
+
+            return View(cp.ToList());
         }
+
+
 
         // GET: CategoriaProductoes/Details/5
         public ActionResult Details(int? id)
@@ -47,12 +57,16 @@ namespace Kermesse.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idCatProd,nombre,descripcion,estado")] CategoriaProducto categoriaProducto)
+        // [ValidateAntiForgeryToken]
+        public ActionResult Create(CategoriaProducto categoriaProducto)
         {
             if (ModelState.IsValid)
             {
-                db.CategoriaProductoes.Add(categoriaProducto);
+                CategoriaProducto cp = new CategoriaProducto();
+                cp.nombre = categoriaProducto.nombre;
+                cp.descripcion = categoriaProducto.descripcion;
+                cp.estado = 1;
+                db.CategoriaProductoes.Add(cp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -84,6 +98,7 @@ namespace Kermesse.Controllers
         {
             if (ModelState.IsValid)
             {
+                categoriaProducto.estado = 2;
                 db.Entry(categoriaProducto).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

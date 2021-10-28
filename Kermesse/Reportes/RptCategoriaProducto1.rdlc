@@ -96,7 +96,6 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -264,7 +263,7 @@
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
           <Top>1.76706cm</Top>
           <Height>0.6cm</Height>
-          <Width>6.15125cm</Width>
+          <Width>16.51cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>

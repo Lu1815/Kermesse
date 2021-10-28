@@ -17,10 +17,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: ListaPrecios
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var listaPrecios = db.ListaPrecios.Include(l => l.Kermesse1);
-            return View(listaPrecios.ToList());
+            var lp = from m in db.ListaPrecios select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                lp = lp.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato));
+            }
+
+            return View(lp.ToList());
         }
 
         // GET: ListaPrecios/Details/5
@@ -49,12 +55,16 @@ namespace Kermesse.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idListaPrecio,kermesse,nombre,descripcion,estado")] ListaPrecio listaPrecio)
+        public ActionResult Create(ListaPrecio listaPrecio)
         {
             if (ModelState.IsValid)
             {
-                db.ListaPrecios.Add(listaPrecio);
+                ListaPrecio lp = new ListaPrecio();
+                lp.nombre = listaPrecio.nombre;
+                lp.descripcion = listaPrecio.descripcion;
+                lp.kermesse = listaPrecio.kermesse;
+                lp.estado = 1;
+                db.ListaPrecios.Add(lp);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -88,6 +98,7 @@ namespace Kermesse.Controllers
         {
             if (ModelState.IsValid)
             {
+                listaPrecio.estado = 2;
                 db.Entry(listaPrecio).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

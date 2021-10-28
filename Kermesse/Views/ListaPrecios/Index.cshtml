@@ -7,21 +7,29 @@
 
 <h2>Lista de precios</h2>
 
-<p>
     
-    <div class="mb-1">
-        <button type="button" class="btn btn-primary">
-            <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Crear nueva lista de precios", "Create", null, new { @class = "text-light" })
-        </button>
-        <button type="button" class="btn btn-secondary">
-            <i class="fa fa-print icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Exportar a PDF", "verReporte", new { tipo = "PDF" }, new { @class = "text-light" })
-        </button>
-    </div>
-</p>
+<div class="mb-1">
+    <button type="button" class="btn btn-primary">
+        <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Crear nueva lista de precios", "Create", null, new { @class = "text-light" })
+    </button>
+    <button type="button" class="btn btn-secondary">
+        <i class="fa fa-print icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Exportar a PDF", "verReporte", new { tipo = "PDF" }, new { @class = "text-light", target = "_blank" })
+    </button>
+    @* BUSCAR *@
+    @using (Html.BeginForm("Index", "ListaPrecios", FormMethod.Post, new { @class = "w-50 float-right" }))
+    {
+        <div class="form-group">
+            @Html.TextBox("dato", "", new { @class = "form-control col-md-8" })
+            <button type="submit" class="btn btn-success col-md-3 float-right">
+                <i class="fa fa-search icon mr-1"></i>Buscar
+            </button>
+        </div>
+    }
+</div>
 
 <div class="card">
     <div class="table-responsive">
-        <table class="table table-bordered table-striped">
+        <table class="table table-bordered table-striped table-hover">
             <tr class="bg-info">
                 <th>
                     @Html.DisplayNameFor(model => model.nombre)

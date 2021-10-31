@@ -23,7 +23,7 @@ namespace Kermesse.Models
             this.IngresoComunidads = new HashSet<IngresoComunidad>();
             this.ListaPrecios = new HashSet<ListaPrecio>();
         }
-    
+
         public int idKermesse { get; set; }
         public int parroquia { get; set; }
         [Display(Name = "Kermesse")]
@@ -39,7 +39,7 @@ namespace Kermesse.Models
         public Nullable<System.DateTime> fechaModificacion { get; set; }
         public Nullable<int> usuarioEliminacion { get; set; }
         public Nullable<System.DateTime> fechaEliminacion { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ArqueoCaja> ArqueoCajas { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

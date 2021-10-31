@@ -12,10 +12,12 @@ using Microsoft.Reporting.WebForms;
 
 namespace Kermesse.Controllers
 {
+
     public class UsuariosController : Controller
     {
         private BDKermesseEntities db = new BDKermesseEntities();
 
+        [Authorize]
         // GET: Usuarios
         public ActionResult Index()
         {
@@ -23,6 +25,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Usuarios/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +41,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Usuarios/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -48,6 +52,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idUsuario,userName,pwd,nombres,apellidos,email,estado")] Usuario usuario)
         {
             if (ModelState.IsValid)
@@ -61,6 +66,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Usuarios/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +86,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idUsuario,userName,pwd,nombres,apellidos,email,estado")] Usuario usuario)
         {
             if (ModelState.IsValid)
@@ -92,6 +99,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Usuarios/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,6 +117,7 @@ namespace Kermesse.Controllers
         // POST: Usuarios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Usuario usuario = db.Usuarios.Find(id);
@@ -117,6 +126,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -126,6 +136,7 @@ namespace Kermesse.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
         public ActionResult VerReporte(string tipo)
         {
             LocalReport rpt = new LocalReport();

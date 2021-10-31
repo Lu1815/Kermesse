@@ -17,6 +17,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Monedas
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var moneda = from m in db.Monedas select m;
@@ -30,6 +31,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Monedas/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -45,6 +47,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Monedas/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -56,6 +59,7 @@ namespace Kermesse.Controllers
         [HttpPost]
         //[ValidateAntiForgeryToken]
         //[Bind(Include = "idMoneda,nombre,simbolo,estado")]
+        [Authorize]
         public ActionResult Create(Moneda moneda)
         {
             if (ModelState.IsValid)
@@ -73,6 +77,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Monedas/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,6 +98,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idMoneda,nombre,simbolo,estado")] Moneda moneda)
         {
             if (ModelState.IsValid)
@@ -107,6 +113,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Monedas/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -124,6 +131,7 @@ namespace Kermesse.Controllers
         // POST: Monedas/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Moneda moneda = db.Monedas.Find(id);
@@ -132,6 +140,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -141,6 +150,7 @@ namespace Kermesse.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
         public ActionResult verReporte(string tipo)
         {
             LocalReport rpt = new LocalReport();

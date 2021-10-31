@@ -253,7 +253,7 @@
           </Key>
           <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
-          <Property Name="pwd" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="pwd" Type="nvarchar" MaxLength="200" Nullable="false" />
           <Property Name="nombres" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="apellidos" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="email" Type="nvarchar" MaxLength="45" Nullable="false" />
@@ -1214,7 +1214,7 @@ warning 6002: The table/view 'BDKermesse.dbo.VwListaPrecio' does not have a prim
           </Key>
           <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="userName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="pwd" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="pwd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="nombres" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="apellidos" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />

@@ -20,7 +20,7 @@ namespace Kermesse.Models
         {
             this.Kermesses = new HashSet<Kermesse>();
         }
-    
+
         public int idParroquia { get; set; }
         [Display(Name = "Parroquia")]
         [Required(ErrorMessage = "Este campo es requerido")]
@@ -39,7 +39,7 @@ namespace Kermesse.Models
         [Display(Name = "Sitio Web")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public string sitioWeb { get; set; }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Kermesse> Kermesses { get; set; }
     }

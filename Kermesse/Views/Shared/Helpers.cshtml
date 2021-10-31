@@ -1,0 +1,43 @@
+﻿@helper ShortcutCard(string name, string to) { 
+        <div class="col-6 col-md-4 mb-4">
+            <div class="card rounded-3">
+                <div class="card-body">
+                    <h3 class="card-title">@name</h3>
+                    <div class="row">
+                        <div class="col-12 col-xl-4 mb-1">
+                            <a class="btn btn-primary w-100" href="/@to">Lista</a>
+                        </div>
+                        <div class="col-12 col-xl-4 mb-1">
+                            <a class="btn btn-primary w-100" href="/@to/Create">Crear</a>
+                        </div>
+                        <div class="col-12 col-xl-4 mb-1">
+                            <div class="dropdown">
+                                <button class="btn btn-primary"
+                                        type="button"
+                                        id="reportOptions"
+                                        data-bs-toggle="dropdown"
+                                        aria-expanded="false">
+                                    Reporte
+                                </button>
+                                <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="/@to/verReporte?tipo=PDF"
+                                           target="_blank">PDF</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="/@to/verReporte?tipo=Word">Word</a>
+                                    </li>
+                                    <li>
+                                        <a class="dropdown-item"
+                                           href="/@to/verReporte?tipo=Excel">Excel</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }

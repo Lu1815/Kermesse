@@ -309,7 +309,7 @@
     </Key>
     <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="userName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="pwd" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pwd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="nombres" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="apellidos" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />

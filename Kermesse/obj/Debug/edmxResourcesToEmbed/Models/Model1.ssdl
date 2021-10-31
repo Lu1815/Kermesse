@@ -248,7 +248,7 @@
     </Key>
     <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
-    <Property Name="pwd" Type="nvarchar" MaxLength="45" Nullable="false" />
+    <Property Name="pwd" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="nombres" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="apellidos" Type="nvarchar" MaxLength="45" Nullable="false" />
     <Property Name="email" Type="nvarchar" MaxLength="45" Nullable="false" />

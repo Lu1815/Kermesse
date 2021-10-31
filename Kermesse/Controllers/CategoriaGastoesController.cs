@@ -17,12 +17,14 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: CategoriaGastoes
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.CategoriaGastoes.ToList());
         }
 
         // GET: CategoriaGastoes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,6 +40,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: CategoriaGastoes/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -48,6 +51,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idCatGasto,nombreCategoria,descripcion,estado")] CategoriaGasto categoriaGasto)
         {
             if (ModelState.IsValid)
@@ -61,6 +65,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: CategoriaGastoes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -80,6 +85,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idCatGasto,nombreCategoria,descripcion,estado")] CategoriaGasto categoriaGasto)
         {
             if (ModelState.IsValid)
@@ -92,6 +98,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: CategoriaGastoes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -109,6 +116,7 @@ namespace Kermesse.Controllers
         // POST: CategoriaGastoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             CategoriaGasto categoriaGasto = db.CategoriaGastoes.Find(id);
@@ -117,6 +125,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -126,6 +135,7 @@ namespace Kermesse.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
         public ActionResult VerReporte(string tipo)
         {
             LocalReport rpt = new LocalReport();

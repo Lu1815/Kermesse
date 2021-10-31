@@ -17,7 +17,7 @@ namespace Kermesse.Models
     {
         public int idTasaCambioDet { get; set; }
         [Display(Name = "Tasa de Cambio")]
-      
+
         public int tasaCambio { get; set; }
         [Display(Name = "Fecha")]
         [Required(ErrorMessage = "Este campo es requerido")]
@@ -31,7 +31,6 @@ namespace Kermesse.Models
         public int estado { get; set; }
         [Display(Name = "Mes")]
         [Required(ErrorMessage = "Este campo es requerido")]
-
         public virtual TasaCambio TasaCambio1 { get; set; }
     }
 }

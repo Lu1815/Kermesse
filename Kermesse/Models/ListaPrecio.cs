@@ -34,7 +34,7 @@ namespace Kermesse.Models
         public string descripcion { get; set; }
         [Display(Name = "Estado")]
         public int estado { get; set; }
-    
+
         public virtual Kermesse Kermesse1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ListaPrecioDet> ListaPrecioDets { get; set; }

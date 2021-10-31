@@ -17,6 +17,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: ListaPrecios
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var lp = from m in db.ListaPrecios select m;
@@ -30,6 +31,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecios/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -45,6 +47,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecios/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre");
@@ -55,6 +58,7 @@ namespace Kermesse.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
+        [Authorize]
         public ActionResult Create(ListaPrecio listaPrecio)
         {
             if (ModelState.IsValid)
@@ -74,6 +78,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecios/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -94,6 +99,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idListaPrecio,kermesse,nombre,descripcion,estado")] ListaPrecio listaPrecio)
         {
             if (ModelState.IsValid)
@@ -108,6 +114,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecios/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -125,6 +132,7 @@ namespace Kermesse.Controllers
         // POST: ListaPrecios/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             ListaPrecio listaPrecio = db.ListaPrecios.Find(id);
@@ -133,6 +141,8 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -142,6 +152,7 @@ namespace Kermesse.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
         public ActionResult VerReporte(string tipo)
         {
             LocalReport rpt = new LocalReport();

@@ -17,6 +17,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: TasaCambioDets
+        [Authorize]
         public ActionResult Index()
         {
             var tasaCambioDets = db.TasaCambioDets.Include(t => t.TasaCambio1);
@@ -24,6 +25,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: TasaCambioDets/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -39,6 +41,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: TasaCambioDets/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.tasaCambio = new SelectList(db.TasaCambios, "idTasaCambio", "mes");
@@ -50,6 +53,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idTasaCambioDet,tasaCambio,fecha,tipoCambio,estado")] TasaCambioDet tasaCambioDet)
         {
             if (ModelState.IsValid)
@@ -64,6 +68,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: TasaCambioDets/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -84,6 +89,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idTasaCambioDet,tasaCambio,fecha,tipoCambio,estado")] TasaCambioDet tasaCambioDet)
         {
             if (ModelState.IsValid)
@@ -97,6 +103,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: TasaCambioDets/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +121,7 @@ namespace Kermesse.Controllers
         // POST: TasaCambioDets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             TasaCambioDet tasaCambioDet = db.TasaCambioDets.Find(id);
@@ -122,6 +130,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -131,6 +140,7 @@ namespace Kermesse.Controllers
             base.Dispose(disposing);
         }
 
+        [Authorize]
         public ActionResult VerReporte(string tipo)
         {
             LocalReport rpt = new LocalReport();

@@ -242,3 +242,7 @@ C:\Users\frank\Desktop\Kermesse\Kermesse\bin\zh-CHT\Microsoft.ReportViewer.WinFo
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.cache
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.compiled
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.AssemblyReference.cache
+C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Microsoft.AspNetCore.Cryptography.KeyDerivation.xml

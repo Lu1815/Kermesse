@@ -11,14 +11,28 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Gasto
     {
         public int idGasto { get; set; }
+        [Display(Name = "Kermesse")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int kermesse { get; set; }
+        [Display(Name = "Categoría gasto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int catGasto { get; set; }
+        [Display(Name = "Fecha")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [DataType(DataType.DateTime)]
         public System.DateTime fechGasto { get; set; }
+        [Display(Name = "Concepto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(70, ErrorMessage = "El tamaño máximo es 70 caracteres")]
         public string concepto { get; set; }
+        [Display(Name = "Monto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
         public double monto { get; set; }
         public int usuarioCreacion { get; set; }
         public System.DateTime fechaCreacion { get; set; }

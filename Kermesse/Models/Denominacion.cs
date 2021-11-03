@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Denominacion
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,8 +22,16 @@ namespace Kermesse.Models
         }
     
         public int idDenominacion { get; set; }
+        [Display(Name = "Moneda")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int moneda { get; set; }
+        [Display(Name = "Valor")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(18, ErrorMessage = "El tamaño máximo es 18 caracteres")]
         public decimal valor { get; set; }
+        [Display(Name = "Valor en letras")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "El tamaño máximo es 100 caracteres")]
         public string valorLetras { get; set; }
         public int estado { get; set; }
     

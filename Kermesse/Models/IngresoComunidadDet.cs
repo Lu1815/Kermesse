@@ -11,14 +11,22 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class IngresoComunidadDet
     {
         public int idIngresoComunidadDet { get; set; }
+        [Display(Name = "Ingreso")]
         public int ingresoComunidad { get; set; }
+        [Display(Name = "Bono")]
         public int bono { get; set; }
+        [Display(Name = "Denominación")]
+        [StringLength(45, ErrorMessage = "El tamaño máximo es 45 caracteres")]
         public string denominacion { get; set; }
+        [Display(Name = "Cantidad")]
         public int cantidad { get; set; }
+        [Display(Name = "Subtotal")]
+        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
         public double subTotalBono { get; set; }
     
         public virtual ControlBono ControlBono { get; set; }

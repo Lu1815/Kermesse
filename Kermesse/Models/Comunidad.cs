@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Comunidad
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,9 +23,18 @@ namespace Kermesse.Models
         }
     
         public int idComunidad { get; set; }
+        [Display(Name = "Comunidad")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public string nombre { get; set; }
+        [Display(Name = "Responsable")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "El tamaño máximo es 45 caracteres")]
         public string responsble { get; set; }
+        [Display(Name = "Descuento")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "El tamaño máximo es 100 caracteres")]
         public string descContribucion { get; set; }
+        [Display(Name = "Estado")]
         public int estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

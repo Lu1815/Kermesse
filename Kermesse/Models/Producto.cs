@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,11 +23,23 @@ namespace Kermesse.Models
         }
     
         public int idProducto { get; set; }
+        [Display(Name = "Comunidad")]
         public Nullable<int> comunidad { get; set; }
+        [Display(Name = "Categoría")]
         public Nullable<int> catProd { get; set; }
+        [Display(Name = "Producto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "El tamaño máximo es 45 caracteres")]
         public string nombre { get; set; }
+        [Display(Name = "Descripción")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(100, ErrorMessage = "El tamaño máximo es 100 caracteres")]
         public string descripcion { get; set; }
+        [Display(Name = "Cantidad")]
         public Nullable<int> cantidad { get; set; }
+        [Display(Name = "Precio sugerido")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
         public double precioVSugerido { get; set; }
         public int estado { get; set; }
     

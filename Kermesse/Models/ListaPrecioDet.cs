@@ -11,12 +11,20 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ListaPrecioDet
     {
         public int idListaPrecioDet { get; set; }
+        [Display(Name = "Lista")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int listaPrecio { get; set; }
+        [Display(Name = "Producto")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int producto { get; set; }
+        [Display(Name = "Precio venta")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
         public double precioVenta { get; set; }
     
         public virtual ListaPrecio ListaPrecio1 { get; set; }

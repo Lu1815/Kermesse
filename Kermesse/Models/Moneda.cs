@@ -25,13 +25,14 @@ namespace Kermesse.Models
         }
 
         public int idMoneda { get; set; }
-
-        [Required]
-        [StringLength(20, MinimumLength = 5, ErrorMessage = "M�ximo 20 caracteres, m�nimo 5")]
+        [Display(Name = "Moneda")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, MinimumLength = 5, ErrorMessage = "M�ximo 45 caracteres, m�nimo 5")]
         [DataType(DataType.Text)]
         public string nombre { get; set; }
-
-        [Required]
+        [Display(Name = "Símbolo")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "El tamaño máximo es 45 caracteres")]
         [DataType(DataType.Text)]
         public string simbolo { get; set; }
 

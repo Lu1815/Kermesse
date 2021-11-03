@@ -14,7 +14,8 @@ namespace Kermesse.Controllers
 
         // GET: Account
         public ActionResult Index()
-        {
+        { 
+
             return View();
         }
 
@@ -33,9 +34,9 @@ namespace Kermesse.Controllers
                 db.SaveChanges();
 
                 ModelState.Clear();
-                ViewBag.Message = "El usuario " + usuario.nombres + " " + usuario.apellidos + " ha sido registrado con éxito.";
             }
 
+            ViewBag.Message = "El usuario " + usuario.nombres + " " + usuario.apellidos + " ha sido registrado con éxito.";
             return View();
         }
 
@@ -58,7 +59,7 @@ namespace Kermesse.Controllers
             var usr = db.Usuarios.SingleOrDefault(u => u.userName == usuario.userName);
             if (usr != null && VerifyHashedPassword(usr.pwd, usuario.pwd))
             {
-                //Session["UserID"] = usr.idUsuario.ToString();
+                Session["UserID"] = usr.idUsuario.ToString();
                 //Session["Username"] = usr.userName.ToString();
                 Session["Name"] = usr.nombres.ToString();
                 Session["Lastname"] = usr.apellidos.ToString();

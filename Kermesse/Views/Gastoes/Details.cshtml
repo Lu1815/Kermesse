@@ -1,4 +1,4 @@
-﻿@model Kermesse.Models.Kermesse
+﻿@model Kermesse.Models.Gasto
 
 @{
     ViewBag.Title = "Details";
@@ -8,47 +8,31 @@
 <h2>Details</h2>
 
 <div>
-    <h4>Kermesse</h4>
+    <h4>Gasto</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.nombre)
+            @Html.DisplayNameFor(model => model.fechGasto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.nombre)
+            @Html.DisplayFor(model => model.fechGasto)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fInicio)
+            @Html.DisplayNameFor(model => model.concepto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fInicio)
+            @Html.DisplayFor(model => model.concepto)
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fFinal)
+            @Html.DisplayNameFor(model => model.monto)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fFinal)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.descripcion)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.estado)
+            @Html.DisplayFor(model => model.monto)
         </dd>
 
         <dt>
@@ -76,11 +60,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Parroquia1.nombre)
+            @Html.DisplayNameFor(model => model.CategoriaGasto.nombreCategoria)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Parroquia1.nombre)
+            @Html.DisplayFor(model => model.CategoriaGasto.nombreCategoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kermesse1.nombre)
         </dd>
 
         <dt>
@@ -110,6 +102,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idKermesse }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.idGasto }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

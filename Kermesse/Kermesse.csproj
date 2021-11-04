@@ -1063,12 +1063,26 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Reportes\RptArqueoCaja.rdlc" />
+    <EmbeddedResource Include="Reportes\RptArqueoCajaDet.rdlc" />
+    <EmbeddedResource Include="Reportes\RptBonos.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaGasto.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaProducto1.rdlc" />
+    <EmbeddedResource Include="Reportes\RptComunidades.rdlc" />
+    <EmbeddedResource Include="Reportes\RptDenominaciones.rdlc" />
+    <EmbeddedResource Include="Reportes\RptGastos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptIngresoComunidad.rdlc" />
+    <EmbeddedResource Include="Reportes\RptIngresoComunidadDet.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecio1.rdlc" />
+    <EmbeddedResource Include="Reportes\RptListaPrecioDet.rdlc" />
     <EmbeddedResource Include="Reportes\RptOpciones.rdlc" />
     <EmbeddedResource Include="Reportes\RptParroquia1.rdlc" />
+    <EmbeddedResource Include="Reportes\RptProductos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptRoles.rdlc" />
+    <EmbeddedResource Include="Reportes\RptRolOpciones.rdlc" />
+    <EmbeddedResource Include="Reportes\RptRolUsuario.rdlc" />
     <EmbeddedResource Include="Reportes\RptTasaCambio.rdlc" />
+    <EmbeddedResource Include="Reportes\RptTasaCambios.rdlc" />
     <EmbeddedResource Include="Reportes\RptUsuarios.rdlc" />
   </ItemGroup>
   <PropertyGroup>

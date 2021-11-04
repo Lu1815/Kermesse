@@ -6,26 +6,26 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>7.20572cm</Width>
+              <Width>2.83689in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.20572cm</Width>
+              <Width>2.83689in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox4">
+                    <Textbox Name="Textbox3">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Categoria</Value>
+                              <Value>Roles</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -34,7 +34,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <rd:DefaultName>Textbox3</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -51,14 +51,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox6">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripcion</Value>
+                              <Value>Opciones</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -67,7 +67,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -85,25 +85,25 @@
               </TablixCells>
             </TablixRow>
             <TablixRow>
-              <Height>0.6cm</Height>
+              <Height>0.25in</Height>
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nombre">
+                    <Textbox Name="rol">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nombre.Value</Value>
+                              <Value>=Fields!rol.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nombre</rd:DefaultName>
+                      <rd:DefaultName>rol</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -119,21 +119,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="descripcion">
+                    <Textbox Name="opciones">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!descripcion.Value</Value>
+                              <Value>=Fields!opciones.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>descripcion</rd:DefaultName>
+                      <rd:DefaultName>opciones</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -167,18 +167,18 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DSCategoriaProducto</DataSetName>
-        <Top>1.09334cm</Top>
-        <Left>0.73248cm</Left>
-        <Height>1.2cm</Height>
-        <Width>14.41144cm</Width>
+        <DataSetName>DSRolOpciones</DataSetName>
+        <Top>0.64458in</Top>
+        <Left>0.41311in</Left>
+        <Height>0.5in</Height>
+        <Width>5.67379in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox10">
+      <Textbox Name="Textbox9">
         <CanGrow>true</CanGrow>
         <KeepTogether>true</KeepTogether>
         <Paragraphs>
@@ -192,11 +192,11 @@
             <Style />
           </Paragraph>
         </Paragraphs>
-        <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>2.78667cm</Top>
-        <Left>0.73248cm</Left>
-        <Height>0.6cm</Height>
-        <Width>2.5cm</Width>
+        <rd:DefaultName>Textbox9</rd:DefaultName>
+        <Top>1.48833in</Top>
+        <Left>0.41311in</Left>
+        <Height>0.25in</Height>
+        <Width>1in</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
@@ -209,13 +209,13 @@
         </Style>
       </Textbox>
     </ReportItems>
-    <Height>1.45833in</Height>
+    <Height>1.89583in</Height>
     <Style />
   </Body>
-  <Width>6.12884in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>3.37495cm</Height>
+      <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -226,7 +226,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Categoria Producto</Value>
+                  <Value>Reporte Rol Opciones</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                   </Style>
@@ -236,8 +236,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.24248in</Top>
-          <Left>0.28838in</Left>
+          <Top>0.07812in</Top>
+          <Left>0.41311in</Left>
           <Height>0.30208in</Height>
           <Width>3.53838in</Width>
           <Style>
@@ -265,8 +265,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>0.71123in</Top>
-          <Left>0.28838in</Left>
+          <Top>0.54688in</Top>
+          <Left>0.41311in</Left>
           <Height>0.25in</Height>
           <Width>1.67708in</Width>
           <ZIndex>1</ZIndex>
@@ -281,8 +281,8 @@
           </Style>
         </Textbox>
         <Line Name="Line1">
-          <Top>1.08623in</Top>
-          <Left>0.28838in</Left>
+          <Top>0.92188in</Top>
+          <Left>0.41311in</Left>
           <Height>0in</Height>
           <Width>5.67379in</Width>
           <ZIndex>2</ZIndex>
@@ -300,7 +300,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>1.56104cm</Height>
+      <Height>0.85417in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -319,10 +319,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.49953cm</Top>
-          <Left>12.64391cm</Left>
-          <Height>0.6cm</Height>
-          <Width>2.5cm</Width>
+          <Top>0.31125in</Top>
+          <Left>5.06125in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -340,13 +340,10 @@
         </Border>
       </Style>
     </PageFooter>
-    <PageHeight>29.7cm</PageHeight>
-    <PageWidth>21cm</PageWidth>
-    <LeftMargin>2cm</LeftMargin>
-    <RightMargin>2cm</RightMargin>
-    <TopMargin>2cm</TopMargin>
-    <BottomMargin>2cm</BottomMargin>
-    <ColumnSpacing>0.13cm</ColumnSpacing>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -356,35 +353,35 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>cd393f89-985a-4c62-94c5-63175ced362e</rd:DataSourceID>
+      <rd:DataSourceID>0f33cc29-dba3-43ae-be88-ff29f8da0a08</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSCategoriaProducto">
+    <DataSet Name="DSRolOpciones">
       <Query>
         <DataSourceName>DSReportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
+        <Field Name="rol">
+          <DataField>rol</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="descripcion">
-          <DataField>descripcion</DataField>
+        <Field Name="opciones">
+          <DataField>opciones</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSReportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\frank\Desktop\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
-        <rd:TableName>CategoríaProducto</rd:TableName>
+        <rd:SchemaPath>C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:TableName>RolOpciones</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>a66deab3-e5d8-4012-861b-b024803ad5c4</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+  <rd:ReportID>68334a00-2955-4af6-8810-9d7a3aa3ade7</rd:ReportID>
 </Report>

@@ -3,11 +3,13 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Kermesse.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace Kermesse.Controllers
 {
@@ -138,6 +140,26 @@ namespace Kermesse.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        public ActionResult verReporte(string tipo)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptTasaCambios.rdlc");
+            rpt.ReportPath = ruta;
+
+            List<TasaCambio> ls = new List<TasaCambio>();
+            ls = db.TasaCambios.ToList();
+
+            ReportDataSource rd = new ReportDataSource("DSTasaCambios", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
         }
     }
 }

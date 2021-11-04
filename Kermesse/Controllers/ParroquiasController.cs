@@ -18,9 +18,17 @@ namespace Kermesse.Controllers
 
         // GET: Parroquias
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.Parroquias.ToList());
+            
+            var parroquia = from p in db.Parroquias select p;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                parroquia = parroquia.Where(p => p.nombre.Contains(dato) || p.direccion.Contains(dato) || p.telefono.Contains(dato) || p.sitioWeb.Contains(dato) || p.parroco.Contains(dato));
+            }
+
+            return View(parroquia.ToList());
         }
 
         // GET: Parroquias/Details/5

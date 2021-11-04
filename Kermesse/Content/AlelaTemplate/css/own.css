@@ -6,3 +6,8 @@
 .azul {
     background-color: blue;
 }
+
+.square-img {
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}

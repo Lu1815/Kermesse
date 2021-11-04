@@ -25,13 +25,13 @@ namespace Kermesse.Models
         [Display(Name = "Parroquia")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public string nombre { get; set; }
-        [Display(Name = "Descripción")]
+        [Display(Name = "Dirección")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public string direccion { get; set; }
         [Display(Name = "Teléfono")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public string telefono { get; set; }
-        [Display(Name = "Parroco")]
+        [Display(Name = "Párroco")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public string parroco { get; set; }
         [Display(Name = "Logo")]

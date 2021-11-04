@@ -5,32 +5,57 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Lista de precios</h2>
+<h1>Lista de precios</h1>
 
-    
-<div class="mb-1">
-    <button type="button" class="btn btn-primary">
-        <i class="fa fa-plus icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Crear nueva lista de precios", "Create", null, new { @class = "text-light" })
-    </button>
-    <button type="button" class="btn btn-secondary">
-        <i class="fa fa-print icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Exportar a PDF", "verReporte", new { tipo = "PDF" }, new { @class = "text-light", target = "_blank" })
-    </button>
-    @* BUSCAR *@
-    @using (Html.BeginForm("Index", "ListaPrecios", FormMethod.Post, new { @class = "w-50 float-right" }))
-    {
-        <div class="form-group">
-            @Html.TextBox("dato", "", new { @class = "form-control col-md-8" })
-            <button type="submit" class="btn btn-success col-md-3 float-right">
-                <i class="fa fa-search icon mr-1"></i>Buscar
+
+<div class="row mb-1">
+    <div class="col-12 col-md-2 mb-1">
+        <a class="btn btn-primary w-100" href="/ListaPrecios/Create">Crear</a>
+    </div>
+    <div class="col-12 col-md-2 mb-1">
+        <div class="dropdown">
+            <button class="btn btn-primary w-100"
+                    type="button"
+                    id="reportOptions"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Reporte
             </button>
+            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                <li>
+                    <a class="dropdown-item"
+                       href="/ListaPrecios/verReporte?tipo=PDF"
+                       target="_blank">PDF</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                       href="/ListaPrecios/verReporte?tipo=Word">Word</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                       href="/ListaPrecios/verReporte?tipo=Excel">Excel</a>
+                </li>
+            </ul>
         </div>
-    }
+    </div>
+
+    <div class="col-12 col-md-8 col-lg-4 mb-1 ml-auto">
+        @* BUSCAR *@
+        @using (Html.BeginForm("Index", "ListaPrecios", FormMethod.Post, new { @class = "" }))
+        {
+            <div class="col-12 col-md-12 ">
+                @Html.TextBox("dato", "", new { @class = "form-control rounded", placeholder = "Buscar" })
+            </div>
+        }
+    </div>
 </div>
 
-<div class="card">
-    <div class="table-responsive">
-        <table class="table table-bordered table-striped table-hover">
-            <tr class="bg-info">
+
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-info">
+
+            <tr>
                 <th>
                     @Html.DisplayNameFor(model => model.nombre)
                 </th>
@@ -44,37 +69,35 @@
                     Opciones
                 </th>
             </tr>
+        </thead>
 
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.descripcion)
-                    </td>
-                
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
-                    </td>
-                    <td>
-                        <button class="btn btn-secondary">
-                            @Html.ActionLink("Editar", "Edit", new { id = item.idListaPrecio }, new { @class = "text-light" })
-                        </button>
-                        |
-                        <button class="btn btn-primary">
-                            @Html.ActionLink("Ver", "Details", new { id = item.idListaPrecio }, new { @class = "text-light" })
-                        </button>
-                        |
-                        <button class="btn btn-danger">
-                            @Html.ActionLink("Eliminar", "Delete", new { id = item.idListaPrecio }, new { @class = "text-light" })
-                        </button>
-                    </td>
-                </tr>
-            }
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
 
-        </table>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                </td>
+                <td>
+                    <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idListaPrecio })">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idListaPrecio })">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idListaPrecio })">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
 
-    </div>
+    </table>
+
 </div>

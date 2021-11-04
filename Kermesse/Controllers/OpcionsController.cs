@@ -18,9 +18,16 @@ namespace Kermesse.Controllers
 
         // GET: Opcions
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.Opcions.ToList());
+            var opcion = from o in db.Opcions select o;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                opcion = opcion.Where(o => o.opcionDescripcion.Contains(dato));
+            }
+
+            return View(opcion.ToList());
         }
 
         // GET: Opcions/Details/5

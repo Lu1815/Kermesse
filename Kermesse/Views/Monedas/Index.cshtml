@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Moneda</h1>
+<h1>Moneda🪙</h1>
 
 <div class="row mb-1">
     <div class="col-12 col-md-2 mb-1">
@@ -37,11 +37,12 @@
             </ul>
         </div>
     </div>
-    <div class="col-12 col-md-8 mb-1">
+
+    <div class="col-12 col-md-8 col-lg-4 mb-1 ml-auto">
         @* BUSCAR *@
         @using (Html.BeginForm("Index", "Monedas", FormMethod.Post, new { @class = "" }))
         {
-            <div class="float-right w-50">    
+            <div class="col-12 col-md-12 ">
                 @Html.TextBox("dato", "", new { @class = "form-control rounded", placeholder = "Buscar" })
             </div>
         }
@@ -51,42 +52,43 @@
 
 <div class="table-responsive">
     <table class="table table-bordered table-striped table-hover">
-        <tr class="bg-primary">
-            <th>
-                @Html.DisplayNameFor(model => model.nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.simbolo)
-            </th>
-            <th>
-                Opciones
-            </th>
-        </tr>
-
-        @foreach (var item in Model)
-        {
+        <thead class="table-info">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nombre)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.simbolo)
-                </td>
-                <td>
-
-                    <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idMoneda })">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                    <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idMoneda })">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idMoneda })">
-                        <i class="fa fa-trash"></i>
-                    </a>
-                </td>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.simbolo)
+                </th>
+                <th>
+                    Opciones
+                </th>
             </tr>
-        }
-
+        </thead>
+        <tbody >
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.simbolo)
+                    </td>
+                    <td>
+                        <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idMoneda })">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idMoneda })">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idMoneda })">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
     </table>
 </div>
 

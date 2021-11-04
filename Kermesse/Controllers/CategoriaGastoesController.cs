@@ -18,9 +18,17 @@ namespace Kermesse.Controllers
 
         // GET: CategoriaGastoes
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.CategoriaGastoes.ToList());
+
+            var catgast = from cg in db.CategoriaGastoes select cg;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                catgast = catgast.Where(cg => cg.nombreCategoria.Contains(dato) || cg.descripcion.Contains(dato));
+            }
+
+            return View(catgast.ToList());
         }
 
         // GET: CategoriaGastoes/Details/5

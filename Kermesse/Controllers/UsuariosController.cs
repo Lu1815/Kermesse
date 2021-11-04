@@ -19,9 +19,17 @@ namespace Kermesse.Controllers
 
         [Authorize]
         // GET: Usuarios
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.Usuarios.ToList());
+
+            var user = from u in db.Usuarios select u;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                user = user.Where(u => u.nombres.Contains(dato) || u.apellidos.Contains(dato) || u.userName.Contains(dato) || u.email.Contains(dato));
+            }
+
+            return View(user.ToList());
         }
 
         // GET: Usuarios/Details/5

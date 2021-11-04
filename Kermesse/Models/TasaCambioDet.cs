@@ -21,6 +21,7 @@ namespace Kermesse.Models
         public int tasaCambio { get; set; }
         [Display(Name = "Fecha")]
         [Required(ErrorMessage = "Este campo es requerido")]
+        [DataType(DataType.DateTime)]
         public System.DateTime fecha { get; set; }
         [Display(Name = "Tipo de Cambio")]
         [Required(ErrorMessage = "Este campo es requerido")]

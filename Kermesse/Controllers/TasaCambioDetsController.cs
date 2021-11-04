@@ -18,10 +18,16 @@ namespace Kermesse.Controllers
 
         // GET: TasaCambioDets
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var tasaCambioDets = db.TasaCambioDets.Include(t => t.TasaCambio1);
-            return View(tasaCambioDets.ToList());
+            var tcd = from m in db.TasaCambioDets select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                tcd = tcd.Where(m => m.tipoCambio.ToString().Contains(dato) || m.fecha.ToString().Contains(dato));
+            }
+
+            return View(tcd.ToList());
         }
 
         // GET: TasaCambioDets/Details/5

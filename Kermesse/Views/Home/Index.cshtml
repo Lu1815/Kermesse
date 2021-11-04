@@ -437,48 +437,6 @@
     <div class="col-12 col-md-6 col-lg-4 mb-4">
         <div class="card rounded-3">
             <div class="card-body">
-                <h3 class="card-title">Parroquias</h3>
-                <div class="row">
-                    <div class="col-12 col-xl-4 mb-1">
-                        <a class="btn btn-primary w-100" href="/Parroquias">Lista</a>
-                    </div>
-                    <div class="col-12 col-xl-4 mb-1">
-                        <a class="btn btn-primary w-100" href="/Parroquias/Create">Crear</a>
-                    </div>
-                    <div class="col-12 col-xl-4 mb-1">
-                        <div class="dropdown">
-                            <button class="btn btn-primary w-100"
-                                    type="button"
-                                    id="reportOptions"
-                                    data-bs-toggle="dropdown"
-                                    aria-expanded="false">
-                                Reporte
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
-                                <li>
-                                    <a class="dropdown-item"
-                                       href="/Parroquias/verReporte?tipo=PDF"
-                                       target="_blank">PDF</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item"
-                                       href="/Parroquias/verReporte?tipo=Word">Word</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item"
-                                       href="/Parroquias/verReporte?tipo=Excel">Excel</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="col-12 col-md-6 col-lg-4 mb-4">
-        <div class="card rounded-3">
-            <div class="card-body">
                 <h3 class="card-title">Lista de precios</h3>
                 <div class="row">
                     <div class="col-12 col-xl-4 mb-1">
@@ -509,6 +467,48 @@
                                 <li>
                                     <a class="dropdown-item"
                                        href="/ListaPrecios/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Lista de precios detalle*</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/ListaPrecioDets">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/ListaPrecioDets/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/ListaPrecioDets/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/ListaPrecioDets/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/ListaPrecioDets/verReporte?tipo=Excel">Excel</a>
                                 </li>
                             </ul>
                         </div>
@@ -589,6 +589,250 @@
                                 </li>
                                 <li>
                                     <a class="dropdown-item" href="/Opcions/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Parroquias</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/Parroquias">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/Parroquias/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/Parroquias/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/Parroquias/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/Parroquias/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Productos*</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/Productoes">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/Productoes/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/Productoes/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/Productoes/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/Productoes/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Rol Opciones*</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/RolOpcions">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/RolOpcions/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/RolOpcions/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/RolOpcions/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/RolOpcions/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Roles*</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/Rols">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/Rols/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/Rols/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/Rols/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/Rols/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Rol Usuarios*</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/RolUsuarios">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/RolUsuarios/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/RolUsuarios/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/RolUsuarios/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item" href="/RolUsuarios/verReporte?tipo=Excel">Excel</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4 mb-4">
+        <div class="card rounded-3">
+            <div class="card-body">
+                <h3 class="card-title">Tasa de cambio*</h3>
+                <div class="row">
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/TasaCambios">Lista</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <a class="btn btn-primary w-100" href="/TasaCambios/Create">Crear</a>
+                    </div>
+                    <div class="col-12 col-xl-4 mb-1">
+                        <div class="dropdown">
+                            <button class="btn btn-primary w-100"
+                                    type="button"
+                                    id="reportOptions"
+                                    data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                Reporte
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/TasaCambios/verReporte?tipo=PDF"
+                                       target="_blank">PDF</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/TasaCambios/verReporte?tipo=Word">Word</a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item"
+                                       href="/TasaCambios/verReporte?tipo=Excel">Excel</a>
                                 </li>
                             </ul>
                         </div>

@@ -15,10 +15,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Productoes
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var productoes = db.Productoes.Include(p => p.CategoriaProducto).Include(p => p.Comunidad1);
-            return View(productoes.ToList());
+            var prod = from m in db.Productoes select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                prod = prod.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato));
+            }
+
+            return View(prod.ToList());
         }
 
         // GET: Productoes/Details/5

@@ -154,7 +154,7 @@ namespace Kermesse.Controllers
             string[] s;
             Warning[] w;
 
-            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptTasaCambio.rdlc");
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptTasaCambioDets.rdlc");
             rpt.ReportPath = ruta;
 
             List<TasaCambioDet> ls = new List<TasaCambioDet>();

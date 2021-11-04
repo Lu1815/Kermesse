@@ -15,10 +15,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: IngresoComunidadDets
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var ingresoComunidadDets = db.IngresoComunidadDets.Include(i => i.ControlBono).Include(i => i.IngresoComunidad1);
-            return View(ingresoComunidadDets.ToList());
+            var icd = from m in db.IngresoComunidadDets select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                icd = icd.Where(m => m.denominacion.Contains(dato));
+            }
+
+            return View(icd.ToList());
         }
 
         // GET: IngresoComunidadDets/Details/5

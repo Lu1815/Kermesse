@@ -1,40 +1,86 @@
 ﻿@model IEnumerable<Kermesse.Models.Rol>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Roles";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h1>Roles</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.rolDescripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado)
-        </th>
-        <th></th>
-    </tr>
+<div class="row mb-1">
+    <div class="col-12 col-md-2 mb-1">
+        <a class="btn btn-primary w-100" href="/Rols/Create">Crear</a>
+    </div>
+    <div class="col-12 col-md-2 mb-1">
+        <div class="dropdown">
+            <button class="btn btn-primary w-100"
+                    type="button"
+                    id="reportOptions"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Reporte
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                <li>
+                    <a class="dropdown-item"
+                       href="/Rols/verReporte?tipo=PDF"
+                       target="_blank">PDF</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                       href="/Rols/verReporte?tipo=Word">Word</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                       href="/Rols/verReporte?tipo=Excel">Excel</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.rolDescripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idRol }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idRol }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idRol })
-        </td>
-    </tr>
-}
+    <div class="col-12 col-md-8 col-lg-4 mb-1 ml-auto">
+        @* BUSCAR *@
+        @using (Html.BeginForm("Index", "Rols", FormMethod.Post, new { @class = "" }))
+        {
+            <div class="col-12 col-md-12 ">
+                @Html.TextBox("dato", "", new { @class = "form-control rounded", placeholder = "Buscar" })
+            </div>
+        }
+    </div>
+</div>
 
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover">
+        <thead class="table-info">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.rolDescripcion)
+                </th>
+                <th>
+                    Opciones
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.rolDescripcion)
+                    </td>
+                    <td>
+                        <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idRol })">
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idRol })">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idRol })">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

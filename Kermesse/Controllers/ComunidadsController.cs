@@ -15,9 +15,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Comunidads
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            return View(db.Comunidads.ToList());
+            var comunidad = from m in db.Comunidads select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                comunidad = comunidad.Where(m => m.nombre.Contains(dato) || m.responsble.Contains(dato));
+            }
+
+            return View(comunidad.ToList());
         }
 
         // GET: Comunidads/Details/5

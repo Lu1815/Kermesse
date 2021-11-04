@@ -16,10 +16,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: TasaCambios
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var tasaCambios = db.TasaCambios.Include(t => t.Moneda).Include(t => t.Moneda1);
-            return View(tasaCambios.ToList());
+            var tc = from m in db.TasaCambios select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                tc = tc.Where(m => m.mes.Contains(dato) || m.anio.ToString().Contains(dato));
+            }
+
+            return View(tc.ToList());
         }
 
         // GET: TasaCambios/Details/5

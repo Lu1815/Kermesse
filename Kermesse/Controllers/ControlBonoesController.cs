@@ -38,6 +38,7 @@ namespace Kermesse.Controllers
         // GET: ControlBonoes/Create
         public ActionResult Create()
         {
+            Console.WriteLine("HELLO PUTO");
             return View();
         }
 
@@ -48,6 +49,8 @@ namespace Kermesse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idBono,nombre,valor,estado")] ControlBono controlBono)
         {
+            Console.WriteLine(controlBono);
+            Console.WriteLine("HELLO PUTO");
             if (ModelState.IsValid)
             {
                 db.ControlBonoes.Add(controlBono);

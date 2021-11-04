@@ -1,70 +1,115 @@
 ﻿@model IEnumerable<Kermesse.Models.Producto>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Productos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<h1>Productos</h1>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cantidad)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.precioVSugerido)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.estado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CategoriaProducto.nombre)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Comunidad1.nombre)
-        </th>
-        <th></th>
-    </tr>
+<div class="row mb-1">
+    <div class="col-12 col-md-2 mb-1">
+        <a class="btn btn-primary w-100" href="/Productoes/Create">Crear</a>
+    </div>
+    <div class="col-12 col-md-2 mb-1">
+        <div class="dropdown">
+            <button class="btn btn-primary w-100"
+                    type="button"
+                    id="reportOptions"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Reporte
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                <li>
+                    <a class="dropdown-item"
+                       href="/Productoes/verReporte?tipo=PDF"
+                       target="_blank">PDF</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                       href="/Productoes/verReporte?tipo=Word">Word</a>
+                </li>
+                <li>
+                    <a class="dropdown-item"
+                       href="/Productoes/verReporte?tipo=Excel">Excel</a>
+                </li>
+            </ul>
+        </div>
+    </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cantidad)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.precioVSugerido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CategoriaProducto.nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comunidad1.nombre)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.idProducto }) |
-            @Html.ActionLink("Details", "Details", new { id=item.idProducto }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.idProducto })
-        </td>
-    </tr>
-}
+    <div class="col-12 col-md-8 col-lg-4 mb-1 ml-auto">
+        @* BUSCAR *@
+        @using (Html.BeginForm("Index", "Productoes", FormMethod.Post, new { @class = "" }))
+        {
+            <div class="col-12 col-md-12 ">
+                @Html.TextBox("dato", "", new { @class = "form-control rounded", placeholder = "Buscar" })
+            </div>
+        }
+    </div>
+</div>
 
-</table>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hove">
+        <thead class="table-info">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.descripcion)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.cantidad)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.precioVSugerido)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CategoriaProducto.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Comunidad1.nombre)
+                </th>
+                <th>
+                    Opciones
+                </th>
+            </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.descripcion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.cantidad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.precioVSugerido)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CategoriaProducto.nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Comunidad1.nombre)
+                </td>
+                <td>
+                    <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idProducto })">
+                        <i class="fa fa-edit"></i>
+                    </a>
+                    <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idProducto })">
+                        <i class="fa fa-eye"></i>
+                    </a>
+                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idProducto })">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

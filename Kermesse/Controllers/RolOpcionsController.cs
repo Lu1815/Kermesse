@@ -15,10 +15,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: RolOpcions
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var rolOpcions = db.RolOpcions.Include(r => r.Opcion1).Include(r => r.Rol1);
-            return View(rolOpcions.ToList());
+            var RolOpcions = from m in db.RolOpcions select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                RolOpcions = RolOpcions.Where(m => m.rol.ToString().Contains(dato));
+            }
+
+            return View(RolOpcions.ToList());
         }
 
         // GET: RolOpcions/Details/5

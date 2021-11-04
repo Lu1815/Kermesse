@@ -15,10 +15,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Gastoes
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var gastoes = db.Gastoes.Include(g => g.CategoriaGasto).Include(g => g.Kermesse1).Include(g => g.Usuario).Include(g => g.Usuario1).Include(g => g.Usuario2);
-            return View(gastoes.ToList());
+            var gasto = from m in db.Gastoes select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                gasto = gasto.Where(m => m.concepto.Contains(dato) || m.monto.ToString().Contains(dato));
+            }
+
+            return View(gasto.ToList());
         }
 
         // GET: Gastoes/Details/5
@@ -54,6 +60,9 @@ namespace Kermesse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "idGasto,kermesse,catGasto,fechGasto,concepto,monto,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] Gasto gasto)
         {
+
+            gasto.usuarioCreacion = int.Parse(Session["UserID"].ToString(), System.Globalization.NumberStyles.Integer);
+            gasto.fechaCreacion = DateTime.Now;
             if (ModelState.IsValid)
             {
                 db.Gastoes.Add(gasto);

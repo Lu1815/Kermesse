@@ -41,7 +41,7 @@ namespace Kermesse.Controllers
         {
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCajas, "idArqueoCaja", "idArqueoCaja");
             ViewBag.denominacion = new SelectList(db.Denominacions, "idDenominacion", "valorLetras");
-            ViewBag.moneda = new SelectList(db.TasaCambioDets, "idMoneda", "nombre");
+            ViewBag.moneda = new SelectList(db.Monedas, "idMoneda", "nombre");
             return View();
         }
 
@@ -61,7 +61,7 @@ namespace Kermesse.Controllers
 
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCajas, "idArqueoCaja", "idArqueoCaja", arqueoCajaDet.arqueoCaja);
             ViewBag.denominacion = new SelectList(db.Denominacions, "idDenominacion", "valorLetras", arqueoCajaDet.denominacion);
-            ViewBag.moneda = new SelectList(db.TasaCambioDets, "idMoneda", "nombre", arqueoCajaDet.moneda);
+            ViewBag.moneda = new SelectList(db.Monedas, "idMoneda", "nombre", arqueoCajaDet.moneda);
             return View(arqueoCajaDet);
         }
 
@@ -79,7 +79,7 @@ namespace Kermesse.Controllers
             }
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCajas, "idArqueoCaja", "idArqueoCaja", arqueoCajaDet.arqueoCaja);
             ViewBag.denominacion = new SelectList(db.Denominacions, "idDenominacion", "valorLetras", arqueoCajaDet.denominacion);
-            ViewBag.moneda = new SelectList(db.TasaCambioDets, "idMoneda", "nombre", arqueoCajaDet.moneda);
+            ViewBag.moneda = new SelectList(db.Monedas, "idMoneda", "nombre", arqueoCajaDet.moneda);
             return View(arqueoCajaDet);
         }
 
@@ -90,6 +90,7 @@ namespace Kermesse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "idArqueoCajaDet,arqueoCaja,moneda,denominacion,cantidad,subtotal")] ArqueoCajaDet arqueoCajaDet)
         {
+            
             if (ModelState.IsValid)
             {
                 db.Entry(arqueoCajaDet).State = EntityState.Modified;
@@ -98,7 +99,7 @@ namespace Kermesse.Controllers
             }
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCajas, "idArqueoCaja", "idArqueoCaja", arqueoCajaDet.arqueoCaja);
             ViewBag.denominacion = new SelectList(db.Denominacions, "idDenominacion", "valorLetras", arqueoCajaDet.denominacion);
-            ViewBag.moneda = new SelectList(db.TasaCambioDets, "idMoneda", "nombre", arqueoCajaDet.moneda);
+            ViewBag.moneda = new SelectList(db.Monedas, "idMoneda", "nombre", arqueoCajaDet.moneda);
             return View(arqueoCajaDet);
         }
 

@@ -15,10 +15,16 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Denominacions
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var denominacions = db.Denominacions.Include(d => d.Moneda1);
-            return View(denominacions.ToList());
+            var denominacion = from m in db.Denominacions select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                denominacion = denominacion.Where(m => m.valor.ToString().Contains(dato) || m.valorLetras.Contains(dato));
+            }
+
+            return View(denominacion.ToList());
         }
 
         // GET: Denominacions/Details/5

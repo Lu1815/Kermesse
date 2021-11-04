@@ -1068,7 +1068,7 @@
     <EmbeddedResource Include="Reportes\RptListaPrecio1.rdlc" />
     <EmbeddedResource Include="Reportes\RptOpciones.rdlc" />
     <EmbeddedResource Include="Reportes\RptParroquia1.rdlc" />
-    <EmbeddedResource Include="Reportes\RptTasaCambio.rdlc" />
+    <EmbeddedResource Include="Reportes\RptTasaCambioDets.rdlc" />
     <EmbeddedResource Include="Reportes\RptUsuarios.rdlc" />
   </ItemGroup>
   <PropertyGroup>

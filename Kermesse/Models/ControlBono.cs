@@ -29,6 +29,7 @@ namespace Kermesse.Models
         public string nombre { get; set; }
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "Este campo es requerido")]
+        [DataType(DataType.Currency)]
         [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
         public double valor { get; set; }
         public int estado { get; set; }

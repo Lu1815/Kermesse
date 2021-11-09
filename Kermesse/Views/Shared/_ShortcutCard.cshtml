@@ -1,0 +1,41 @@
+﻿<div class="col-12 col-md-6 col-lg-4 mb-4">
+    <div class="card rounded-3">
+        <div class="card-body">
+            <h3 class="card-title">@ViewBag.simpleName</h3>
+            <div class="row">
+                <div class="col-12 col-xl-4 mb-1">
+                    <a class="btn btn-primary w-100" href="/@ViewBag.modelName">Lista</a>
+                </div>
+                <div class="col-12 col-xl-4 mb-1">
+                    <a class="btn btn-primary w-100" href="/@ViewBag.modelName/Create">Crear</a>
+                </div>
+                <div class="col-12 col-xl-4 mb-1">
+                    <div class="dropdown">
+                        <button class="btn btn-primary w-100"
+                                type="button"
+                                id="reportOptions"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Reporte
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/@ViewBag.modelName/verReporte?tipo=PDF"
+                                   target="_blank">PDF</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/@ViewBag.modelName/verReporte?tipo=Word">Word</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item"
+                                   href="/@ViewBag.modelName/verReporte?tipo=Excel">Excel</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

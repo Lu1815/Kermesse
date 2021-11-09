@@ -29,14 +29,6 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.estado)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.estado)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Moneda.nombre)
         </dt>
 
@@ -54,12 +46,18 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <button type="submit" value="Delete" class="btn btn-danger">
+                <i class="fa fa-trash icon" style="margin-right: .5rem;"></i>
+                Eliminar
+            </button>
+            <div class="btn btn-info">
+                <i class="fa fa-arrow-left icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Regresar", "Index", null, new { @style = "color: white;" })
+            </div>
         </div>
     }
 </div>

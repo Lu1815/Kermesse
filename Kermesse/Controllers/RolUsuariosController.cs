@@ -21,7 +21,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                ru = ru.Where(m => m.usuario.ToString().Contains(dato));
+                ru = ru.Where(m => m.usuario.ToString().Contains(dato) || m.rol.ToString().Contains(dato));
             }
 
             return View(ru.ToList());

@@ -9,6 +9,8 @@
     <link href="~/Vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
     <!-- FontAwesome -->
     <link href="~/Vendors/fontawesome/css/font-awesome.min.css" rel="stylesheet" />
+    <!-- IconsCout -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- NProgress -->
     <link href="~/Vendors/nprogress/nprogress.css" rel="stylesheet" />
     <!-- Custom Theme Style -->
@@ -53,30 +55,60 @@
                             <h3>Menús</h3>
                             <ul class="nav side-menu">
                                 <li>
-                                    <a><i class="fa fa-edit"></i> Formularios<span class="fa fa-chevron-down"></span></a>
+                                    <a><i class="fa fa-cash-register"></i> Control de caja<span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Arqueo de caja", "Index", "ArqueoCajas")</li>
                                         <li>@Html.ActionLink("Arqueo de caja detalle", "Index", "ArqueoCajaDets")</li>
-                                        <li>@Html.ActionLink("Bonos", "Index", "ControlBonoes")</li>
-                                        <li>@Html.ActionLink("Categorías de gastos", "Index", "CategoriaGastoes")</li>
-                                        <li>@Html.ActionLink("Categorías de productos", "Index", "CategoriaProductoes")</li>
-                                        <li>@Html.ActionLink("Comunidades", "Index", "Comunidads")</li>
                                         <li>@Html.ActionLink("Denominación", "Index", "Denominacions")</li>
+                                        <li>@Html.ActionLink("Moneda", "Index", "Monedas")</li>
+                                        <li>@Html.ActionLink("Tasa de cambio", "Index", "TasaCambios")</li>
+                                        <li>@Html.ActionLink("Tasa de cambio detalle", "Index", "TasaCambioDets")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-dollar"></i> Control de gastos<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Gasto", "Index", "Gastoes")</li>
+                                        <li>@Html.ActionLink("Categorías de gastos", "Index", "CategoriaGastoes")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-users"></i> Ingresos comunidad<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>@Html.ActionLink("Bonos", "Index", "ControlBonoes")</li>
+                                        <li>@Html.ActionLink("Comunidades", "Index", "Comunidads")</li>
                                         <li>@Html.ActionLink("Ingreso comunidad", "Index", "IngresoComunidads")</li>
                                         <li>@Html.ActionLink("Ingreso comunidad detalle", "Index", "IngresoComunidadDets")</li>
-                                        <li>@Html.ActionLink("Kermesses", "Index", "Kermesses")</li>
-                                        <li>@Html.ActionLink("Parroquias", "Index", "Parroquias")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-tag"></i> Lista de precios<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
                                         <li>@Html.ActionLink("Lista de precios", "Index", "ListaPrecios")</li>
                                         <li>@Html.ActionLink("Lista de precios detalle", "Index", "ListaPrecioDets")</li>
-                                        <li>@Html.ActionLink("Moneda", "Index", "Monedas")</li>
-                                        <li>@Html.ActionLink("Opciones", "Index", "Opcions")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-store"></i> Kermesse<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>@Html.ActionLink("Kermesse", "Index", "Kermesses")</li>
+                                        <li>@Html.ActionLink("Parroquias", "Index", "Parroquias")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-shopping-basket"></i> Productos<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>@Html.ActionLink("Categorías de productos", "Index", "CategoriaProductoes")</li>
                                         <li>@Html.ActionLink("Productos", "Index", "Productoes")</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a><i class="fa fa-shield"></i> Seguridad<span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li>@Html.ActionLink("Opciones", "Index", "Opcions")</li>
                                         <li>@Html.ActionLink("Roles", "Index", "Rols")</li>
                                         <li>@Html.ActionLink("Rol opciones", "Index", "RolOpcions")</li>
                                         <li>@Html.ActionLink("Rol usuarios", "Index", "RolUsuarios")</li>
-                                        <li>@Html.ActionLink("Tasa de cambio", "Index", "TasaCambios")</li>
-                                        <li>@Html.ActionLink("Tasa de cambio detalle", "Index", "TasaCambioDets")</li>
                                         <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
                                     </ul>
                                 </li>
@@ -218,7 +250,8 @@
 
     <script src="~/Content/AlelaTemplate/js/own.js"></script>
     <script src="~/Content/AlelaTemplate/js/custom.js"></script>
-    
+    <script src="https://kit.fontawesome.com/78f46d0997.js" crossorigin="anonymous"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>

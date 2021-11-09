@@ -5,9 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>¿Está seguro de borrar este registro?</h3>
 <div>
     <h4>RolOpcion</h4>
     <hr />
@@ -34,8 +34,13 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <button type="submit" value="Delete" class="btn btn-danger">
+                <i class="fa fa-trash icon" style="margin-right: .5rem;"></i>
+                Eliminar
+            </button>
+            <div class="btn btn-info">
+                <i class="fa fa-arrow-left icon" style="margin-right: .5rem;"></i> @Html.ActionLink("Regresar", "Index", null, new { @style = "color: white;" })
+            </div>
         </div>
     }
 </div>

@@ -21,7 +21,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                RolOpcions = RolOpcions.Where(m => m.rol.ToString().Contains(dato));
+                RolOpcions = RolOpcions.Where(m => m.rol.ToString().Contains(dato) || m.opcion.ToString().Contains(dato));
             }
 
             return View(RolOpcions.ToList());

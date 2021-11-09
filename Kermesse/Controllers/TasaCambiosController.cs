@@ -24,7 +24,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                tc = tc.Where(m => m.mes.Contains(dato) || m.anio.ToString().Contains(dato));
+                tc = tc.Where(m => m.mes.Contains(dato) || m.anio.ToString().Contains(dato) || m.monedaO.ToString().Contains(dato) || m.monedaC.ToString().Contains(dato));
             }
 
             return View(tc.ToList());
@@ -58,11 +58,17 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "idTasaCambio,monedaO,monedaC,mes,anio,estado")] TasaCambio tasaCambio)
+        public ActionResult Create(TasaCambio tasaCambio)
         {
             if (ModelState.IsValid)
             {
-                db.TasaCambios.Add(tasaCambio);
+                TasaCambio ts = new TasaCambio();
+                ts.monedaO = tasaCambio.monedaO;
+                ts.monedaC = tasaCambio.monedaC;
+                ts.mes = tasaCambio.mes;
+                ts.anio = tasaCambio.anio;
+                ts.estado = 1;
+                db.TasaCambios.Add(ts);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -98,6 +104,7 @@ namespace Kermesse.Controllers
         {
             if (ModelState.IsValid)
             {
+                tasaCambio.estado = 2;
                 db.Entry(tasaCambio).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");

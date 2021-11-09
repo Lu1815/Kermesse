@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Denominacions
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var denominacion = from m in db.Denominacions select m;
@@ -28,6 +29,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Denominacions/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Denominacions/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.moneda = new SelectList(db.Monedas, "idMoneda", "nombre");
@@ -54,6 +57,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idDenominacion,moneda,valor,valorLetras,estado")] Denominacion denominacion)
         {
             if (ModelState.IsValid)
@@ -68,6 +72,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Denominacions/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,6 +93,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idDenominacion,moneda,valor,valorLetras,estado")] Denominacion denominacion)
         {
             if (ModelState.IsValid)
@@ -101,6 +107,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Denominacions/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -118,6 +125,7 @@ namespace Kermesse.Controllers
         // POST: Denominacions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Denominacion denominacion = db.Denominacions.Find(id);
@@ -126,6 +134,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

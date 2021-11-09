@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Rols
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var rol = from m in db.Rols select m;
@@ -28,6 +29,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Rols/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Rols/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -53,6 +56,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idRol,rolDescripcion,estado")] Rol rol)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Rols/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +90,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idRol,rolDescripcion,estado")] Rol rol)
         {
             if (ModelState.IsValid)
@@ -96,7 +102,9 @@ namespace Kermesse.Controllers
             return View(rol);
         }
 
+
         // GET: Rols/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +122,7 @@ namespace Kermesse.Controllers
         // POST: Rols/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Rol rol = db.Rols.Find(id);
@@ -122,6 +131,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

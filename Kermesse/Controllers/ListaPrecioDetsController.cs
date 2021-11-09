@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: ListaPrecioDets
+        [Authorize]
         public ActionResult Index()
         {
             var listaPrecioDets = db.ListaPrecioDets.Include(l => l.ListaPrecio1).Include(l => l.Producto1);
@@ -22,6 +23,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecioDets/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecioDets/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.listaPrecio = new SelectList(db.ListaPrecios, "idListaPrecio", "nombre");
@@ -49,6 +52,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idListaPrecioDet,listaPrecio,producto,precioVenta")] ListaPrecioDet listaPrecioDet)
         {
             if (ModelState.IsValid)
@@ -64,6 +68,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecioDets/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +90,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idListaPrecioDet,listaPrecio,producto,precioVenta")] ListaPrecioDet listaPrecioDet)
         {
             if (ModelState.IsValid)
@@ -99,6 +105,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ListaPrecioDets/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -116,6 +123,7 @@ namespace Kermesse.Controllers
         // POST: ListaPrecioDets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             ListaPrecioDet listaPrecioDet = db.ListaPrecioDets.Find(id);
@@ -124,6 +132,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

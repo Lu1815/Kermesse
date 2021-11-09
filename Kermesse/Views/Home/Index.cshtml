@@ -13,7 +13,6 @@
 </div>
 
 <div class="row">
-    <partial name="_ShortcutCard" modelName="Perro" simpleName="Perro" ></partial>
     @Html.Partial("_ShortcutCard", new ViewDataDictionary { { "modelName", "ArqueoCajas" }, { "simpleName", "Arqueo de caja*" } })
     @Html.Partial("_ShortcutCard", new ViewDataDictionary { { "modelName", "ArqueoCajaDets" }, { "simpleName", "Arqueo de caja detalle*" } })
     @Html.Partial("_ShortcutCard", new ViewDataDictionary { { "modelName", "CategoriaGastoes" }, { "simpleName", "Categorías de gastos" } })

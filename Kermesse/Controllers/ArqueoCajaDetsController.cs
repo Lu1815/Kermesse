@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: ArqueoCajaDets
+        [Authorize]
         public ActionResult Index()
         {
             var arqueoCajaDets = db.ArqueoCajaDets.Include(a => a.ArqueoCaja1).Include(a => a.Denominacion1).Include(a => a.Moneda1);
@@ -22,6 +23,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ArqueoCajaDets/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -37,6 +39,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ArqueoCajaDets/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCajas, "idArqueoCaja", "idArqueoCaja");
@@ -50,6 +53,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idArqueoCajaDet,arqueoCaja,moneda,denominacion,cantidad,subtotal")] ArqueoCajaDet arqueoCajaDet)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ArqueoCajaDets/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -88,6 +93,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idArqueoCajaDet,arqueoCaja,moneda,denominacion,cantidad,subtotal")] ArqueoCajaDet arqueoCajaDet)
         {
             
@@ -104,6 +110,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ArqueoCajaDets/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -121,6 +128,7 @@ namespace Kermesse.Controllers
         // POST: ArqueoCajaDets/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             ArqueoCajaDet arqueoCajaDet = db.ArqueoCajaDets.Find(id);
@@ -129,6 +137,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

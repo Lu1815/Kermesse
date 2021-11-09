@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: IngresoComunidads
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var ic = from m in db.IngresoComunidads select m;
@@ -29,6 +30,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: IngresoComunidads/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -44,6 +46,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: IngresoComunidads/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.comunidad = new SelectList(db.Comunidads, "idComunidad", "nombre");
@@ -60,6 +63,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
             if (ModelState.IsValid)
@@ -79,6 +83,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: IngresoComunidads/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -104,6 +109,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
             if (ModelState.IsValid)
@@ -122,6 +128,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: IngresoComunidads/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -139,6 +146,7 @@ namespace Kermesse.Controllers
         // POST: IngresoComunidads/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             IngresoComunidad ingresoComunidad = db.IngresoComunidads.Find(id);
@@ -147,6 +155,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

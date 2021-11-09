@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Comunidads
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var comunidad = from m in db.Comunidads select m;
@@ -28,6 +29,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Comunidads/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Comunidads/Create
+        [Authorize]
         public ActionResult Create()
         {
             return View();
@@ -53,6 +56,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idComunidad,nombre,responsble,descContribucion,estado")] Comunidad comunidad)
         {
             if (ModelState.IsValid)
@@ -66,6 +70,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Comunidads/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -85,6 +90,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idComunidad,nombre,responsble,descContribucion,estado")] Comunidad comunidad)
         {
             if (ModelState.IsValid)
@@ -97,6 +103,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Comunidads/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,6 +121,7 @@ namespace Kermesse.Controllers
         // POST: Comunidads/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Comunidad comunidad = db.Comunidads.Find(id);
@@ -122,6 +130,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

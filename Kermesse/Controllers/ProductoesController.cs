@@ -14,6 +14,7 @@ namespace Kermesse.Controllers
     {
         private BDKermesseEntities db = new BDKermesseEntities();
 
+        [Authorize]
         // GET: Productoes
         public ActionResult Index(string dato)
         {
@@ -27,6 +28,7 @@ namespace Kermesse.Controllers
             return View(prod.ToList());
         }
 
+        [Authorize]
         // GET: Productoes/Details/5
         public ActionResult Details(int? id)
         {
@@ -42,6 +44,7 @@ namespace Kermesse.Controllers
             return View(producto);
         }
 
+        [Authorize]
         // GET: Productoes/Create
         public ActionResult Create()
         {
@@ -55,6 +58,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idProducto,comunidad,catProd,nombre,descripcion,cantidad,precioVSugerido,estado")] Producto producto)
         {
             if (ModelState.IsValid)
@@ -70,6 +74,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Productoes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +96,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idProducto,comunidad,catProd,nombre,descripcion,cantidad,precioVSugerido,estado")] Producto producto)
         {
             if (ModelState.IsValid)
@@ -105,6 +111,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Productoes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,6 +129,7 @@ namespace Kermesse.Controllers
         // POST: Productoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Producto producto = db.Productoes.Find(id);
@@ -130,6 +138,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

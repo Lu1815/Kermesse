@@ -15,12 +15,14 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: ControlBonoes
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.ControlBonoes.ToList());
         }
 
         // GET: ControlBonoes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -36,6 +38,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ControlBonoes/Create
+        [Authorize]
         public ActionResult Create()
         {
             Console.WriteLine("HELLO PUTO");
@@ -47,6 +50,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idBono,nombre,valor,estado")] ControlBono controlBono)
         {
             Console.WriteLine(controlBono);
@@ -62,6 +66,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ControlBonoes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -81,6 +86,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idBono,nombre,valor,estado")] ControlBono controlBono)
         {
             if (ModelState.IsValid)
@@ -93,6 +99,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: ControlBonoes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -110,6 +117,7 @@ namespace Kermesse.Controllers
         // POST: ControlBonoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             ControlBono controlBono = db.ControlBonoes.Find(id);
@@ -118,6 +126,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: Gastoes
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var gasto = from m in db.Gastoes select m;
@@ -28,6 +29,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Gastoes/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Gastoes/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.catGasto = new SelectList(db.CategoriaGastoes, "idCatGasto", "nombreCategoria");
@@ -58,6 +61,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idGasto,kermesse,catGasto,fechGasto,concepto,monto,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] Gasto gasto)
         {
 
@@ -79,6 +83,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Gastoes/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -103,6 +108,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idGasto,kermesse,catGasto,fechGasto,concepto,monto,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] Gasto gasto)
         {
             if (ModelState.IsValid)
@@ -120,6 +126,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: Gastoes/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -137,6 +144,7 @@ namespace Kermesse.Controllers
         // POST: Gastoes/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             Gasto gasto = db.Gastoes.Find(id);
@@ -145,6 +153,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

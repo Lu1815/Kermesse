@@ -15,6 +15,7 @@ namespace Kermesse.Controllers
         private BDKermesseEntities db = new BDKermesseEntities();
 
         // GET: RolOpcions
+        [Authorize]
         public ActionResult Index(string dato)
         {
             var RolOpcions = from m in db.RolOpcions select m;
@@ -28,6 +29,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: RolOpcions/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -43,6 +45,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: RolOpcions/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.opcion = new SelectList(db.Opcions, "idOpcion", "opcionDescripcion");
@@ -55,6 +58,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Create([Bind(Include = "idRolOpcion,rol,opcion")] RolOpcion rolOpcion)
         {
             if (ModelState.IsValid)
@@ -70,6 +74,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: RolOpcions/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -91,6 +96,7 @@ namespace Kermesse.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult Edit([Bind(Include = "idRolOpcion,rol,opcion")] RolOpcion rolOpcion)
         {
             if (ModelState.IsValid)
@@ -105,6 +111,7 @@ namespace Kermesse.Controllers
         }
 
         // GET: RolOpcions/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,6 +129,7 @@ namespace Kermesse.Controllers
         // POST: RolOpcions/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
             RolOpcion rolOpcion = db.RolOpcions.Find(id);
@@ -130,6 +138,7 @@ namespace Kermesse.Controllers
             return RedirectToAction("Index");
         }
 
+        [Authorize]
         protected override void Dispose(bool disposing)
         {
             if (disposing)

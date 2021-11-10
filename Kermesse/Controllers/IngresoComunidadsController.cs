@@ -53,8 +53,6 @@ namespace Kermesse.Controllers
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre");
             ViewBag.producto = new SelectList(db.Productoes, "idProducto", "nombre");
             ViewBag.usuarioCreacion = new SelectList(db.Usuarios, "idUsuario", "userName");
-            ViewBag.usuarioModificacion = new SelectList(db.Usuarios, "idUsuario", "userName");
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuarios, "idUsuario", "userName");
             return View();
         }
 
@@ -66,8 +64,11 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
+
             if (ModelState.IsValid)
             {
+                ingresoComunidad.usuarioCreacion = int.Parse(Session["UserID"].ToString());
+                ingresoComunidad.fechaCreacion = DateTime.Now;
                 db.IngresoComunidads.Add(ingresoComunidad);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -76,9 +77,7 @@ namespace Kermesse.Controllers
             ViewBag.comunidad = new SelectList(db.Comunidads, "idComunidad", "nombre", ingresoComunidad.comunidad);
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre", ingresoComunidad.kermesse);
             ViewBag.producto = new SelectList(db.Productoes, "idProducto", "nombre", ingresoComunidad.producto);
-            ViewBag.usuarioCreacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
-            ViewBag.usuarioModificacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
+            ViewBag.usuarioCreacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);            
             return View(ingresoComunidad);
         }
 
@@ -98,9 +97,6 @@ namespace Kermesse.Controllers
             ViewBag.comunidad = new SelectList(db.Comunidads, "idComunidad", "nombre", ingresoComunidad.comunidad);
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre", ingresoComunidad.kermesse);
             ViewBag.producto = new SelectList(db.Productoes, "idProducto", "nombre", ingresoComunidad.producto);
-            ViewBag.usuarioCreacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
-            ViewBag.usuarioModificacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
             return View(ingresoComunidad);
         }
 
@@ -112,18 +108,30 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
+
+            IngresoComunidad i = db.IngresoComunidads.Find(ingresoComunidad.idIngresoComunidad);
+
+            i.kermesse = ingresoComunidad.kermesse;
+            i.comunidad = ingresoComunidad.comunidad;
+            i.producto = ingresoComunidad.producto;
+            i.cantProducto = ingresoComunidad.cantProducto;
+            i.totalBonos = ingresoComunidad.totalBonos;
+            i.usuarioModificacion = int.Parse(Session["UserID"].ToString());
+            i.fechaModificacion = DateTime.Now;
+
             if (ModelState.IsValid)
             {
+                ingresoComunidad.usuarioModificacion = int.Parse(Session["UserID"].ToString());
+                ingresoComunidad.fechaModificacion = DateTime.Now;
                 db.Entry(ingresoComunidad).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.comunidad = new SelectList(db.Comunidads, "idComunidad", "nombre", ingresoComunidad.comunidad);
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre", ingresoComunidad.kermesse);
             ViewBag.producto = new SelectList(db.Productoes, "idProducto", "nombre", ingresoComunidad.producto);
-            ViewBag.usuarioCreacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioCreacion);
-            ViewBag.usuarioModificacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioModificacion);
-            ViewBag.usuarioEliminacion = new SelectList(db.Usuarios, "idUsuario", "userName", ingresoComunidad.usuarioEliminacion);
+            
             return View(ingresoComunidad);
         }
 

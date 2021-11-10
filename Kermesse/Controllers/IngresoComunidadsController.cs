@@ -106,9 +106,19 @@ namespace Kermesse.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Edit([Bind(Include = "iidIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
+        public ActionResult Edit([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
-            
+
+            IngresoComunidad i = db.IngresoComunidads.Find(ingresoComunidad.idIngresoComunidad);
+
+            i.kermesse = ingresoComunidad.kermesse;
+            i.comunidad = ingresoComunidad.comunidad;
+            i.producto = ingresoComunidad.producto;
+            i.cantProducto = ingresoComunidad.cantProducto;
+            i.totalBonos = ingresoComunidad.totalBonos;
+            i.usuarioModificacion = int.Parse(Session["UserID"].ToString());
+            i.fechaModificacion = DateTime.Now;
+
             if (ModelState.IsValid)
             {
                 ingresoComunidad.usuarioModificacion = int.Parse(Session["UserID"].ToString());
@@ -117,6 +127,7 @@ namespace Kermesse.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
             ViewBag.comunidad = new SelectList(db.Comunidads, "idComunidad", "nombre", ingresoComunidad.comunidad);
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre", ingresoComunidad.kermesse);
             ViewBag.producto = new SelectList(db.Productoes, "idProducto", "nombre", ingresoComunidad.producto);

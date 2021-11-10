@@ -1,15 +1,13 @@
 ﻿@model Kermesse.Models.ArqueoCaja
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles arqueo caja";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h1>Detalles arqueo caja</h1>
 
 <div>
-    <h4>ArqueoCaja</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.fechaArqueo)
@@ -86,6 +84,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idArqueoCaja }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-secondary">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idArqueoCaja }, new { @class = "text-light" })
+    </button>|
+    <button type="button" class="btn btn-primary">
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "text-light" })
+    </button>
 </p>

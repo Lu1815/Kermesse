@@ -121,9 +121,7 @@ namespace Kermesse.Controllers
 
             if (ModelState.IsValid)
             {
-                ingresoComunidad.usuarioModificacion = int.Parse(Session["UserID"].ToString());
-                ingresoComunidad.fechaModificacion = DateTime.Now;
-                db.Entry(ingresoComunidad).State = EntityState.Modified;
+                db.Entry(i).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

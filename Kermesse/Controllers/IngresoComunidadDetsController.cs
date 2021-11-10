@@ -99,9 +99,18 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBono")] IngresoComunidadDet ingresoComunidadDet)
         {
+            System.Diagnostics.Debug.WriteLine("ENTRÓ PUTO");
+            IngresoComunidadDet i = db.IngresoComunidadDets.Find(ingresoComunidadDet.idIngresoComunidadDet);
+
+            i.ingresoComunidad = ingresoComunidadDet.ingresoComunidad;
+            i.bono = ingresoComunidadDet.bono;
+            i.denominacion = ingresoComunidadDet.denominacion;
+            i.cantidad = ingresoComunidadDet.cantidad;
+            i.subTotalBono = ingresoComunidadDet.subTotalBono;
+
             if (ModelState.IsValid)
             {
-                db.Entry(ingresoComunidadDet).State = EntityState.Modified;
+                db.Entry(i).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }

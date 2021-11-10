@@ -1,14 +1,14 @@
 ﻿@model Kermesse.Models.Comunidad
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles comunidad";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h1>Detalles comunidad</h1>
 
 <div>
-    <h4>Comunidad</h4>
+    <h4>Viendo comunidad</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -46,6 +46,10 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idComunidad }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button type="button" class="btn btn-secondary">
+        @Html.ActionLink("Editar", "Edit", new { id = Model.idComunidad }, new { @class = "text-light" })
+    </button>|
+    <button type="button" class="btn btn-primary">
+        @Html.ActionLink("Regresar", "Index", null, new { @class = "text-light" })
+    </button>
 </p>

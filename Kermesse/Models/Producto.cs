@@ -45,11 +45,15 @@ namespace Kermesse.Models
         public double precioVSugerido { get; set; }
         public int estado { get; set; }
 
+        [Display(Name = "Categoría")]
         public virtual CategoriaProducto CategoriaProducto { get; set; }
+        [Display(Name = "Comunidad")]
         public virtual Comunidad Comunidad1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [Display(Name = "Ingreso de comunidad")]
         public virtual ICollection<IngresoComunidad> IngresoComunidads { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        [Display(Name = "Detalle de lista de precio")]
         public virtual ICollection<ListaPrecioDet> ListaPrecioDets { get; set; }
     }
 }

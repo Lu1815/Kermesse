@@ -2377,6 +2377,8 @@ advertencia 6002: La tabla o vista 'DBKermesse.dbo.VwListaPrecio' no tiene defin
                 <ScalarProperty Name="comunidad" ColumnName="comunidad" />
                 <ScalarProperty Name="kermesse" ColumnName="kermesse" />
                 <ScalarProperty Name="idIngresoComunidad" ColumnName="idIngresoComunidad" />
+              </MappingFragment>
+            </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="VwDenominaciones">
             <EntityTypeMapping TypeName="BDKermesseModel.VwDenominacione">

@@ -289,15 +289,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-
-
-
-
-
-
-
-
-
     <EntitySetMapping Name="VwIngresoComunidadDets">
       <EntityTypeMapping TypeName="BDKermesseModel.VwIngresoComunidadDet">
         <MappingFragment StoreEntitySet="VwIngresoComunidadDet">
@@ -354,15 +345,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-
-
-
-
-
-
-
-
-    
     <EntitySetMapping Name="VwArqueoCajaDets">
       <EntityTypeMapping TypeName="BDKermesseModel.VwArqueoCajaDet">
         <MappingFragment StoreEntitySet="VwArqueoCajaDet">

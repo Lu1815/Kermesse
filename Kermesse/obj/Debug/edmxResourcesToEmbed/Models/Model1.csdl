@@ -947,7 +947,6 @@
     <EntitySet Name="VwListaPrecios" EntityType="BDKermesseModel.VwListaPrecio" />
     <EntitySet Name="VwIngresoComunidadDets" EntityType="BDKermesseModel.VwIngresoComunidadDet" />
     <EntitySet Name="VwIngresoComunidads" EntityType="BDKermesseModel.VwIngresoComunidad" />
-    <EntitySet Name="VwGastos" EntityType="BDKermesseModel.VwGastos" />
     <EntitySet Name="VwDenominaciones" EntityType="BDKermesseModel.VwDenominacione" />
     <EntitySet Name="VwArqueoCajas" EntityType="BDKermesseModel.VwArqueoCaja" />
     <EntitySet Name="VwGastoes" EntityType="BDKermesseModel.VwGasto" />
@@ -967,9 +966,6 @@
     <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="estado" Type="Int32" Nullable="false" />
   </EntityType>
-
-
-  
   <EntityType Name="VwIngresoComunidadDet">
     <Key>
       <PropertyRef Name="idIngresoComunidadDet" />
@@ -1021,7 +1017,6 @@
     <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="monto" Type="Double" Nullable="false" />
   </EntityType>
-
   <EntityType Name="VwArqueoCajaDet">
     <Key>
       <PropertyRef Name="idArqueoCajaDet" />

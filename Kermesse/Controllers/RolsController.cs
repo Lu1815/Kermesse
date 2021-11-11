@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Kermesse.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace Kermesse.Controllers
 {
@@ -139,6 +141,55 @@ namespace Kermesse.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [Authorize]
+        public ActionResult VerReporte(string tipo)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptRoles.rdlc");
+            rpt.ReportPath = ruta;
+
+            List<Rol> ls = new List<Rol>();
+
+            ls = db.Rols.ToList();
+
+            ReportDataSource rds = new ReportDataSource("DSRoles", ls);
+
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return new FileContentResult(b, mt);
+        }
+
+        [Authorize]
+        public ActionResult VerReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptRolesVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            Rol l = db.Rols.Find(id);
+            List<Rol> ls = new List<Rol>();
+
+            ls.Add(l);
+
+            ReportDataSource rds = new ReportDataSource("DSRoles", ls);
+
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+
+            return new FileContentResult(b, mt);
         }
     }
 }

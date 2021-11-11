@@ -114,19 +114,10 @@
             <xs:sequence>
               <xs:element name="comunidad" msprop:Generator_ColumnVarNameInTable="columncomunidad" msprop:Generator_ColumnPropNameInRow="comunidad" msprop:Generator_ColumnPropNameInTable="comunidadColumn" msprop:Generator_UserColumnName="comunidad" type="xs:string" minOccurs="0" />
               <xs:element name="catProd" msprop:Generator_ColumnVarNameInTable="columncatProd" msprop:Generator_ColumnPropNameInRow="catProd" msprop:Generator_ColumnPropNameInTable="catProdColumn" msprop:Generator_UserColumnName="catProd" type="xs:string" minOccurs="0" />
-              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" type="xs:string" minOccurs="0" />
+              <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
               <xs:element name="descripcion" msprop:Generator_ColumnVarNameInTable="columndescripcion" msprop:Generator_ColumnPropNameInRow="descripcion" msprop:Generator_ColumnPropNameInTable="descripcionColumn" msprop:Generator_UserColumnName="descripcion" type="xs:string" minOccurs="0" />
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:string" minOccurs="0" />
               <xs:element name="precioVSugerido" msprop:Generator_ColumnVarNameInTable="columnprecioVSugerido" msprop:Generator_ColumnPropNameInRow="precioVSugerido" msprop:Generator_ColumnPropNameInTable="precioVSugeridoColumn" msprop:Generator_UserColumnName="precioVSugerido" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="ListasPrecioDetalle" msprop:Generator_TableClassName="ListasPrecioDetalleDataTable" msprop:Generator_TableVarName="tableListasPrecioDetalle" msprop:Generator_RowChangedName="ListasPrecioDetalleRowChanged" msprop:Generator_TablePropName="ListasPrecioDetalle" msprop:Generator_RowDeletingName="ListasPrecioDetalleRowDeleting" msprop:Generator_RowChangingName="ListasPrecioDetalleRowChanging" msprop:Generator_RowEvHandlerName="ListasPrecioDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="ListasPrecioDetalleRowDeleted" msprop:Generator_RowClassName="ListasPrecioDetalleRow" msprop:Generator_UserTableName="ListasPrecioDetalle" msprop:Generator_RowEvArgName="ListasPrecioDetalleRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="listaPrecio" msprop:Generator_ColumnVarNameInTable="columnlistaPrecio" msprop:Generator_ColumnPropNameInRow="listaPrecio" msprop:Generator_ColumnPropNameInTable="listaPrecioColumn" msprop:Generator_UserColumnName="listaPrecio" type="xs:string" minOccurs="0" />
-              <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
-              <xs:element name="precioVenta" msprop:Generator_ColumnVarNameInTable="columnprecioVenta" msprop:Generator_ColumnPropNameInRow="precioVenta" msprop:Generator_ColumnPropNameInTable="precioVentaColumn" msprop:Generator_UserColumnName="precioVenta" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -207,6 +198,14 @@
               <xs:element name="denominacion" msprop:Generator_ColumnVarNameInTable="columndenominacion" msprop:Generator_ColumnPropNameInRow="denominacion" msprop:Generator_ColumnPropNameInTable="denominacionColumn" msprop:Generator_UserColumnName="denominacion" type="xs:string" minOccurs="0" />
               <xs:element name="cantidad" msprop:Generator_ColumnVarNameInTable="columncantidad" msprop:Generator_ColumnPropNameInRow="cantidad" msprop:Generator_ColumnPropNameInTable="cantidadColumn" msprop:Generator_UserColumnName="cantidad" type="xs:string" minOccurs="0" />
               <xs:element name="subtotal" msprop:Generator_ColumnVarNameInTable="columnsubtotal" msprop:Generator_ColumnPropNameInRow="subtotal" msprop:Generator_ColumnPropNameInTable="subtotalColumn" msprop:Generator_UserColumnName="subtotal" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ListaPrecioDetalle" msprop:Generator_TableClassName="ListaPrecioDetalleDataTable" msprop:Generator_TableVarName="tableListaPrecioDetalle" msprop:Generator_RowChangedName="ListaPrecioDetalleRowChanged" msprop:Generator_TablePropName="ListaPrecioDetalle" msprop:Generator_RowDeletingName="ListaPrecioDetalleRowDeleting" msprop:Generator_RowChangingName="ListaPrecioDetalleRowChanging" msprop:Generator_RowEvHandlerName="ListaPrecioDetalleRowChangeEventHandler" msprop:Generator_RowDeletedName="ListaPrecioDetalleRowDeleted" msprop:Generator_RowClassName="ListaPrecioDetalleRow" msprop:Generator_UserTableName="ListaPrecioDetalle" msprop:Generator_RowEvArgName="ListaPrecioDetalleRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
+              <xs:element name="precioVenta" msprop:Generator_ColumnVarNameInTable="columnprecioVenta" msprop:Generator_ColumnPropNameInRow="precioVenta" msprop:Generator_ColumnPropNameInTable="precioVentaColumn" msprop:Generator_UserColumnName="precioVenta" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -356,5 +356,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VwListaPrecioDets">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwListaPrecioDet">
+        <MappingFragment StoreEntitySet="VwListaPrecioDet">
+          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwProductos">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwProducto">
+        <MappingFragment StoreEntitySet="VwProductos">
+          <ScalarProperty Name="precioVSugerido" ColumnName="precioVSugerido" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="comunidad" ColumnName="comunidad" />
+          <ScalarProperty Name="catProd" ColumnName="catProd" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

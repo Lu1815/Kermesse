@@ -22,7 +22,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Descripcion Rol</Value>
+                              <Value>Rol</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>

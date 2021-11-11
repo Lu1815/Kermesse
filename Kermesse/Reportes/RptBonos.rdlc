@@ -171,7 +171,7 @@
         <Top>0.68625in</Top>
         <Left>0.51958in</Left>
         <Height>0.5in</Height>
-        <Width>5.56731in</Width>
+        <Width>5.56732in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -226,7 +226,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Categoria Producto</Value>
+                  <Value>Reporte Bono</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                   </Style>

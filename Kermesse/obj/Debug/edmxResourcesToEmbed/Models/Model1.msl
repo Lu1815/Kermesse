@@ -289,5 +289,48 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VwDenominaciones">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwDenominacione">
+        <MappingFragment StoreEntitySet="VwDenominaciones">
+          <ScalarProperty Name="idDenominacion" ColumnName="idDenominacion" />
+          <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+          <ScalarProperty Name="ValorLetras" ColumnName="ValorLetras" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwArqueoCajas">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwArqueoCaja">
+        <MappingFragment StoreEntitySet="VwArqueoCaja">
+          <ScalarProperty Name="granTotal" ColumnName="granTotal" />
+          <ScalarProperty Name="fechaArqueo" ColumnName="fechaArqueo" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+          <ScalarProperty Name="idArqueoCaja" ColumnName="idArqueoCaja" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwGastoes">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwGasto">
+        <MappingFragment StoreEntitySet="VwGasto">
+          <ScalarProperty Name="monto" ColumnName="monto" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="fechGasto" ColumnName="fechGasto" />
+          <ScalarProperty Name="catGasto" ColumnName="catGasto" />
+          <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+          <ScalarProperty Name="idGasto" ColumnName="idGasto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwArqueoCajaDets">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwArqueoCajaDet">
+        <MappingFragment StoreEntitySet="VwArqueoCajaDet">
+          <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="idArqueoCajaDet" ColumnName="idArqueoCajaDet" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Kermesse.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace Kermesse.Controllers
 {
@@ -139,5 +141,52 @@ namespace Kermesse.Controllers
             }
             base.Dispose(disposing);
         }
+
+        [Authorize]
+        public ActionResult verReporte(string tipo)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptComunidades.rdlc");
+            rpt.ReportPath = ruta;
+
+            List<Comunidad> ls = new List<Comunidad>();
+            ls = db.Comunidads.ToList();
+
+            ReportDataSource rd = new ReportDataSource("DSComunidades", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
+
+
+        [Authorize]
+        public ActionResult verReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptComunidadesVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            Comunidad g = db.Comunidads.Find(id);
+            List<Comunidad> ls = new List<Comunidad>();
+            ls.Add(g);
+
+            ReportDataSource rd = new ReportDataSource("DSComunidades", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
+
+
+
     }
 }

@@ -6,52 +6,16 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.89126in</Width>
+              <Width>2.83689in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.89126in</Width>
-            </TablixColumn>
-            <TablixColumn>
-              <Width>1.89126in</Width>
+              <Width>2.83689in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
             <TablixRow>
               <Height>0.25in</Height>
               <TablixCells>
-                <TablixCell>
-                  <CellContents>
-                    <Textbox Name="Textbox3">
-                      <CanGrow>true</CanGrow>
-                      <KeepTogether>true</KeepTogether>
-                      <Paragraphs>
-                        <Paragraph>
-                          <TextRuns>
-                            <TextRun>
-                              <Value>Kermesse</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
-                            </TextRun>
-                          </TextRuns>
-                          <Style />
-                        </Paragraph>
-                      </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
-                      <Style>
-                        <Border>
-                          <Color>LightGrey</Color>
-                          <Style>Solid</Style>
-                        </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
-                        <PaddingLeft>2pt</PaddingLeft>
-                        <PaddingRight>2pt</PaddingRight>
-                        <PaddingTop>2pt</PaddingTop>
-                        <PaddingBottom>2pt</PaddingBottom>
-                      </Style>
-                    </Textbox>
-                  </CellContents>
-                </TablixCell>
                 <TablixCell>
                   <CellContents>
                     <Textbox Name="Textbox5">
@@ -61,7 +25,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Fecha Arqueo</Value>
+                              <Value>Kermesse</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -87,29 +51,28 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="kermesse">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Gran Total</Value>
-                              <Style>
-                                <FontWeight>Bold</FontWeight>
-                              </Style>
+                              <Value>=Fields!kermesse.Value</Value>
+                              <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>kermesse</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
-                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -125,26 +88,29 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="kermesse">
+                    <Textbox Name="Textbox10">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!kermesse.Value</Value>
-                              <Style />
+                              <Value>Fecha Arqueo</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>kermesse</rd:DefaultName>
+                      <rd:DefaultName>Textbox10</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -183,7 +149,44 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
-                    <rd:Selected>true</rd:Selected>
+                  </CellContents>
+                </TablixCell>
+              </TablixCells>
+            </TablixRow>
+            <TablixRow>
+              <Height>0.25in</Height>
+              <TablixCells>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox12">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Gran Total</Value>
+                              <Style>
+                                <FontWeight>Bold</FontWeight>
+                              </Style>
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox12</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightBlue</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
@@ -226,62 +229,33 @@
           <TablixMembers>
             <TablixMember />
             <TablixMember />
-            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
             <TablixMember>
-              <KeepWithGroup>After</KeepWithGroup>
-            </TablixMember>
-            <TablixMember>
               <Group Name="Detalles" />
+              <TablixMembers>
+                <TablixMember />
+                <TablixMember />
+                <TablixMember />
+              </TablixMembers>
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSArqueoCaja</DataSetName>
-        <Top>0.58208in</Top>
+        <Top>0.67583in</Top>
         <Left>0.41311in</Left>
-        <Height>0.5in</Height>
-        <Width>5.67378in</Width>
+        <Height>0.75in</Height>
+        <Width>5.67379in</Width>
         <Style>
           <Border>
             <Style>None</Style>
           </Border>
         </Style>
       </Tablix>
-      <Textbox Name="Textbox10">
-        <CanGrow>true</CanGrow>
-        <KeepTogether>true</KeepTogether>
-        <Paragraphs>
-          <Paragraph>
-            <TextRuns>
-              <TextRun>
-                <Value>Último registro</Value>
-                <Style />
-              </TextRun>
-            </TextRuns>
-            <Style />
-          </Paragraph>
-        </Paragraphs>
-        <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>1.37375in</Top>
-        <Left>0.41311in</Left>
-        <Height>0.25in</Height>
-        <Width>1in</Width>
-        <ZIndex>1</ZIndex>
-        <Style>
-          <Border>
-            <Style>None</Style>
-          </Border>
-          <PaddingLeft>2pt</PaddingLeft>
-          <PaddingRight>2pt</PaddingRight>
-          <PaddingTop>2pt</PaddingTop>
-          <PaddingBottom>2pt</PaddingBottom>
-        </Style>
-      </Textbox>
     </ReportItems>
-    <Height>1.94792in</Height>
+    <Height>2in</Height>
     <Style />
   </Body>
   <Width>6.5in</Width>
@@ -298,7 +272,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Arqueo Caja</Value>
+                  <Value>Reporte Arqueo caja</Value>
                   <Style>
                     <FontSize>16pt</FontSize>
                   </Style>
@@ -391,8 +365,8 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>PageNumber</rd:DefaultName>
-          <Top>0.30083in</Top>
-          <Left>5.0869in</Left>
+          <Top>0.39458in</Top>
+          <Left>4.53in</Left>
           <Height>0.25in</Height>
           <Width>1in</Width>
           <Style>
@@ -425,7 +399,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>fd399e95-e6b2-4ac7-a01f-0163c0c41c85</rd:DataSourceID>
+      <rd:DataSourceID>a9e7007b-d281-4d2b-8424-41005d1de9cf</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -459,5 +433,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>2ef6f4ea-b8e6-40fa-9f50-458c07b98477</rd:ReportID>
+  <rd:ReportID>6dc88b8a-b1d9-401c-9ef7-19f825d8c88e</rd:ReportID>
 </Report>

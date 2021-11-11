@@ -440,6 +440,18 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\VwArqueoCaja.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VwArqueoCajaDet.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VwDenominacione.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VwGasto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\VwListaPrecio.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -1238,12 +1250,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Reportes\RptArqueoCaja.rdlc" />
     <EmbeddedResource Include="Reportes\RptArqueoCajaDet.rdlc" />
+    <EmbeddedResource Include="Reportes\RptArqueoCajaDetVertical.rdlc" />
+    <EmbeddedResource Include="Reportes\RptArqueoCajaVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptBonos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptBonosVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaGasto.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaProducto1.rdlc" />
     <EmbeddedResource Include="Reportes\RptComunidades.rdlc" />
+    <EmbeddedResource Include="Reportes\RptComunidadesVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptDenominaciones.rdlc" />
+    <EmbeddedResource Include="Reportes\RptDenominacionesVerticales.rdlc" />
     <EmbeddedResource Include="Reportes\RptGastos.rdlc" />
+    <EmbeddedResource Include="Reportes\RptGastosVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptIngresoComunidad.rdlc" />
     <EmbeddedResource Include="Reportes\RptIngresoComunidadDet.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecio1.rdlc" />

@@ -4871,11 +4871,11 @@ namespace Kermesse.Reportes.DataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class DenominacionesDataTable : global::System.Data.TypedTableBase<DenominacionesRow> {
             
-            private global::System.Data.DataColumn columnmoneda;
+            private global::System.Data.DataColumn columnMoneda;
             
-            private global::System.Data.DataColumn columnvalor;
+            private global::System.Data.DataColumn columnValor;
             
-            private global::System.Data.DataColumn columnvalorLetras;
+            private global::System.Data.DataColumn columnValorLetras;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4912,25 +4912,25 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn monedaColumn {
+            public global::System.Data.DataColumn MonedaColumn {
                 get {
-                    return this.columnmoneda;
+                    return this.columnMoneda;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn valorColumn {
+            public global::System.Data.DataColumn ValorColumn {
                 get {
-                    return this.columnvalor;
+                    return this.columnValor;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn valorLetrasColumn {
+            public global::System.Data.DataColumn ValorLetrasColumn {
                 get {
-                    return this.columnvalorLetras;
+                    return this.columnValorLetras;
                 }
             }
             
@@ -4971,12 +4971,12 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DenominacionesRow AddDenominacionesRow(string moneda, string valor, string valorLetras) {
+            public DenominacionesRow AddDenominacionesRow(string Moneda, string Valor, string ValorLetras) {
                 DenominacionesRow rowDenominacionesRow = ((DenominacionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        moneda,
-                        valor,
-                        valorLetras};
+                        Moneda,
+                        Valor,
+                        ValorLetras};
                 rowDenominacionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowDenominacionesRow);
                 return rowDenominacionesRow;
@@ -4999,20 +4999,20 @@ namespace Kermesse.Reportes.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnmoneda = base.Columns["moneda"];
-                this.columnvalor = base.Columns["valor"];
-                this.columnvalorLetras = base.Columns["valorLetras"];
+                this.columnMoneda = base.Columns["Moneda"];
+                this.columnValor = base.Columns["Valor"];
+                this.columnValorLetras = base.Columns["ValorLetras"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnmoneda = new global::System.Data.DataColumn("moneda", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmoneda);
-                this.columnvalor = new global::System.Data.DataColumn("valor", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvalor);
-                this.columnvalorLetras = new global::System.Data.DataColumn("valorLetras", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnvalorLetras);
+                this.columnMoneda = new global::System.Data.DataColumn("Moneda", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMoneda);
+                this.columnValor = new global::System.Data.DataColumn("Valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValor);
+                this.columnValorLetras = new global::System.Data.DataColumn("ValorLetras", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnValorLetras);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8351,86 +8351,86 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string moneda {
+            public string Moneda {
                 get {
                     try {
-                        return ((string)(this[this.tableDenominaciones.monedaColumn]));
+                        return ((string)(this[this.tableDenominaciones.MonedaColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'moneda\' de la tabla \'Denominaciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Moneda\' de la tabla \'Denominaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDenominaciones.monedaColumn] = value;
+                    this[this.tableDenominaciones.MonedaColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string valor {
+            public string Valor {
                 get {
                     try {
-                        return ((string)(this[this.tableDenominaciones.valorColumn]));
+                        return ((string)(this[this.tableDenominaciones.ValorColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'valor\' de la tabla \'Denominaciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'Valor\' de la tabla \'Denominaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDenominaciones.valorColumn] = value;
+                    this[this.tableDenominaciones.ValorColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string valorLetras {
+            public string ValorLetras {
                 get {
                     try {
-                        return ((string)(this[this.tableDenominaciones.valorLetrasColumn]));
+                        return ((string)(this[this.tableDenominaciones.ValorLetrasColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'valorLetras\' de la tabla \'Denominaciones\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'ValorLetras\' de la tabla \'Denominaciones\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableDenominaciones.valorLetrasColumn] = value;
+                    this[this.tableDenominaciones.ValorLetrasColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsmonedaNull() {
-                return this.IsNull(this.tableDenominaciones.monedaColumn);
+            public bool IsMonedaNull() {
+                return this.IsNull(this.tableDenominaciones.MonedaColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetmonedaNull() {
-                this[this.tableDenominaciones.monedaColumn] = global::System.Convert.DBNull;
+            public void SetMonedaNull() {
+                this[this.tableDenominaciones.MonedaColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsvalorNull() {
-                return this.IsNull(this.tableDenominaciones.valorColumn);
+            public bool IsValorNull() {
+                return this.IsNull(this.tableDenominaciones.ValorColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetvalorNull() {
-                this[this.tableDenominaciones.valorColumn] = global::System.Convert.DBNull;
+            public void SetValorNull() {
+                this[this.tableDenominaciones.ValorColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsvalorLetrasNull() {
-                return this.IsNull(this.tableDenominaciones.valorLetrasColumn);
+            public bool IsValorLetrasNull() {
+                return this.IsNull(this.tableDenominaciones.ValorLetrasColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetvalorLetrasNull() {
-                this[this.tableDenominaciones.valorLetrasColumn] = global::System.Convert.DBNull;
+            public void SetValorLetrasNull() {
+                this[this.tableDenominaciones.ValorLetrasColumn] = global::System.Convert.DBNull;
             }
         }
         

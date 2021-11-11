@@ -6,19 +6,19 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.29517in</Width>
+              <Width>1.941in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.29517in</Width>
+              <Width>0.99309in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.29517in</Width>
+              <Width>1.08684in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.29517in</Width>
+              <Width>0.7535in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.29517in</Width>
+              <Width>0.93061in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -27,14 +27,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox4">
+                    <Textbox Name="Textbox5">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Ingreso Comunidad</Value>
+                              <Value>Comunidad</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -43,7 +43,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox4</rd:DefaultName>
+                      <rd:DefaultName>Textbox5</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -166,7 +166,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>SubTotal Bono</Value>
+                              <Value>Subtotal</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -197,21 +197,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="ingresoComunidad">
+                    <Textbox Name="comunidad1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!ingresoComunidad.Value</Value>
+                              <Value>=Fields!comunidad.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>ingresoComunidad</rd:DefaultName>
+                      <rd:DefaultName>comunidad1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -298,7 +298,9 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>cantidad</rd:DefaultName>
@@ -317,21 +319,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="subTotalBono">
+                    <Textbox Name="subtotal">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!subTotalBono.Value</Value>
+                              <Value>=Fields!subtotal.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>subTotalBono</rd:DefaultName>
+                      <rd:DefaultName>subtotal</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -343,6 +347,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -370,9 +375,9 @@
         </TablixRowHierarchy>
         <DataSetName>DSIngresoComunidadDet</DataSetName>
         <Top>0.55083in</Top>
-        <Left>0.4131in</Left>
+        <Left>0.41311in</Left>
         <Height>0.5in</Height>
-        <Width>6.47587in</Width>
+        <Width>5.70504in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -413,7 +418,7 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>7.11458in</Width>
+  <Width>7.88895in</Width>
   <Page>
     <PageHeader>
       <Height>1in</Height>
@@ -578,16 +583,20 @@
         </Field>
         <Field Name="cantidad">
           <DataField>cantidad</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="subTotalBono">
-          <DataField>subTotalBono</DataField>
+        <Field Name="subtotal">
+          <DataField>subtotal</DataField>
+          <rd:TypeName>System.Double</rd:TypeName>
+        </Field>
+        <Field Name="comunidad">
+          <DataField>comunidad</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSReportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\frank\Desktop\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
         <rd:TableName>IngresoComunidadDetalle</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

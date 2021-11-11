@@ -64,7 +64,7 @@ namespace Kermesse.Controllers
                 Session["Name"] = usr.nombres.ToString().Split(' ')[0];
                 Session["Lastname"] = usr.apellidos.ToString().Split(' ')[0];
                 FormsAuthentication.SetAuthCookie(usr.idUsuario.ToString(), false);
-                
+
                 return Redirect(ReturnUrl);
             } 
             else

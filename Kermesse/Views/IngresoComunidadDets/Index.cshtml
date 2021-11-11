@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Kermesse.Models.IngresoComunidadDet>
 
 @{
-    ViewBag.Title = "Ingreso comunidad detalles";
+    ViewBag.Title = "Detalles de ingresos de comunidad";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Ingreso comunidad detalle</h1>
+<h1>Detalles de ingresos de comunidad</h1>
 
 <div class="row mb-1">
     <div class="col-12 col-md-2 mb-1">
@@ -96,6 +96,9 @@
                         </a>
                         <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idIngresoComunidadDet })">
                             <i class="fa fa-trash"></i>
+                        </a>
+                        <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idIngresoComunidadDet })" target="_blank">
+                            <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </td>
                 </tr>

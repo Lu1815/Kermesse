@@ -1,19 +1,17 @@
 ﻿@model Kermesse.Models.IngresoComunidadDet
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editando detalle de ingreso de comunidad";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Edit</h2>
+<h1>Editando detalle de ingreso de comunidad</h1>
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>IngresoComunidadDet</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.idIngresoComunidadDet)
 

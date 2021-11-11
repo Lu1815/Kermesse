@@ -1,11 +1,11 @@
 ﻿@model IEnumerable<Kermesse.Models.IngresoComunidad>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Ingresos de comunidad";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Ingreso de comunidad</h1>
+<h1>Ingresos de comunidad</h1>
 
 <div class="row mb-1">
     <div class="col-12 col-md-2 mb-1">
@@ -54,12 +54,7 @@
     <table class="table table-bordered table-striped table-hover">
         <thead class="table-info">
             <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.cantProducto)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.totalBonos)
-                </th>
+
                 <th>
                     @Html.DisplayNameFor(model => model.Comunidad1.nombre)
                 </th>
@@ -68,6 +63,12 @@
                 </th>
                 <th>
                     @Html.DisplayNameFor(model => model.Producto1.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.totalBonos)
                 </th>
                 <th>
                     Opciones
@@ -79,12 +80,6 @@
             {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.cantProducto)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.totalBonos)
-                    </td>
-                    <td>
                         @Html.DisplayFor(modelItem => item.Comunidad1.nombre)
                     </td>
                     <td>
@@ -92,6 +87,12 @@
                     </td>
                     <td>
                         @Html.DisplayFor(modelItem => item.Producto1.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.totalBonos)
                     </td>
                     <td>
                         <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idIngresoComunidad })">
@@ -102,6 +103,9 @@
                         </a>
                         <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idIngresoComunidad })">
                             <i class="fa fa-trash"></i>
+                        </a>
+                        <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idIngresoComunidad })" target="_blank">
+                            <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </td>
                 </tr>

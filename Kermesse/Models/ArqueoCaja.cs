@@ -11,8 +11,7 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class ArqueoCaja
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,24 +21,14 @@ namespace Kermesse.Models
         }
     
         public int idArqueoCaja { get; set; }
-        [Display(Name = "Categoría")]
-        [Required(ErrorMessage = "Este campo es requerido")]
         public int kermesse { get; set; }
-        [Display(Name = "Fecha de arqueo")]
         public Nullable<System.DateTime> fechaArqueo { get; set; }
-        [Display(Name = "Gran total")]
         public Nullable<decimal> granTotal { get; set; }
-        [Display(Name = "Usuario creador")]
         public int usuarioCreacion { get; set; }
-        [Display(Name = "Fecha de creación")]
         public System.DateTime fechaCreacion { get; set; }
-        [Display(Name = "Usuario modificación")]
         public Nullable<int> usuarioModificacion { get; set; }
-        [Display(Name = "Fecha de modificación")]
         public Nullable<System.DateTime> fechaModificacion { get; set; }
-        [Display(Name = "Usuario eliminación")]
         public Nullable<int> usuarioEliminacion { get; set; }
-        [Display(Name = "Fecha de eliminación")]
         public Nullable<System.DateTime> fechaEliminacion { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

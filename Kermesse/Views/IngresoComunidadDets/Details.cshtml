@@ -1,15 +1,13 @@
 ﻿@model Kermesse.Models.IngresoComunidadDet
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalle de ingreso de comunidad";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h1>Detalle de ingreso de comunidad</h1>
 
 <div>
-    <h4>IngresoComunidadDet</h4>
-    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.denominacion)
@@ -52,8 +50,15 @@
         </dd>
 
     </dl>
+
+    <div class="form-group">
+        <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+            @Html.ActionLink("Editar", "Edit", new { id = Model.idIngresoComunidadDet }, new { @class = "btn btn-success w-100" })
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary w-100" })
+        </div>
+    </div>
+
+
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.idIngresoComunidadDet }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

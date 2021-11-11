@@ -309,7 +309,7 @@
     </Key>
     <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="userName" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="pwd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="pwd" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
     <Property Name="nombres" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="apellidos" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="true" Nullable="false" />
@@ -945,6 +945,9 @@
       <End Role="TasaCambioDet" EntitySet="TasaCambioDets" />
     </AssociationSet>
     <EntitySet Name="VwListaPrecios" EntityType="BDKermesseModel.VwListaPrecio" />
+    <EntitySet Name="VwIngresoComunidadDets" EntityType="BDKermesseModel.VwIngresoComunidadDet" />
+    <EntitySet Name="VwIngresoComunidads" EntityType="BDKermesseModel.VwIngresoComunidad" />
+    <EntitySet Name="VwGastos" EntityType="BDKermesseModel.VwGastos" />
   </EntityContainer>
   <EntityType Name="VwListaPrecio">
     <Key>
@@ -959,5 +962,43 @@
     <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="estado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VwIngresoComunidadDet">
+    <Key>
+      <PropertyRef Name="idIngresoComunidadDet" />
+    </Key>
+    <Property Name="idIngresoComunidadDet" Type="Int32" Nullable="false" />
+    <Property Name="bono" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="denominacion" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="cantidad" Type="Int32" Nullable="false" />
+    <Property Name="subtotal" Type="Double" Nullable="false" />
+    <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VwIngresoComunidad">
+    <Key>
+      <PropertyRef Name="idIngresoComunidad" />
+    </Key>
+    <Property Name="idIngresoComunidad" Type="Int32" Nullable="false" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="cantProducto" Type="Int32" Nullable="false" />
+    <Property Name="totalBonos" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VwGastos">
+    <Key>
+      <PropertyRef Name="idGasto" />
+      <PropertyRef Name="kermesse" />
+      <PropertyRef Name="catGasto" />
+      <PropertyRef Name="fechGasto" />
+      <PropertyRef Name="concepto" />
+      <PropertyRef Name="monto" />
+    </Key>
+    <Property Name="idGasto" Type="Int32" Nullable="false" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="catGasto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="fechGasto" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="monto" Type="Double" Nullable="false" />
   </EntityType>
 </Schema>

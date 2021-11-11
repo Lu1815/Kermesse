@@ -11,8 +11,7 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Rol
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,9 +22,6 @@ namespace Kermesse.Models
         }
     
         public int idRol { get; set; }
-        [Display(Name = "Descripción")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(70, ErrorMessage = "El tamaño máximo es 70 caracteres")]
         public string rolDescripcion { get; set; }
         public int estado { get; set; }
     

@@ -12,13 +12,13 @@ namespace Kermesse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RolUsuario
+    public partial class VwGastos
     {
-        public int idRolUsuario { get; set; }
-        public int usuario { get; set; }
-        public int rol { get; set; }
-    
-        public virtual Rol Rol1 { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public int idGasto { get; set; }
+        public string kermesse { get; set; }
+        public string catGasto { get; set; }
+        public System.DateTime fechGasto { get; set; }
+        public string concepto { get; set; }
+        public double monto { get; set; }
     }
 }

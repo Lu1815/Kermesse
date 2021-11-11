@@ -2,11 +2,14 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Kermesse.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace Kermesse.Controllers
 {
@@ -22,8 +25,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-
-                ic = ic.Where(m => m.cantProducto.ToString().Contains(dato));
+                ic = ic.Where(m => m.Comunidad1.nombre.Contains(dato) || m.Kermesse1.nombre.Contains(dato) || m.Producto1.nombre.Contains(dato));
             }
 
             return View(ic.ToList());
@@ -117,6 +119,7 @@ namespace Kermesse.Controllers
             i.cantProducto = ingresoComunidad.cantProducto;
             i.totalBonos = ingresoComunidad.totalBonos;
             i.usuarioModificacion = int.Parse(Session["UserID"].ToString());
+            
             i.fechaModificacion = DateTime.Now;
 
             if (ModelState.IsValid)
@@ -169,6 +172,51 @@ namespace Kermesse.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [Authorize]
+        public ActionResult verReporte(string tipo)
+        {
+            
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptIngresoComunidad.rdlc");
+            rpt.ReportPath = ruta;
+
+            List<VwIngresoComunidad> ls = new List<VwIngresoComunidad>();
+            ls = db.VwIngresoComunidads.ToList();
+
+            ReportDataSource rd = new ReportDataSource("DSIngresoComunidad", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
+
+        [Authorize]
+        public ActionResult verReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptIngresoComunidadVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            VwIngresoComunidad i = db.VwIngresoComunidads.Find(id);
+            List<VwIngresoComunidad> ls = new List<VwIngresoComunidad>();
+            ls.Add(i);
+            
+
+            ReportDataSource rd = new ReportDataSource("DSIngresoComunidad", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
         }
     }
 }

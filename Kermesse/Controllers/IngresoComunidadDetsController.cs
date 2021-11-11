@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Kermesse.Models;
+using Microsoft.Reporting.WebForms;
 
 namespace Kermesse.Controllers
 {
@@ -22,7 +24,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                icd = icd.Where(m => m.denominacion.Contains(dato));
+                icd = icd.Where(m => m.denominacion.Contains(dato) || m.ControlBono.nombre.Contains(dato));
             }
 
             return View(icd.ToList());
@@ -59,11 +61,20 @@ namespace Kermesse.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBono")] IngresoComunidadDet ingresoComunidadDet)
+        public ActionResult Create([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBonoHelper")] IngresoComunidadDet ingresoComunidadDet)
         {
+
+            IngresoComunidadDet i = new IngresoComunidadDet();
+
+            i.ingresoComunidad = ingresoComunidadDet.ingresoComunidad;
+            i.bono = ingresoComunidadDet.bono;
+            i.denominacion = ingresoComunidadDet.denominacion;
+            i.cantidad = ingresoComunidadDet.cantidad;
+            i.subTotalBono = 0.0;
+
             if (ModelState.IsValid)
             {
-                db.IngresoComunidadDets.Add(ingresoComunidadDet);
+                db.IngresoComunidadDets.Add(i);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -99,14 +110,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBono")] IngresoComunidadDet ingresoComunidadDet)
         {
-            System.Diagnostics.Debug.WriteLine("ENTRÓ PUTO");
             IngresoComunidadDet i = db.IngresoComunidadDets.Find(ingresoComunidadDet.idIngresoComunidadDet);
 
             i.ingresoComunidad = ingresoComunidadDet.ingresoComunidad;
             i.bono = ingresoComunidadDet.bono;
             i.denominacion = ingresoComunidadDet.denominacion;
             i.cantidad = ingresoComunidadDet.cantidad;
-            i.subTotalBono = ingresoComunidadDet.subTotalBono;
+            // i.subTotalBono = ingresoComunidadDet.subTotalBono;
 
             if (ModelState.IsValid)
             {
@@ -155,6 +165,50 @@ namespace Kermesse.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        [Authorize]
+        public ActionResult verReporte(string tipo)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptIngresoComunidadDet.rdlc");
+            rpt.ReportPath = ruta;
+
+            List<VwIngresoComunidadDet> ls = new List<VwIngresoComunidadDet>();
+            ls = db.VwIngresoComunidadDets.ToList();
+
+            ReportDataSource rd = new ReportDataSource("DSIngresoComunidadDet", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
+
+        [Authorize]
+        public ActionResult verReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptIngresoComunidadDetVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            VwIngresoComunidadDet i = db.VwIngresoComunidadDets.Find(id);
+            List<VwIngresoComunidadDet> ls = new List<VwIngresoComunidadDet>();
+            ls.Add(i);
+            
+
+            ReportDataSource rd = new ReportDataSource("DSIngresoComunidadDet", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
         }
     }
 }

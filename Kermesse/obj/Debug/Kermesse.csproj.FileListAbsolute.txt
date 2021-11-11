@@ -609,3 +609,4 @@ C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CoreCompileIn
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CopyComplete
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.dll
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.pdb
+C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.AssemblyReference.cache

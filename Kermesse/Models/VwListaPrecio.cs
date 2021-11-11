@@ -10,10 +10,11 @@
 namespace Kermesse.Models
 {
     using System;
-    using System.Collections.Generic;
+    using System.Collections.Generic; using System.ComponentModel.DataAnnotations;
     
     public partial class VwListaPrecio
     {
+
         public int idListaPrecio { get; set; }
         public string kermesse { get; set; }
         public string nombre { get; set; }

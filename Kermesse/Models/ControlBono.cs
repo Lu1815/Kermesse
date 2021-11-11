@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ControlBono
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,12 +20,20 @@ namespace Kermesse.Models
         {
             this.IngresoComunidadDets = new HashSet<IngresoComunidadDet>();
         }
-    
+
+
+        [Display(Name = "Bono")]
         public int idBono { get; set; }
+        [Display(Name = "Bono")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(45, ErrorMessage = "El tamaño máximo es 45 caracteres")]
         public string nombre { get; set; }
+        [Display(Name = "Valor")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [DataType(DataType.Currency)]
+        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
         public double valor { get; set; }
         public int estado { get; set; }
-    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IngresoComunidadDet> IngresoComunidadDets { get; set; }
     }

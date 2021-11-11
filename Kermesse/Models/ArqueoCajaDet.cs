@@ -11,16 +11,30 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class ArqueoCajaDet
     {
+        [Display(Name ="Detalle de arqueo caja")]
         public int idArqueoCajaDet { get; set; }
+        [Display(Name = "Arqueo caja")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int arqueoCaja { get; set; }
+        [Display(Name = "Moneda")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int moneda { get; set; }
+        [Display(Name = "Denominación")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int denominacion { get; set; }
+        [Display(Name = "Cantidad")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(18, ErrorMessage = "El tamaño máximo es 18 caracteres")]
         public decimal cantidad { get; set; }
+        [Display(Name = "Subtotal")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(18, ErrorMessage = "El tamaño máximo es 18 caracteres")]
         public decimal subtotal { get; set; }
-    
+
         public virtual ArqueoCaja ArqueoCaja1 { get; set; }
         public virtual Denominacion Denominacion1 { get; set; }
         public virtual Moneda Moneda1 { get; set; }

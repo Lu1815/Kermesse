@@ -261,22 +261,6 @@
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'DBKermesse.dbo.VwGastos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
-        <EntityType Name="VwGastos">
-          <Key>
-            <PropertyRef Name="idGasto" />
-            <PropertyRef Name="kermesse" />
-            <PropertyRef Name="catGasto" />
-            <PropertyRef Name="fechGasto" />
-            <PropertyRef Name="concepto" />
-            <PropertyRef Name="monto" />
-          </Key>
-          <Property Name="idGasto" Type="int" Nullable="false" />
-          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
-          <Property Name="catGasto" Type="nvarchar" MaxLength="45" Nullable="false" />
-          <Property Name="fechGasto" Type="datetime" Nullable="false" />
-          <Property Name="concepto" Type="nvarchar" MaxLength="70" Nullable="false" />
-          <Property Name="monto" Type="float" Nullable="false" />
-        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'DBKermesse.dbo.VwIngresoComunidad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VwIngresoComunidad">
@@ -797,16 +781,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
           <EntitySet Name="TasaCambio" EntityType="Self.TasaCambio" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TasaCambioDet" EntityType="Self.TasaCambioDet" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VwGastos" EntityType="Self.VwGastos" store:Type="Views" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [VwGastos].[idGasto] AS [idGasto], 
-    [VwGastos].[kermesse] AS [kermesse], 
-    [VwGastos].[catGasto] AS [catGasto], 
-    [VwGastos].[fechGasto] AS [fechGasto], 
-    [VwGastos].[concepto] AS [concepto], 
-    [VwGastos].[monto] AS [monto]
-    FROM [dbo].[VwGastos] AS [VwGastos]</DefiningQuery>
-          </EntitySet>
           <EntitySet Name="VwIngresoComunidad" EntityType="Self.VwIngresoComunidad" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [VwIngresoComunidad].[idIngresoComunidad] AS [idIngresoComunidad], 
@@ -1936,7 +1910,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
           <EntitySet Name="VwListaPrecios" EntityType="BDKermesseModel.VwListaPrecio" />
           <EntitySet Name="VwIngresoComunidadDets" EntityType="BDKermesseModel.VwIngresoComunidadDet" />
           <EntitySet Name="VwIngresoComunidads" EntityType="BDKermesseModel.VwIngresoComunidad" />
-          <EntitySet Name="VwGastos" EntityType="BDKermesseModel.VwGastos" />
         </EntityContainer>
         <EntityType Name="VwListaPrecio">
           <Key>
@@ -1973,22 +1946,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
           <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="cantProducto" Type="Int32" Nullable="false" />
           <Property Name="totalBonos" Type="Int32" Nullable="false" />
-        </EntityType>
-        <EntityType Name="VwGastos">
-          <Key>
-            <PropertyRef Name="idGasto" />
-            <PropertyRef Name="kermesse" />
-            <PropertyRef Name="catGasto" />
-            <PropertyRef Name="fechGasto" />
-            <PropertyRef Name="concepto" />
-            <PropertyRef Name="monto" />
-          </Key>
-          <Property Name="idGasto" Type="Int32" Nullable="false" />
-          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="catGasto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
-          <Property Name="fechGasto" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
-          <Property Name="monto" Type="Double" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2305,18 +2262,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
                 <ScalarProperty Name="comunidad" ColumnName="comunidad" />
                 <ScalarProperty Name="kermesse" ColumnName="kermesse" />
                 <ScalarProperty Name="idIngresoComunidad" ColumnName="idIngresoComunidad" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VwGastos">
-            <EntityTypeMapping TypeName="BDKermesseModel.VwGastos">
-              <MappingFragment StoreEntitySet="VwGastos">
-                <ScalarProperty Name="monto" ColumnName="monto" />
-                <ScalarProperty Name="concepto" ColumnName="concepto" />
-                <ScalarProperty Name="fechGasto" ColumnName="fechGasto" />
-                <ScalarProperty Name="catGasto" ColumnName="catGasto" />
-                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
-                <ScalarProperty Name="idGasto" ColumnName="idGasto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

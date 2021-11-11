@@ -440,9 +440,6 @@
     <Compile Include="Models\Usuario.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\VwGastos.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\VwIngresoComunidad.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

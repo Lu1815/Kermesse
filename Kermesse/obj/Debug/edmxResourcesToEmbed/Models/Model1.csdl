@@ -948,6 +948,10 @@
     <EntitySet Name="VwIngresoComunidadDets" EntityType="BDKermesseModel.VwIngresoComunidadDet" />
     <EntitySet Name="VwIngresoComunidads" EntityType="BDKermesseModel.VwIngresoComunidad" />
     <EntitySet Name="VwGastos" EntityType="BDKermesseModel.VwGastos" />
+    <EntitySet Name="VwDenominaciones" EntityType="BDKermesseModel.VwDenominacione" />
+    <EntitySet Name="VwArqueoCajas" EntityType="BDKermesseModel.VwArqueoCaja" />
+    <EntitySet Name="VwGastoes" EntityType="BDKermesseModel.VwGasto" />
+    <EntitySet Name="VwArqueoCajaDets" EntityType="BDKermesseModel.VwArqueoCajaDet" />
   </EntityContainer>
   <EntityType Name="VwListaPrecio">
     <Key>
@@ -963,6 +967,9 @@
     <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
     <Property Name="estado" Type="Int32" Nullable="false" />
   </EntityType>
+
+
+  
   <EntityType Name="VwIngresoComunidadDet">
     <Key>
       <PropertyRef Name="idIngresoComunidadDet" />
@@ -985,14 +992,27 @@
     <Property Name="cantProducto" Type="Int32" Nullable="false" />
     <Property Name="totalBonos" Type="Int32" Nullable="false" />
   </EntityType>
-  <EntityType Name="VwGastos">
+  <EntityType Name="VwDenominacione">
+    <Key>
+      <PropertyRef Name="idDenominacion" />
+    </Key>
+    <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="ValorLetras" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Moneda" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="idDenominacion" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VwArqueoCaja">
+    <Key>
+      <PropertyRef Name="idArqueoCaja" />
+    </Key>
+    <Property Name="idArqueoCaja" Type="Int32" Nullable="false" />
+    <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="fechaArqueo" Type="DateTime" Precision="3" />
+    <Property Name="granTotal" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="VwGasto">
     <Key>
       <PropertyRef Name="idGasto" />
-      <PropertyRef Name="kermesse" />
-      <PropertyRef Name="catGasto" />
-      <PropertyRef Name="fechGasto" />
-      <PropertyRef Name="concepto" />
-      <PropertyRef Name="monto" />
     </Key>
     <Property Name="idGasto" Type="Int32" Nullable="false" />
     <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
@@ -1000,5 +1020,16 @@
     <Property Name="fechGasto" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
     <Property Name="monto" Type="Double" Nullable="false" />
+  </EntityType>
+
+  <EntityType Name="VwArqueoCajaDet">
+    <Key>
+      <PropertyRef Name="idArqueoCajaDet" />
+    </Key>
+    <Property Name="idArqueoCajaDet" Type="Int32" Nullable="false" />
+    <Property Name="moneda" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="denominacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
   </EntityType>
 </Schema>

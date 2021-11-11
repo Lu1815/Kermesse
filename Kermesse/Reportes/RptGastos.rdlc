@@ -9,7 +9,7 @@
               <Width>1.16184in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.16184in</Width>
+              <Width>1.2147in</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>1.16184in</Width>
@@ -67,7 +67,7 @@
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cantidad Gasto</Value>
+                              <Value>Categoria Gasto</Value>
                               <Style>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
@@ -372,7 +372,7 @@
         <Top>0.73833in</Top>
         <Left>0.41311in</Left>
         <Height>0.5in</Height>
-        <Width>5.80921in</Width>
+        <Width>5.86206in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -395,7 +395,7 @@
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
         <Top>1.48833in</Top>
-        <Left>0.55083in</Left>
+        <Left>0.41311in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <ZIndex>1</ZIndex>

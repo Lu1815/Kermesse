@@ -12,16 +12,11 @@ namespace Kermesse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class IngresoComunidadDet
+    public partial class VwDenominacione
     {
-        public int idIngresoComunidadDet { get; set; }
-        public int ingresoComunidad { get; set; }
-        public int bono { get; set; }
-        public string denominacion { get; set; }
-        public int cantidad { get; set; }
-        public double subTotalBono { get; set; }
-    
-        public virtual ControlBono ControlBono { get; set; }
-        public virtual IngresoComunidad IngresoComunidad1 { get; set; }
+        public decimal Valor { get; set; }
+        public string ValorLetras { get; set; }
+        public string Moneda { get; set; }
+        public int idDenominacion { get; set; }
     }
 }

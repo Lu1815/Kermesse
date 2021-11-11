@@ -265,12 +265,7 @@ warning 6002: The table/view 'DBKermesse.dbo.VwGastos' does not have a primary k
 warning 6002: The table/view 'DBKermesse.dbo.VwIngresoComunidad' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VwIngresoComunidad">
           <Key>
-            <PropertyRef Name="idIngresoComunidad" />
-            
-            
-            
-            
-            
+            <PropertyRef Name="idIngresoComunidad" /> 
           </Key>
           <Property Name="idIngresoComunidad" Type="int" Nullable="false" />
           <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
@@ -284,11 +279,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwIngresoComunidadDet' does not hav
         <EntityType Name="VwIngresoComunidadDet">
           <Key>
             <PropertyRef Name="idIngresoComunidadDet" />
-            
-            
-            
-            
-            
           </Key>
           <Property Name="idIngresoComunidadDet" Type="int" Nullable="false" />
           <Property Name="bono" Type="nvarchar" MaxLength="45" Nullable="false" />
@@ -297,8 +287,55 @@ warning 6002: The table/view 'DBKermesse.dbo.VwIngresoComunidadDet' does not hav
           <Property Name="subtotal" Type="float" Nullable="false" />
           <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesse.dbo.VwArqueoCaja' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VwArqueoCaja">
+          <Key>
+            <PropertyRef Name="idArqueoCaja" />
+          </Key>
+          <Property Name="idArqueoCaja" Type="int" Nullable="false" />
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="fechaArqueo" Type="datetime" />
+          <Property Name="granTotal" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesse.dbo.VwArqueoCajaDet' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VwArqueoCajaDet">
+          <Key>
+            <PropertyRef Name="idArqueoCajaDet" />
+          </Key>
+          <Property Name="idArqueoCajaDet" Type="int" Nullable="false" />
+          <Property Name="moneda" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="denominacion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="cantidad" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="subtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesse.dbo.VwDenominaciones' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VwDenominaciones">
+          <Key>
+            <PropertyRef Name="idDenominacion" />
+          </Key>
+          <Property Name="Valor" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="ValorLetras" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Moneda" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="idDenominacion" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesse.dbo.VwGasto' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="VwGasto">
+          <Key>
+            <PropertyRef Name="idGasto" />            
+          </Key>
+          <Property Name="idGasto" Type="int" Nullable="false" />
+          <Property Name="kermesse" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="catGasto" Type="nvarchar" MaxLength="45" Nullable="false" />
+          <Property Name="fechGasto" Type="datetime" Nullable="false" />
+          <Property Name="concepto" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="monto" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'DBKermesse.dbo.VwListaPrecio' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="VwListaPrecio">
           <Key>
             <PropertyRef Name="idListaPrecio" />
@@ -800,6 +837,41 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
     [VwIngresoComunidadDet].[subtotal] AS [subtotal], 
     [VwIngresoComunidadDet].[comunidad] AS [comunidad]
     FROM [dbo].[VwIngresoComunidadDet] AS [VwIngresoComunidadDet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwArqueoCaja" EntityType="Self.VwArqueoCaja" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwArqueoCaja].[idArqueoCaja] AS [idArqueoCaja], 
+    [VwArqueoCaja].[kermesse] AS [kermesse], 
+    [VwArqueoCaja].[fechaArqueo] AS [fechaArqueo], 
+    [VwArqueoCaja].[granTotal] AS [granTotal]
+    FROM [dbo].[VwArqueoCaja] AS [VwArqueoCaja]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwArqueoCajaDet" EntityType="Self.VwArqueoCajaDet" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwArqueoCajaDet].[idArqueoCajaDet] AS [idArqueoCajaDet], 
+    [VwArqueoCajaDet].[moneda] AS [moneda], 
+    [VwArqueoCajaDet].[denominacion] AS [denominacion], 
+    [VwArqueoCajaDet].[cantidad] AS [cantidad], 
+    [VwArqueoCajaDet].[subtotal] AS [subtotal]
+    FROM [dbo].[VwArqueoCajaDet] AS [VwArqueoCajaDet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwDenominaciones" EntityType="Self.VwDenominaciones" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwDenominaciones].[Valor] AS [Valor], 
+    [VwDenominaciones].[ValorLetras] AS [ValorLetras], 
+    [VwDenominaciones].[Moneda] AS [Moneda], 
+    [VwDenominaciones].[idDenominacion] AS [idDenominacion]
+    FROM [dbo].[VwDenominaciones] AS [VwDenominaciones]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwGasto" EntityType="Self.VwGasto" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwGasto].[idGasto] AS [idGasto], 
+    [VwGasto].[kermesse] AS [kermesse], 
+    [VwGasto].[catGasto] AS [catGasto], 
+    [VwGasto].[fechGasto] AS [fechGasto], 
+    [VwGasto].[concepto] AS [concepto], 
+    [VwGasto].[monto] AS [monto]
+    FROM [dbo].[VwGasto] AS [VwGasto]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VwListaPrecio" EntityType="Self.VwListaPrecio" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1910,6 +1982,10 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
           <EntitySet Name="VwListaPrecios" EntityType="BDKermesseModel.VwListaPrecio" />
           <EntitySet Name="VwIngresoComunidadDets" EntityType="BDKermesseModel.VwIngresoComunidadDet" />
           <EntitySet Name="VwIngresoComunidads" EntityType="BDKermesseModel.VwIngresoComunidad" />
+          <EntitySet Name="VwDenominaciones" EntityType="BDKermesseModel.VwDenominacione" />
+          <EntitySet Name="VwArqueoCajas" EntityType="BDKermesseModel.VwArqueoCaja" />
+          <EntitySet Name="VwGastoes" EntityType="BDKermesseModel.VwGasto" />
+          <EntitySet Name="VwArqueoCajaDets" EntityType="BDKermesseModel.VwArqueoCajaDet" />
         </EntityContainer>
         <EntityType Name="VwListaPrecio">
           <Key>
@@ -1946,6 +2022,45 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
           <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="cantProducto" Type="Int32" Nullable="false" />
           <Property Name="totalBonos" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VwDenominacione">
+          <Key>
+            <PropertyRef Name="idDenominacion" />
+          </Key>
+          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="ValorLetras" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Moneda" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="idDenominacion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VwArqueoCaja">
+          <Key>
+            <PropertyRef Name="idArqueoCaja" />
+          </Key>
+          <Property Name="idArqueoCaja" Type="Int32" Nullable="false" />
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="fechaArqueo" Type="DateTime" Precision="3" />
+          <Property Name="granTotal" Type="Decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="VwGasto">
+          <Key>
+            <PropertyRef Name="idGasto" />
+          </Key>
+          <Property Name="idGasto" Type="Int32" Nullable="false" />
+          <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="catGasto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="fechGasto" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="concepto" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="monto" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VwArqueoCajaDet">
+          <Key>
+            <PropertyRef Name="idArqueoCajaDet" />
+          </Key>
+          <Property Name="idArqueoCajaDet" Type="Int32" Nullable="false" />
+          <Property Name="moneda" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="denominacion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2262,6 +2377,47 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a prim
                 <ScalarProperty Name="comunidad" ColumnName="comunidad" />
                 <ScalarProperty Name="kermesse" ColumnName="kermesse" />
                 <ScalarProperty Name="idIngresoComunidad" ColumnName="idIngresoComunidad" />
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwDenominaciones">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwDenominacione">
+              <MappingFragment StoreEntitySet="VwDenominaciones">
+                <ScalarProperty Name="idDenominacion" ColumnName="idDenominacion" />
+                <ScalarProperty Name="Moneda" ColumnName="Moneda" />
+                <ScalarProperty Name="ValorLetras" ColumnName="ValorLetras" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwArqueoCajas">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwArqueoCaja">
+              <MappingFragment StoreEntitySet="VwArqueoCaja">
+                <ScalarProperty Name="granTotal" ColumnName="granTotal" />
+                <ScalarProperty Name="fechaArqueo" ColumnName="fechaArqueo" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+                <ScalarProperty Name="idArqueoCaja" ColumnName="idArqueoCaja" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwGastoes">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwGasto">
+              <MappingFragment StoreEntitySet="VwGasto">
+                <ScalarProperty Name="monto" ColumnName="monto" />
+                <ScalarProperty Name="concepto" ColumnName="concepto" />
+                <ScalarProperty Name="fechGasto" ColumnName="fechGasto" />
+                <ScalarProperty Name="catGasto" ColumnName="catGasto" />
+                <ScalarProperty Name="kermesse" ColumnName="kermesse" />
+                <ScalarProperty Name="idGasto" ColumnName="idGasto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwArqueoCajaDets">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwArqueoCajaDet">
+              <MappingFragment StoreEntitySet="VwArqueoCajaDet">
+                <ScalarProperty Name="subtotal" ColumnName="subtotal" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="idArqueoCajaDet" ColumnName="idArqueoCajaDet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

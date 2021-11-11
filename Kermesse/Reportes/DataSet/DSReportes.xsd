@@ -145,9 +145,9 @@
         <xs:element name="Denominaciones" msprop:Generator_TableClassName="DenominacionesDataTable" msprop:Generator_TableVarName="tableDenominaciones" msprop:Generator_RowChangedName="DenominacionesRowChanged" msprop:Generator_TablePropName="Denominaciones" msprop:Generator_RowDeletingName="DenominacionesRowDeleting" msprop:Generator_RowChangingName="DenominacionesRowChanging" msprop:Generator_RowEvHandlerName="DenominacionesRowChangeEventHandler" msprop:Generator_RowDeletedName="DenominacionesRowDeleted" msprop:Generator_RowClassName="DenominacionesRow" msprop:Generator_UserTableName="Denominaciones" msprop:Generator_RowEvArgName="DenominacionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="moneda" msprop:Generator_ColumnVarNameInTable="columnmoneda" msprop:Generator_ColumnPropNameInRow="moneda" msprop:Generator_ColumnPropNameInTable="monedaColumn" msprop:Generator_UserColumnName="moneda" type="xs:string" minOccurs="0" />
-              <xs:element name="valor" msprop:Generator_ColumnVarNameInTable="columnvalor" msprop:Generator_ColumnPropNameInRow="valor" msprop:Generator_ColumnPropNameInTable="valorColumn" msprop:Generator_UserColumnName="valor" type="xs:string" minOccurs="0" />
-              <xs:element name="valorLetras" msprop:Generator_ColumnVarNameInTable="columnvalorLetras" msprop:Generator_ColumnPropNameInRow="valorLetras" msprop:Generator_ColumnPropNameInTable="valorLetrasColumn" msprop:Generator_UserColumnName="valorLetras" type="xs:string" minOccurs="0" />
+              <xs:element name="Moneda" msprop:Generator_ColumnVarNameInTable="columnMoneda" msprop:Generator_ColumnPropNameInRow="Moneda" msprop:Generator_ColumnPropNameInTable="MonedaColumn" msprop:Generator_UserColumnName="Moneda" type="xs:string" minOccurs="0" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:string" minOccurs="0" />
+              <xs:element name="ValorLetras" msprop:Generator_ColumnVarNameInTable="columnValorLetras" msprop:Generator_ColumnPropNameInRow="ValorLetras" msprop:Generator_ColumnPropNameInTable="ValorLetrasColumn" msprop:Generator_UserColumnName="ValorLetras" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

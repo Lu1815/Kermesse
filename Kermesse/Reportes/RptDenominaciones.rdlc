@@ -125,21 +125,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="moneda">
+                    <Textbox Name="Moneda">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!moneda.Value</Value>
+                              <Value>=Fields!Moneda.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>moneda</rd:DefaultName>
+                      <rd:DefaultName>Moneda</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -155,21 +155,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="valor">
+                    <Textbox Name="Valor">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!valor.Value</Value>
+                              <Value>=Fields!Valor.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Left</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>valor</rd:DefaultName>
+                      <rd:DefaultName>Valor</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -181,25 +183,26 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="valorLetras">
+                    <Textbox Name="ValorLetras">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!valorLetras.Value</Value>
+                              <Value>=Fields!ValorLetras.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>valorLetras</rd:DefaultName>
+                      <rd:DefaultName>ValorLetras</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -234,11 +237,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DSDenominaciones</DataSetName>
+        <DataSetName>VwDenominaciones</DataSetName>
         <Top>0.57167in</Top>
         <Left>0.41311in</Left>
         <Height>0.5in</Height>
-        <Width>5.67379in</Width>
+        <Width>5.67378in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -424,22 +427,22 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DSDenominaciones">
+    <DataSet Name="VwDenominaciones">
       <Query>
         <DataSourceName>DSReportes</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="moneda">
-          <DataField>moneda</DataField>
+        <Field Name="Moneda">
+          <DataField>Moneda</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="valor">
-          <DataField>valor</DataField>
+        <Field Name="Valor">
+          <DataField>Valor</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="valorLetras">
-          <DataField>valorLetras</DataField>
+        <Field Name="ValorLetras">
+          <DataField>ValorLetras</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>

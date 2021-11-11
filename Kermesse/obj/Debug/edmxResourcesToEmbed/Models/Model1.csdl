@@ -955,10 +955,6 @@
   <EntityType Name="VwListaPrecio">
     <Key>
       <PropertyRef Name="idListaPrecio" />
-      <PropertyRef Name="kermesse" />
-      <PropertyRef Name="nombre" />
-      <PropertyRef Name="descripcion" />
-      <PropertyRef Name="estado" />
     </Key>
     <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
     <Property Name="kermesse" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />

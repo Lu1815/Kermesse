@@ -174,5 +174,30 @@ namespace Kermesse.Controllers
             
             return new FileContentResult(b, mt);
         }
+
+        [Authorize]
+        public ActionResult VerReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptCategoriaProductoVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            CategoriaProducto c = db.CategoriaProductoes.Find(id);
+            List<CategoriaProducto> ls = new List<CategoriaProducto>();
+
+            ls.Add(c);
+
+            ReportDataSource rds = new ReportDataSource("DSCategoriaProducto", ls);
+
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
+
+            return new FileContentResult(b, mt);
+        }
     }
 }

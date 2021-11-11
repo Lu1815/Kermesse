@@ -1,38 +1,38 @@
 ﻿@model Kermesse.Models.CategoriaProducto
 
 @{
-    ViewBag.Title = "Viendo categoría de producto";
+    ViewBag.Title = "Categoría de productos";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Detalles</h2>
+<h1>Categoría de productos</h1>
 
-<div>
-    <h4>Viendo categoria de producto</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.nombre)
-        </dt>
+    <div>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.nombre)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.nombre)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.nombre)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.descripcion)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.descripcion)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.descripcion)
-        </dd>
-    </dl>
-</div>
-<p>
-    <button type="button" class="btn btn-secondary">
-        @Html.ActionLink("Editar", "Edit", new { id = Model.idCatProd }, new { @class = "text-light" })
-    </button>|
-    <button type="button" class="btn btn-primary">
-        @Html.ActionLink("Regresar", "Index", null, new { @class = "text-light" })
-    </button>
-</p>
+            <dd>
+                @Html.DisplayFor(model => model.descripcion)
+            </dd>
+        </dl>
+
+        <div class="form-group">
+            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                @Html.ActionLink("Editar", "Edit", new { id = Model.idCatProd }, new { @class = "btn btn-success w-100" })
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary w-100" })
+            </div>
+        </div>
+    </div>
+

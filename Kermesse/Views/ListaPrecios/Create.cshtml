@@ -1,11 +1,11 @@
 ﻿@model Kermesse.Models.ListaPrecio
 
 @{
-    ViewBag.Title = "Crear nueva lista de de precio";
+    ViewBag.Title = "Creando nueva lista de de precio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Crear nueva lista de de precio</h2>
+<h1>Creando nueva lista de de precio</h1>
 
 
 @using (Html.BeginForm()) 
@@ -13,8 +13,6 @@
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Lista de precio</h4>
-        <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger mb-2" })
         <div class="form-group">
             @Html.LabelFor(model => model.kermesse, "Kermesse", htmlAttributes: new { @class = "control-label col-md-2 mb-2" })
@@ -41,20 +39,16 @@
         </div>
 
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Crear" class="btn btn-success" />
+            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                <input type="submit" value="Crear" class="btn btn-success w-100" />
+            </div>
+            <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+                <a href="Index" class="btn btn-primary w-100">Regresar</a>
             </div>
         </div>
     </div>
 }
 
-<div>
-    <div class="mb-1">
-        <button type="button" class="btn btn-primary">
-            @Html.ActionLink("Regresar", "Index", null, new { @class = "text-light" })
-        </button>
-    </div>
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")

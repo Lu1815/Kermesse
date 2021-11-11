@@ -1262,6 +1262,7 @@
     <EmbeddedResource Include="Reportes\RptBonosVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaGasto.rdlc" />
     <EmbeddedResource Include="Reportes\RptCategoriaProducto1.rdlc" />
+    <EmbeddedResource Include="Reportes\RptCategoriaProductoVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptComunidades.rdlc" />
     <EmbeddedResource Include="Reportes\RptComunidadesVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptDenominaciones.rdlc" />
@@ -1274,6 +1275,7 @@
     <EmbeddedResource Include="Reportes\RptIngresoComunidadVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecio1.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecioDet.rdlc" />
+    <EmbeddedResource Include="Reportes\RptListaPrecioVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptOpciones.rdlc" />
     <EmbeddedResource Include="Reportes\RptParroquia1.rdlc" />
     <EmbeddedResource Include="Reportes\RptProductos.rdlc" />

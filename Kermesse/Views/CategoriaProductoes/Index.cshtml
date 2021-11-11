@@ -78,14 +78,17 @@
                 </td>
                 <td>
                     <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idCatProd })">
-                        <i class="fa fa-edit"></i>
-                    </a>
-                    <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idCatProd })">
-                        <i class="fa fa-eye"></i>
-                    </a>
-                    <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idCatProd })">
-                        <i class="fa fa-trash"></i>
-                    </a>
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idCatProd })">
+                            <i class="fa fa-eye"></i>
+                        </a>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idCatProd })">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                        <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idCatProd })" target="_blank">
+                            <i class="fa fa-file-pdf-o"></i>
+                        </a>
                 </td>
             </tr>
         }

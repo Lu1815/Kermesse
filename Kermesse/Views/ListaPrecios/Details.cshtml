@@ -1,15 +1,14 @@
 ﻿@model Kermesse.Models.ListaPrecio
 
 @{
-    ViewBag.Title = "Viendo lista de precio";
+    ViewBag.Title = "Lista de precio";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Viendo lista de precio</h2>
+<h1>Lista de precio</h1>
 
 <div>
-    <h4>Lista de precio</h4>
-    <hr />
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.nombre)
@@ -36,12 +35,13 @@
         </dd>
 
     </dl>
+
+    <div class="form-group">
+        <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+            @Html.ActionLink("Editar", "Edit", new { id = Model.idListaPrecio }, new { @class = "btn btn-success w-100" })
+        </div>
+        <div class="col-12 col-md-6 col-lg-3 col-xl-2">
+            @Html.ActionLink("Regresar", "Index", null, new { @class = "btn btn-primary w-100" })
+        </div>
+    </div>
 </div>
-<p>
-    <button type="button" class="btn btn-secondary">
-        @Html.ActionLink("Editar", "Edit", new { id = Model.idListaPrecio }, new { @class = "text-light" })
-    </button>|
-    <button type="button" class="btn btn-primary">
-        @Html.ActionLink("Regresar", "Index", null, new { @class = "text-light" })
-    </button>
-</p>

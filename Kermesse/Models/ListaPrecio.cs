@@ -23,6 +23,8 @@ namespace Kermesse.Models
 
         [Display(Name = "Lista de precio")]
         public int idListaPrecio { get; set; }
+
+        [Display(Name = "Kermesse")]
         public Nullable<int> kermesse { get; set; }
         [Display(Name = "Lista de precio")]
         [Required(ErrorMessage = "Este campo es requerido")]

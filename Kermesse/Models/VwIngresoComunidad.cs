@@ -10,7 +10,7 @@
 namespace Kermesse.Models
 {
     using System;
-    using System.Collections.Generic; using System.ComponentModel.DataAnnotations;
+    using System.Collections.Generic;
     
     public partial class VwIngresoComunidad
     {

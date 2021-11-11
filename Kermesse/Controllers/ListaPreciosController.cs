@@ -24,7 +24,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                lp = lp.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato));
+                lp = lp.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato) || m.Kermesse1.nombre.Contains(dato));
             }
 
             return View(lp.ToList());
@@ -172,6 +172,31 @@ namespace Kermesse.Controllers
             rpt.DataSources.Add(rds);
 
             var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+
+            return new FileContentResult(b, mt);
+        }
+
+        [Authorize]
+        public ActionResult VerReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptListaPrecioVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            VwListaPrecio l = db.VwListaPrecios.Find(id);
+            List<VwListaPrecio> ls = new List<VwListaPrecio>();
+
+            ls.Add(l);
+
+            ReportDataSource rds = new ReportDataSource("DSListaPrecio", ls);
+
+            rpt.DataSources.Add(rds);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
 
             return new FileContentResult(b, mt);
         }

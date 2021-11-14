@@ -175,7 +175,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             
             LocalReport rpt = new LocalReport();
@@ -187,7 +187,15 @@ namespace Kermesse.Controllers
             rpt.ReportPath = ruta;
 
             List<VwIngresoComunidad> ls = new List<VwIngresoComunidad>();
-            ls = db.VwIngresoComunidads.ToList();
+            var ic = from m in db.VwIngresoComunidads select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                ic = ic.Where(m => m.comunidad.Contains(busq) || m.kermesse.Contains(busq) || m.producto.Contains(busq));
+            }
+
+            ls = ic.ToList();
+
 
             ReportDataSource rd = new ReportDataSource("DSIngresoComunidad", ls);
             rpt.DataSources.Add(rd);

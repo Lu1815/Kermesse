@@ -20,19 +20,16 @@
                     aria-expanded="false">
                 Reporte
             </button>
+
             <ul class="dropdown-menu" aria-labelledby="reportOptions">
                 <li>
-                    <a class="dropdown-item"
-                       href="/IngresoComunidads/verReporte?tipo=PDF"
-                       target="_blank">PDF</a>
+                    <a href="#">@Html.ActionLink("PDF", "verReporte", new { tipo = "PDF", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target="_blank" })</a>
                 </li>
                 <li>
-                    <a class="dropdown-item"
-                       href="/IngresoComunidads/verReporte?tipo=Word">Word</a>
+                    <a href="#">@Html.ActionLink("Word", "verReporte", new { tipo = "WORD", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
                 <li>
-                    <a class="dropdown-item"
-                       href="/IngresoComunidads/verReporte?tipo=Excel">Excel</a>
+                    <a href="#">@Html.ActionLink("Excel", "verReporte", new { tipo = "EXCEL", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
             </ul>
         </div>

@@ -61,7 +61,7 @@ namespace Kermesse.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public ActionResult Create([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBonoHelper")] IngresoComunidadDet ingresoComunidadDet)
+        public ActionResult Create([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBono")] IngresoComunidadDet ingresoComunidadDet)
         {
 
             IngresoComunidadDet i = new IngresoComunidadDet();
@@ -74,7 +74,7 @@ namespace Kermesse.Controllers
 
             if (ModelState.IsValid)
             {
-                db.IngresoComunidadDets.Add(i);
+                db.IngresoComunidadDets.Add(ingresoComunidadDet);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -116,7 +116,7 @@ namespace Kermesse.Controllers
             i.bono = ingresoComunidadDet.bono;
             i.denominacion = ingresoComunidadDet.denominacion;
             i.cantidad = ingresoComunidadDet.cantidad;
-            // i.subTotalBono = ingresoComunidadDet.subTotalBono;
+            i.subTotalBono = ingresoComunidadDet.subTotalBono;
 
             if (ModelState.IsValid)
             {
@@ -168,7 +168,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -179,7 +179,14 @@ namespace Kermesse.Controllers
             rpt.ReportPath = ruta;
 
             List<VwIngresoComunidadDet> ls = new List<VwIngresoComunidadDet>();
-            ls = db.VwIngresoComunidadDets.ToList();
+            var icd = from m in db.VwIngresoComunidadDets select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                icd = icd.Where(m => m.denominacion.Contains(busq) || m.bono.Contains(busq));
+            }
+
+            ls = icd.ToList();
 
             ReportDataSource rd = new ReportDataSource("DSIngresoComunidadDet", ls);
             rpt.DataSources.Add(rd);

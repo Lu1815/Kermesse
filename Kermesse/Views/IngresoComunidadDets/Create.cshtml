@@ -14,7 +14,7 @@
     <div class="form-horizontal">
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.ingresoComunidad, "ingresoComunidad", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.ingresoComunidad, "Ingreso de comunidad", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("ingresoComunidad", null, htmlAttributes: new { @class = "form-control mb-2" })
                 @Html.ValidationMessageFor(model => model.ingresoComunidad, "", new { @class = "text-danger" })
@@ -22,7 +22,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.bono, "bono", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.bono, "Bono", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("bono", null, htmlAttributes: new { @class = "form-control mb-2" })
                 @Html.ValidationMessageFor(model => model.bono, "", new { @class = "text-danger" })
@@ -48,7 +48,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.subTotalBono, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.subTotalBono, new { htmlAttributes = new { @class = "form-control mb-2" } })
+                @Html.EditorFor(model => model.subTotalBono, new { htmlAttributes = new { @class = "form-control mb-2", type="number", min="0", step="0.01" } })
                 @Html.ValidationMessageFor(model => model.subTotalBono, "", new { @class = "text-danger" })
             </div>
         </div>

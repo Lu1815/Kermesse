@@ -49,7 +49,7 @@ namespace Kermesse.Models
         public string apellidos { get; set; }
         [Display(Name = "Correo Electrónico")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [DataType(DataType.EmailAddress)]
+        [DataType(DataType.EmailAddress, ErrorMessage = "Debe ingresar un correo válido")]
         public string email { get; set; }
         [Display(Name = "Estado")]
         [Required(ErrorMessage = "Este campo es requerido")]

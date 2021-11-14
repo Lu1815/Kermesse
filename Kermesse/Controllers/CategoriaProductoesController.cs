@@ -152,7 +152,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult VerReporte(string tipo)
+        public ActionResult VerReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -164,7 +164,14 @@ namespace Kermesse.Controllers
 
             List<CategoriaProducto> ls = new List<CategoriaProducto>();
 
-            ls = db.CategoriaProductoes.ToList();
+            var cp = from m in db.CategoriaProductoes select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                cp = cp.Where(m => m.nombre.Contains(busq) || m.descripcion.Contains(busq));
+            }
+
+            ls = cp.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSCategoriaProducto", ls);
 

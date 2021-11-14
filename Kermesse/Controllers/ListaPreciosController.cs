@@ -153,7 +153,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult VerReporte(string tipo)
+        public ActionResult VerReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -165,7 +165,14 @@ namespace Kermesse.Controllers
 
             List<VwListaPrecio> ls = new List<VwListaPrecio>();
 
-            ls = db.VwListaPrecios.ToList();
+            var lp = from m in db.VwListaPrecios select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                lp = lp.Where(m => m.nombre.Contains(busq) || m.descripcion.Contains(busq) || m.kermesse.Contains(busq));
+            }
+
+            ls = lp.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSListaPrecio", ls);
 

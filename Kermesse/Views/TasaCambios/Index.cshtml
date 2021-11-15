@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Kermesse.Models.TasaCambio>
+﻿@model IEnumerable<Kermesse.Models.VwTasaCambio>
 
 @{
     ViewBag.Title = "Tasa cambio";
@@ -22,17 +22,13 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="reportOptions">
                 <li>
-                    <a class="dropdown-item"
-                       href="/TasaCambios/verReporte?tipo=PDF"
-                       target="_blank">PDF</a>
+                    <a href="#">@Html.ActionLink("PDF", "verReporte", new { tipo = "PDF", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
                 <li>
-                    <a class="dropdown-item"
-                       href="/TasaCambios/verReporte?tipo=Word">Word</a>
+                    <a href="#">@Html.ActionLink("Word", "verReporte", new { tipo = "WORD", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
                 <li>
-                    <a class="dropdown-item"
-                       href="/TasaCambios/verReporte?tipo=Excel">Excel</a>
+                    <a href="#">@Html.ActionLink("Excel", "verReporte", new { tipo = "EXCEL", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
             </ul>
         </div>
@@ -57,7 +53,7 @@
                     @Html.DisplayNameFor(model => model.mes)
                 </th>
                 <th>
-                    @Html.DisplayNameFor(model => model.anio)
+                    @Html.DisplayNameFor(model => model.año)
                 </th>
                 <th>
                     Moneda origen
@@ -79,13 +75,13 @@
                         @Html.DisplayFor(modelItem => item.mes)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.anio)
+                        @Html.DisplayFor(modelItem => item.año)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Moneda.nombre)
+                        @Html.DisplayFor(modelItem => item.monedaO)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Moneda1.nombre)
+                        @Html.DisplayFor(modelItem => item.monedaC)
                     </td>
                     <td>
                         <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idTasaCambio })">
@@ -96,6 +92,9 @@
                         </a>
                         <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idTasaCambio })">
                             <i class="fa fa-trash"></i>
+                        </a>
+                        <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idTasaCambio })" target="_blank">
+                            <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </td>
                 </tr>

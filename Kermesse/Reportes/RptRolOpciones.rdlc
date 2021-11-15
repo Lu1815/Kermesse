@@ -89,21 +89,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="rol">
+                    <Textbox Name="Rol">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!rol.Value</Value>
+                              <Value>=Fields!Rol.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>rol</rd:DefaultName>
+                      <rd:DefaultName>Rol</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -119,21 +119,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="opciones">
+                    <Textbox Name="Opción">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!opciones.Value</Value>
+                              <Value>=Fields!Opción.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>opciones</rd:DefaultName>
+                      <rd:DefaultName>Opción</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -171,7 +171,7 @@
         <Top>0.64458in</Top>
         <Left>0.41311in</Left>
         <Height>0.5in</Height>
-        <Width>5.67379in</Width>
+        <Width>5.67378in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -363,18 +363,18 @@
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="rol">
-          <DataField>rol</DataField>
+        <Field Name="Rol">
+          <DataField>Rol</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="opciones">
-          <DataField>opciones</DataField>
+        <Field Name="Opción">
+          <DataField>Opción</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSReportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\luisf\VS-Workspace\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
         <rd:TableName>RolOpciones</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

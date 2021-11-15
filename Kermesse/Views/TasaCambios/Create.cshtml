@@ -16,7 +16,7 @@
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
-            @Html.LabelFor(model => model.monedaO, "monedaO", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.monedaO, "Moneda de Origen", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("monedaO", null, htmlAttributes: new { @class = "form-control mb-2", @required = "required" })
                 @Html.ValidationMessageFor(model => model.monedaO, "", new { @class = "text-danger" })
@@ -24,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.monedaC, "monedaC", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.monedaC, "Moneda de Cambio", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("monedaC", null, htmlAttributes: new { @class = "form-control mb-2", @required = "required" })
                 @Html.ValidationMessageFor(model => model.monedaC, "", new { @class = "text-danger" })
@@ -32,7 +32,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.mes, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.mes, "Mes",htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.mes, new { htmlAttributes = new { @class = "form-control mb-2", @required = "required" } })
                 @Html.ValidationMessageFor(model => model.mes, "", new { @class = "text-danger" })
@@ -40,7 +40,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.anio, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.anio, "Año", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.anio, new { htmlAttributes = new { @class = "form-control mb-2", @required = "required" } })
                 @Html.ValidationMessageFor(model => model.anio, "", new { @class = "text-danger" })

@@ -2924,7 +2924,7 @@ namespace Kermesse.Reportes.DataSet {
             
             private global::System.Data.DataColumn columnmes;
             
-            private global::System.Data.DataColumn columnanio;
+            private global::System.Data.DataColumn columnaño;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2985,9 +2985,9 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn anioColumn {
+            public global::System.Data.DataColumn añoColumn {
                 get {
-                    return this.columnanio;
+                    return this.columnaño;
                 }
             }
             
@@ -3028,13 +3028,13 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TasaCambioRow AddTasaCambioRow(string monedaO, string monedaC, string mes, string anio) {
+            public TasaCambioRow AddTasaCambioRow(string monedaO, string monedaC, string mes, string año) {
                 TasaCambioRow rowTasaCambioRow = ((TasaCambioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         monedaO,
                         monedaC,
                         mes,
-                        anio};
+                        año};
                 rowTasaCambioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowTasaCambioRow);
                 return rowTasaCambioRow;
@@ -3060,7 +3060,7 @@ namespace Kermesse.Reportes.DataSet {
                 this.columnmonedaO = base.Columns["monedaO"];
                 this.columnmonedaC = base.Columns["monedaC"];
                 this.columnmes = base.Columns["mes"];
-                this.columnanio = base.Columns["anio"];
+                this.columnaño = base.Columns["año"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3072,8 +3072,8 @@ namespace Kermesse.Reportes.DataSet {
                 base.Columns.Add(this.columnmonedaC);
                 this.columnmes = new global::System.Data.DataColumn("mes", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmes);
-                this.columnanio = new global::System.Data.DataColumn("anio", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnanio);
+                this.columnaño = new global::System.Data.DataColumn("año", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnaño);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3207,9 +3207,9 @@ namespace Kermesse.Reportes.DataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class RolUsuarioDataTable : global::System.Data.TypedTableBase<RolUsuarioRow> {
             
-            private global::System.Data.DataColumn columnusuario;
+            private global::System.Data.DataColumn columnuserName;
             
-            private global::System.Data.DataColumn columnrol;
+            private global::System.Data.DataColumn columnrolDescripcion;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3246,17 +3246,17 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn usuarioColumn {
+            public global::System.Data.DataColumn userNameColumn {
                 get {
-                    return this.columnusuario;
+                    return this.columnuserName;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn rolColumn {
+            public global::System.Data.DataColumn rolDescripcionColumn {
                 get {
-                    return this.columnrol;
+                    return this.columnrolDescripcion;
                 }
             }
             
@@ -3297,11 +3297,11 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RolUsuarioRow AddRolUsuarioRow(string usuario, string rol) {
+            public RolUsuarioRow AddRolUsuarioRow(string userName, string rolDescripcion) {
                 RolUsuarioRow rowRolUsuarioRow = ((RolUsuarioRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        usuario,
-                        rol};
+                        userName,
+                        rolDescripcion};
                 rowRolUsuarioRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRolUsuarioRow);
                 return rowRolUsuarioRow;
@@ -3324,17 +3324,17 @@ namespace Kermesse.Reportes.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnusuario = base.Columns["usuario"];
-                this.columnrol = base.Columns["rol"];
+                this.columnuserName = base.Columns["userName"];
+                this.columnrolDescripcion = base.Columns["rolDescripcion"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnusuario = new global::System.Data.DataColumn("usuario", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnusuario);
-                this.columnrol = new global::System.Data.DataColumn("rol", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrol);
+                this.columnuserName = new global::System.Data.DataColumn("userName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnuserName);
+                this.columnrolDescripcion = new global::System.Data.DataColumn("rolDescripcion", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrolDescripcion);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3715,9 +3715,9 @@ namespace Kermesse.Reportes.DataSet {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class RolOpcionesDataTable : global::System.Data.TypedTableBase<RolOpcionesRow> {
             
-            private global::System.Data.DataColumn columnrol;
+            private global::System.Data.DataColumn columnRol;
             
-            private global::System.Data.DataColumn columnopciones;
+            private global::System.Data.DataColumn columnOpción;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -3754,17 +3754,17 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn rolColumn {
+            public global::System.Data.DataColumn RolColumn {
                 get {
-                    return this.columnrol;
+                    return this.columnRol;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn opcionesColumn {
+            public global::System.Data.DataColumn OpciónColumn {
                 get {
-                    return this.columnopciones;
+                    return this.columnOpción;
                 }
             }
             
@@ -3805,11 +3805,11 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public RolOpcionesRow AddRolOpcionesRow(string rol, string opciones) {
+            public RolOpcionesRow AddRolOpcionesRow(string Rol, string Opción) {
                 RolOpcionesRow rowRolOpcionesRow = ((RolOpcionesRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        rol,
-                        opciones};
+                        Rol,
+                        Opción};
                 rowRolOpcionesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowRolOpcionesRow);
                 return rowRolOpcionesRow;
@@ -3832,17 +3832,17 @@ namespace Kermesse.Reportes.DataSet {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnrol = base.Columns["rol"];
-                this.columnopciones = base.Columns["opciones"];
+                this.columnRol = base.Columns["Rol"];
+                this.columnOpción = base.Columns["Opción"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnrol = new global::System.Data.DataColumn("rol", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnrol);
-                this.columnopciones = new global::System.Data.DataColumn("opciones", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnopciones);
+                this.columnRol = new global::System.Data.DataColumn("Rol", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnRol);
+                this.columnOpción = new global::System.Data.DataColumn("Opción", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnOpción);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7644,17 +7644,17 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string anio {
+            public string año {
                 get {
                     try {
-                        return ((string)(this[this.tableTasaCambio.anioColumn]));
+                        return ((string)(this[this.tableTasaCambio.añoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'anio\' in table \'TasaCambio\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'año\' in table \'TasaCambio\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTasaCambio.anioColumn] = value;
+                    this[this.tableTasaCambio.añoColumn] = value;
                 }
             }
             
@@ -7696,14 +7696,14 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsanioNull() {
-                return this.IsNull(this.tableTasaCambio.anioColumn);
+            public bool IsañoNull() {
+                return this.IsNull(this.tableTasaCambio.añoColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetanioNull() {
-                this[this.tableTasaCambio.anioColumn] = global::System.Convert.DBNull;
+            public void SetañoNull() {
+                this[this.tableTasaCambio.añoColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7723,58 +7723,58 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string usuario {
+            public string userName {
                 get {
                     try {
-                        return ((string)(this[this.tableRolUsuario.usuarioColumn]));
+                        return ((string)(this[this.tableRolUsuario.userNameColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'usuario\' in table \'RolUsuario\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'userName\' in table \'RolUsuario\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRolUsuario.usuarioColumn] = value;
+                    this[this.tableRolUsuario.userNameColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string rol {
+            public string rolDescripcion {
                 get {
                     try {
-                        return ((string)(this[this.tableRolUsuario.rolColumn]));
+                        return ((string)(this[this.tableRolUsuario.rolDescripcionColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'rol\' in table \'RolUsuario\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'rolDescripcion\' in table \'RolUsuario\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRolUsuario.rolColumn] = value;
+                    this[this.tableRolUsuario.rolDescripcionColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsusuarioNull() {
-                return this.IsNull(this.tableRolUsuario.usuarioColumn);
+            public bool IsuserNameNull() {
+                return this.IsNull(this.tableRolUsuario.userNameColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetusuarioNull() {
-                this[this.tableRolUsuario.usuarioColumn] = global::System.Convert.DBNull;
+            public void SetuserNameNull() {
+                this[this.tableRolUsuario.userNameColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsrolNull() {
-                return this.IsNull(this.tableRolUsuario.rolColumn);
+            public bool IsrolDescripcionNull() {
+                return this.IsNull(this.tableRolUsuario.rolDescripcionColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetrolNull() {
-                this[this.tableRolUsuario.rolColumn] = global::System.Convert.DBNull;
+            public void SetrolDescripcionNull() {
+                this[this.tableRolUsuario.rolDescripcionColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -7837,58 +7837,58 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string rol {
+            public string Rol {
                 get {
                     try {
-                        return ((string)(this[this.tableRolOpciones.rolColumn]));
+                        return ((string)(this[this.tableRolOpciones.RolColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'rol\' in table \'RolOpciones\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Rol\' in table \'RolOpciones\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRolOpciones.rolColumn] = value;
+                    this[this.tableRolOpciones.RolColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string opciones {
+            public string Opción {
                 get {
                     try {
-                        return ((string)(this[this.tableRolOpciones.opcionesColumn]));
+                        return ((string)(this[this.tableRolOpciones.OpciónColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'opciones\' in table \'RolOpciones\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'Opción\' in table \'RolOpciones\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableRolOpciones.opcionesColumn] = value;
+                    this[this.tableRolOpciones.OpciónColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsrolNull() {
-                return this.IsNull(this.tableRolOpciones.rolColumn);
+            public bool IsRolNull() {
+                return this.IsNull(this.tableRolOpciones.RolColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetrolNull() {
-                this[this.tableRolOpciones.rolColumn] = global::System.Convert.DBNull;
+            public void SetRolNull() {
+                this[this.tableRolOpciones.RolColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsopcionesNull() {
-                return this.IsNull(this.tableRolOpciones.opcionesColumn);
+            public bool IsOpciónNull() {
+                return this.IsNull(this.tableRolOpciones.OpciónColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetopcionesNull() {
-                this[this.tableRolOpciones.opcionesColumn] = global::System.Convert.DBNull;
+            public void SetOpciónNull() {
+                this[this.tableRolOpciones.OpciónColumn] = global::System.Convert.DBNull;
             }
         }
         

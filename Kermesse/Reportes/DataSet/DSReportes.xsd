@@ -82,15 +82,15 @@
               <xs:element name="monedaO" msprop:Generator_ColumnVarNameInTable="columnmonedaO" msprop:Generator_ColumnPropNameInRow="monedaO" msprop:Generator_ColumnPropNameInTable="monedaOColumn" msprop:Generator_UserColumnName="monedaO" type="xs:string" minOccurs="0" />
               <xs:element name="monedaC" msprop:Generator_ColumnVarNameInTable="columnmonedaC" msprop:Generator_ColumnPropNameInRow="monedaC" msprop:Generator_ColumnPropNameInTable="monedaCColumn" msprop:Generator_UserColumnName="monedaC" type="xs:string" minOccurs="0" />
               <xs:element name="mes" msprop:Generator_ColumnVarNameInTable="columnmes" msprop:Generator_ColumnPropNameInRow="mes" msprop:Generator_ColumnPropNameInTable="mesColumn" msprop:Generator_UserColumnName="mes" type="xs:string" minOccurs="0" />
-              <xs:element name="anio" msprop:Generator_ColumnVarNameInTable="columnanio" msprop:Generator_ColumnPropNameInRow="anio" msprop:Generator_ColumnPropNameInTable="anioColumn" msprop:Generator_UserColumnName="anio" type="xs:string" minOccurs="0" />
+              <xs:element name="año" msprop:Generator_ColumnVarNameInTable="columnaño" msprop:Generator_ColumnPropNameInRow="año" msprop:Generator_ColumnPropNameInTable="añoColumn" msprop:Generator_UserColumnName="año" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="RolUsuario" msprop:Generator_TableClassName="RolUsuarioDataTable" msprop:Generator_TableVarName="tableRolUsuario" msprop:Generator_RowChangedName="RolUsuarioRowChanged" msprop:Generator_TablePropName="RolUsuario" msprop:Generator_RowDeletingName="RolUsuarioRowDeleting" msprop:Generator_RowChangingName="RolUsuarioRowChanging" msprop:Generator_RowEvHandlerName="RolUsuarioRowChangeEventHandler" msprop:Generator_RowDeletedName="RolUsuarioRowDeleted" msprop:Generator_RowClassName="RolUsuarioRow" msprop:Generator_UserTableName="RolUsuario" msprop:Generator_RowEvArgName="RolUsuarioRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
-              <xs:element name="rol" msprop:Generator_ColumnVarNameInTable="columnrol" msprop:Generator_ColumnPropNameInRow="rol" msprop:Generator_ColumnPropNameInTable="rolColumn" msprop:Generator_UserColumnName="rol" type="xs:string" minOccurs="0" />
+              <xs:element name="userName" msprop:Generator_ColumnVarNameInTable="columnuserName" msprop:Generator_ColumnPropNameInRow="userName" msprop:Generator_ColumnPropNameInTable="userNameColumn" msprop:Generator_UserColumnName="userName" type="xs:string" minOccurs="0" />
+              <xs:element name="rolDescripcion" msprop:Generator_ColumnVarNameInTable="columnrolDescripcion" msprop:Generator_ColumnPropNameInRow="rolDescripcion" msprop:Generator_ColumnPropNameInTable="rolDescripcionColumn" msprop:Generator_UserColumnName="rolDescripcion" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -104,8 +104,8 @@
         <xs:element name="RolOpciones" msprop:Generator_TableClassName="RolOpcionesDataTable" msprop:Generator_TableVarName="tableRolOpciones" msprop:Generator_RowChangedName="RolOpcionesRowChanged" msprop:Generator_TablePropName="RolOpciones" msprop:Generator_RowDeletingName="RolOpcionesRowDeleting" msprop:Generator_RowChangingName="RolOpcionesRowChanging" msprop:Generator_RowEvHandlerName="RolOpcionesRowChangeEventHandler" msprop:Generator_RowDeletedName="RolOpcionesRowDeleted" msprop:Generator_RowClassName="RolOpcionesRow" msprop:Generator_UserTableName="RolOpciones" msprop:Generator_RowEvArgName="RolOpcionesRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="rol" msprop:Generator_ColumnVarNameInTable="columnrol" msprop:Generator_ColumnPropNameInRow="rol" msprop:Generator_ColumnPropNameInTable="rolColumn" msprop:Generator_UserColumnName="rol" type="xs:string" minOccurs="0" />
-              <xs:element name="opciones" msprop:Generator_ColumnVarNameInTable="columnopciones" msprop:Generator_ColumnPropNameInRow="opciones" msprop:Generator_ColumnPropNameInTable="opcionesColumn" msprop:Generator_UserColumnName="opciones" type="xs:string" minOccurs="0" />
+              <xs:element name="Rol" msprop:Generator_ColumnVarNameInTable="columnRol" msprop:Generator_ColumnPropNameInRow="Rol" msprop:Generator_ColumnPropNameInTable="RolColumn" msprop:Generator_UserColumnName="Rol" type="xs:string" minOccurs="0" />
+              <xs:element name="Opción" msprop:Generator_ColumnVarNameInTable="columnOpción" msprop:Generator_ColumnPropNameInRow="Opción" msprop:Generator_ColumnPropNameInTable="OpciónColumn" msprop:Generator_UserColumnName="Opción" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

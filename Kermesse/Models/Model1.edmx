@@ -388,6 +388,11 @@ warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primar
         <EntityType Name="VwProductos">
           <Key>
             <PropertyRef Name="idProducto" />
+            
+            
+            
+            
+            
           </Key>
           <Property Name="idProducto" Type="int" Nullable="false" />
           <Property Name="producto" Type="nvarchar" MaxLength="45" Nullable="false" />
@@ -396,6 +401,42 @@ warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primar
           <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="cantidad" Type="int" />
           <Property Name="precioVSugerido" Type="float" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwRolOpcion' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwRolOpcion">
+          <Key>
+            
+            
+            <PropertyRef Name="idRolOpcion" />
+          </Key>
+          <Property Name="Opción" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="Rol" Type="nvarchar" MaxLength="70" Nullable="false" />
+          <Property Name="idRolOpcion" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwRolUsuario' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwRolUsuario">
+          <Key>
+            <PropertyRef Name="idRolUsuario" />
+            
+            
+          </Key>
+          <Property Name="idRolUsuario" Type="int" Nullable="false" />
+          <Property Name="userName" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="rolDescripcion" Type="nvarchar" MaxLength="70" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwTasaCambio">
+          <Key>
+            <PropertyRef Name="idTasaCambio" />
+          </Key>
+          <Property Name="idTasaCambio" Type="int" Nullable="false" />
+          <Property Name="monedaO" Type="nvarchar" MaxLength="45" />
+          <Property Name="monedaC" Type="nvarchar" MaxLength="45" />
+          <Property Name="mes" Type="nvarchar" MaxLength="15" Nullable="false" />
+          <Property Name="año" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
           <End Role="ArqueoCaja" Type="Self.ArqueoCaja" Multiplicity="1" />
@@ -946,6 +987,29 @@ warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primar
     [VwProductos].[cantidad] AS [cantidad], 
     [VwProductos].[precioVSugerido] AS [precioVSugerido]
     FROM [dbo].[VwProductos] AS [VwProductos]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwRolOpcion" EntityType="Self.VwRolOpcion" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwRolOpcion].[Opción] AS [Opción], 
+    [VwRolOpcion].[Rol] AS [Rol], 
+    [VwRolOpcion].[idRolOpcion] AS [idRolOpcion]
+    FROM [dbo].[VwRolOpcion] AS [VwRolOpcion]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwRolUsuario" EntityType="Self.VwRolUsuario" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwRolUsuario].[idRolUsuario] AS [idRolUsuario], 
+    [VwRolUsuario].[userName] AS [userName], 
+    [VwRolUsuario].[rolDescripcion] AS [rolDescripcion]
+    FROM [dbo].[VwRolUsuario] AS [VwRolUsuario]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwTasaCambio" EntityType="Self.VwTasaCambio" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwTasaCambio].[idTasaCambio] AS [idTasaCambio], 
+    [VwTasaCambio].[monedaO] AS [monedaO], 
+    [VwTasaCambio].[monedaC] AS [monedaC], 
+    [VwTasaCambio].[mes] AS [mes], 
+    [VwTasaCambio].[año] AS [año]
+    FROM [dbo].[VwTasaCambio] AS [VwTasaCambio]</DefiningQuery>
           </EntitySet>
           <AssociationSet Name="FK__ArqueoCaj__arque__6FE99F9F" Association="Self.FK__ArqueoCaj__arque__6FE99F9F">
             <End Role="ArqueoCaja" EntitySet="ArqueoCaja" />
@@ -2053,6 +2117,9 @@ warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primar
           <EntitySet Name="VwArqueoCajaDets" EntityType="BDKermesseModel.VwArqueoCajaDet" />
           <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
           <EntitySet Name="VwProductos" EntityType="BDKermesseModel.VwProducto" />
+          <EntitySet Name="VwRolOpcions" EntityType="BDKermesseModel.VwRolOpcion" />
+          <EntitySet Name="VwRolUsuarios" EntityType="BDKermesseModel.VwRolUsuario" />
+          <EntitySet Name="VwTasaCambios" EntityType="BDKermesseModel.VwTasaCambio" />
         </EntityContainer>
         <EntityType Name="VwListaPrecio">
           <Key>
@@ -2144,6 +2211,32 @@ warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primar
           <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="cantidad" Type="Int32" />
           <Property Name="precioVSugerido" Type="Double" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VwRolOpcion">
+          <Key>
+            <PropertyRef Name="idRolOpcion" />
+          </Key>
+          <Property Name="Opción" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="Rol" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+          <Property Name="idRolOpcion" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VwRolUsuario">
+          <Key>
+            <PropertyRef Name="idRolUsuario" />
+          </Key>
+          <Property Name="idRolUsuario" Type="Int32" Nullable="false" />
+          <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VwTasaCambio">
+          <Key>
+            <PropertyRef Name="idTasaCambio" />
+          </Key>
+          <Property Name="idTasaCambio" Type="Int32" Nullable="false" />
+          <Property Name="monedaO" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="monedaC" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="mes" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="año" Type="Int32" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2525,6 +2618,35 @@ warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primar
                 <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="producto" ColumnName="producto" />
                 <ScalarProperty Name="idProducto" ColumnName="idProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwRolOpcions">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwRolOpcion">
+              <MappingFragment StoreEntitySet="VwRolOpcion">
+                <ScalarProperty Name="idRolOpcion" ColumnName="idRolOpcion" />
+                <ScalarProperty Name="Rol" ColumnName="Rol" />
+                <ScalarProperty Name="Opción" ColumnName="Opción" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwRolUsuarios">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwRolUsuario">
+              <MappingFragment StoreEntitySet="VwRolUsuario">
+                <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
+                <ScalarProperty Name="userName" ColumnName="userName" />
+                <ScalarProperty Name="idRolUsuario" ColumnName="idRolUsuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwTasaCambios">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwTasaCambio">
+              <MappingFragment StoreEntitySet="VwTasaCambio">
+                <ScalarProperty Name="año" ColumnName="año" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="monedaC" ColumnName="monedaC" />
+                <ScalarProperty Name="monedaO" ColumnName="monedaO" />
+                <ScalarProperty Name="idTasaCambio" ColumnName="idTasaCambio" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

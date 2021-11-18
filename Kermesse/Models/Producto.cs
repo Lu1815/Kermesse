@@ -11,8 +11,7 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Producto
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -21,39 +20,21 @@ namespace Kermesse.Models
             this.IngresoComunidads = new HashSet<IngresoComunidad>();
             this.ListaPrecioDets = new HashSet<ListaPrecioDet>();
         }
-
-        [Display(Name = "Producto")]
-
+    
         public int idProducto { get; set; }
-        [Display(Name = "Comunidad")]
         public Nullable<int> comunidad { get; set; }
-        [Display(Name = "Categoría")]
         public Nullable<int> catProd { get; set; }
-        [Display(Name = "Producto")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(45, ErrorMessage = "El tama�o m�ximo es 45 caracteres")]
         public string nombre { get; set; }
-        [Display(Name = "Descripción")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(100, ErrorMessage = "El tama�o m�ximo es 100 caracteres")]
         public string descripcion { get; set; }
-        [Display(Name = "Cantidad")]
         public Nullable<int> cantidad { get; set; }
-        [Display(Name = "Precio sugerido")]
-        [Required(ErrorMessage = "Este campo es requerido")]
-        
         public double precioVSugerido { get; set; }
         public int estado { get; set; }
-
-        [Display(Name = "Categoría")]
+    
         public virtual CategoriaProducto CategoriaProducto { get; set; }
-        [Display(Name = "Comunidad")]
         public virtual Comunidad Comunidad1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [Display(Name = "Ingreso de comunidad")]
         public virtual ICollection<IngresoComunidad> IngresoComunidads { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        [Display(Name = "Detalle de lista de precio")]
         public virtual ICollection<ListaPrecioDet> ListaPrecioDets { get; set; }
     }
 }

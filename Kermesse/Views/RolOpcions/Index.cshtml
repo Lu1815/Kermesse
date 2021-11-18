@@ -22,17 +22,13 @@
             </button>
             <ul class="dropdown-menu" aria-labelledby="reportOptions">
                 <li>
-                    <a class="dropdown-item"
-                       href="/RolOpcions/verReporte?tipo=PDF"
-                       target="_blank">PDF</a>
+                    <a href="#">@Html.ActionLink("PDF", "verReporte", new { tipo = "PDF", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target="_blank" })</a>
                 </li>
                 <li>
-                    <a class="dropdown-item"
-                       href="/RolOpcions/verReporte?tipo=Word">Word</a>
+                    <a href="#">@Html.ActionLink("Word", "verReporte", new { tipo = "WORD", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
                 <li>
-                    <a class="dropdown-item"
-                       href="/RolOpcions/verReporte?tipo=Excel">Excel</a>
+                    <a href="#">@Html.ActionLink("Excel", "verReporte", new { tipo = "EXCEL", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
             </ul>
         </div>
@@ -84,6 +80,9 @@
                         </a>
                         <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idRolOpcion })">
                             <i class="fa fa-trash"></i>
+                        </a>
+                        <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idRolOpcion })" target="_blank">
+                            <i class="fa fa-file-pdf-o"></i>
                         </a>
                     </td>
                 </tr>

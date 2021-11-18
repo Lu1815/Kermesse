@@ -21,11 +21,11 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Index(string dato)
         {
-            var tc = from m in db.TasaCambios select m;
+            var tc = from m in db.VwTasaCambios select m;
 
             if (!string.IsNullOrEmpty(dato))
             {
-                tc = tc.Where(m => m.mes.Contains(dato) || m.anio.ToString().Contains(dato) || m.monedaO.ToString().Contains(dato) || m.monedaC.ToString().Contains(dato));
+                tc = tc.Where(m => m.mes.Contains(dato) || m.año.ToString().Contains(dato) || m.monedaO.ToString().Contains(dato) || m.monedaC.ToString().Contains(dato));
             }
 
             return View(tc.ToList());
@@ -159,7 +159,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -169,13 +169,42 @@ namespace Kermesse.Controllers
             string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptTasaCambios.rdlc");
             rpt.ReportPath = ruta;
 
-            List<TasaCambio> ls = new List<TasaCambio>();
-            ls = db.TasaCambios.ToList();
+            List<VwTasaCambio> ls = new List<VwTasaCambio>();
+            var ru = from m in db.VwTasaCambios select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                ru = ru.Where(m => m.monedaO.ToString().Contains(busq) || m.monedaC.Contains(busq) || m.mes.Contains(busq) || m.año.ToString().Contains(busq));
+            }
+
+            ls = ru.ToList();
 
             ReportDataSource rd = new ReportDataSource("DSTasaCambios", ls);
             rpt.DataSources.Add(rd);
 
             var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
+
+        [Authorize]
+        public ActionResult verReporteVertical(int? id)
+        {
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptTasaCambiosVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            VwTasaCambio i = db.VwTasaCambios.Find(id);
+            List<VwTasaCambio> ls = new List<VwTasaCambio>();
+            ls.Add(i);
+
+            ReportDataSource rd = new ReportDataSource("DSTasaCambio", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
             return new FileContentResult(b, mt);
         }
     }

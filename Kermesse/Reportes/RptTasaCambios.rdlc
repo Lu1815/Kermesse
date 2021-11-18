@@ -251,21 +251,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="anio">
+                    <Textbox Name="año">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!anio.Value</Value>
+                              <Value>=Fields!año.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>anio</rd:DefaultName>
+                      <rd:DefaultName>año</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -305,7 +305,7 @@
         <Top>0.47792in</Top>
         <Left>0.31771in</Left>
         <Height>0.5in</Height>
-        <Width>5.9375in</Width>
+        <Width>5.93752in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -509,14 +509,14 @@
           <DataField>mes</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="anio">
-          <DataField>anio</DataField>
+        <Field Name="año">
+          <DataField>año</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DSReportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
+        <rd:SchemaPath>C:\Users\luisf\VS-Workspace\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
         <rd:TableName>TasaCambio</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

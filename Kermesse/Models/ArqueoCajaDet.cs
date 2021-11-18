@@ -28,11 +28,9 @@ namespace Kermesse.Models
         public int denominacion { get; set; }
         [Display(Name = "Cantidad")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(18, ErrorMessage = "El tamaño máximo es 18 caracteres")]
         public decimal cantidad { get; set; }
         [Display(Name = "Subtotal")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(18, ErrorMessage = "El tamaño máximo es 18 caracteres")]
         public decimal subtotal { get; set; }
 
         public virtual ArqueoCaja ArqueoCaja1 { get; set; }

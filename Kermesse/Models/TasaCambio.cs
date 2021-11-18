@@ -11,7 +11,8 @@ namespace Kermesse.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TasaCambio
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,14 +20,24 @@ namespace Kermesse.Models
         {
             this.TasaCambioDets = new HashSet<TasaCambioDet>();
         }
-    
+
+        [Display(Name = "Tasa de cambio")]
         public int idTasaCambio { get; set; }
+        [Display(Name = "Moneda objetivo")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int monedaO { get; set; }
+        [Display(Name = "Moneda cambio")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int monedaC { get; set; }
+        [Display(Name = "Mes")]
+        [Required(ErrorMessage = "Este campo es requerido")]
+        [StringLength(15, ErrorMessage = "El tama�o m�ximo es 15 caracteres")]
         public string mes { get; set; }
+        [Display(Name = "Año")]
+        [Required(ErrorMessage = "Este campo es requerido")]
         public int anio { get; set; }
         public int estado { get; set; }
-    
+
         public virtual Moneda Moneda { get; set; }
         public virtual Moneda Moneda1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

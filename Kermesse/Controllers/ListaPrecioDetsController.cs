@@ -18,9 +18,15 @@ namespace Kermesse.Controllers
 
         // GET: ListaPrecioDets
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var listaPrecioDets = db.ListaPrecioDets.Include(l => l.ListaPrecio1).Include(l => l.Producto1);
+            var listaPrecioDets = from m in db.ListaPrecioDets select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                listaPrecioDets = listaPrecioDets.Where(m => m.Producto1.nombre.Contains(dato) || m.precioVenta.ToString().Contains(dato));
+            }
+
             return View(listaPrecioDets.ToList());
         }
 
@@ -145,7 +151,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult VerReporte(string tipo)
+        public ActionResult VerReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -157,7 +163,14 @@ namespace Kermesse.Controllers
 
             List<VwListaPrecioDet> ls = new List<VwListaPrecioDet>();
 
-            ls = db.VwListaPrecioDets.ToList();
+            var listaPrecioDets = from m in db.VwListaPrecioDets select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                listaPrecioDets = listaPrecioDets.Where(m => m.precioVenta.ToString().Contains(busq) || m.producto.Contains(busq));
+            }
+
+            ls = listaPrecioDets.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSListaPrecioDet", ls);
 

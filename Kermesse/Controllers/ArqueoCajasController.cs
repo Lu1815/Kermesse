@@ -18,9 +18,15 @@ namespace Kermesse.Controllers
 
         // GET: ArqueoCajas
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string dato)
         {
-            var arqueoCajas = db.ArqueoCajas.Include(a => a.Kermesse1).Include(a => a.Usuario).Include(a => a.Usuario1).Include(a => a.Usuario2);
+            var arqueoCajas = from m in db.ArqueoCajas select m;
+
+            if (!string.IsNullOrEmpty(dato))
+            {
+                arqueoCajas = arqueoCajas.Where(m => m.fechaArqueo.ToString().Contains(dato) || m.Kermesse1.nombre.Contains(dato) || m.granTotal.ToString().Contains(dato));
+            }
+
             return View(arqueoCajas.ToList());
         }
 
@@ -158,7 +164,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -169,7 +175,17 @@ namespace Kermesse.Controllers
             rpt.ReportPath = ruta;
 
             List<VwArqueoCaja> ls = new List<VwArqueoCaja>();
-            ls = db.VwArqueoCajas.ToList();
+           
+
+            var arqueoCajas = from m in db.VwArqueoCajas select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                arqueoCajas = arqueoCajas.Where(m => m.fechaArqueo.ToString().Contains(busq) || m.kermesse.Contains(busq) || m.granTotal.ToString().Contains(busq));
+            }
+
+            ls = arqueoCajas.ToList();
+
 
             ReportDataSource rd = new ReportDataSource("DSArqueoCaja", ls);
             rpt.DataSources.Add(rd);

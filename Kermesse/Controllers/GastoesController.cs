@@ -24,7 +24,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                gasto = gasto.Where(m => m.concepto.Contains(dato) || m.monto.ToString().Contains(dato));
+                gasto = gasto.Where(m => m.concepto.Contains(dato) || m.monto.ToString().Contains(dato) || m.Kermesse1.nombre.Contains(dato) || m.CategoriaGasto.nombreCategoria.Contains(dato) || m.fechGasto.ToString().Contains(dato) || m.monto.ToString().Contains(dato));
             }
 
             return View(gasto.ToList());
@@ -166,7 +166,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -177,7 +177,15 @@ namespace Kermesse.Controllers
             rpt.ReportPath = ruta;
 
             List<VwGasto> ls = new List<VwGasto>();
-            ls = db.VwGastoes.ToList();
+
+            var gasto = from m in db.VwGastoes select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                gasto = gasto.Where(m => m.concepto.Contains(busq) || m.monto.ToString().Contains(busq) || m.catGasto.Contains(busq) || m.kermesse.Contains(busq) || m.fechGasto.ToString().Contains(busq) || m.monto.ToString().Contains(busq));
+            }
+
+            ls = gasto.ToList();
 
             ReportDataSource rd = new ReportDataSource("DSGastos", ls);
             rpt.DataSources.Add(rd);

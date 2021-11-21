@@ -24,7 +24,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                denominacion = denominacion.Where(m => m.valor.ToString().Contains(dato) || m.valorLetras.Contains(dato));
+                denominacion = denominacion.Where(m => m.valor.ToString().Contains(dato) || m.valorLetras.Contains(dato) || m.Moneda1.nombre.Contains(dato));
             }
 
             return View(denominacion.ToList());
@@ -147,7 +147,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -158,7 +158,15 @@ namespace Kermesse.Controllers
             rpt.ReportPath = ruta;
 
             List<VwDenominacione> ls = new List<VwDenominacione>();
-            ls = db.VwDenominaciones.ToList();
+
+            var denominacion = from m in db.VwDenominaciones select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                denominacion = denominacion.Where(m => m.Valor.ToString().Contains(busq) || m.ValorLetras.Contains(busq) || m.Moneda.Contains(busq));
+            }
+
+            ls = denominacion.ToList();
 
             ReportDataSource rd = new ReportDataSource("VwDenominaciones", ls);
             rpt.DataSources.Add(rd);

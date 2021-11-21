@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Kermesse.Models;
 using Microsoft.Reporting.WebForms;
 
@@ -27,6 +28,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -43,6 +51,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             Console.WriteLine("HELLO PUTO");
             return View();
         }
@@ -55,6 +70,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idBono,nombre,valor,estado")] ControlBono controlBono)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             Console.WriteLine(controlBono);
             Console.WriteLine("HELLO PUTO");
             if (ModelState.IsValid)
@@ -71,6 +93,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -91,6 +120,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idBono,nombre,valor,estado")] ControlBono controlBono)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(controlBono).State = EntityState.Modified;
@@ -104,6 +140,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -122,6 +165,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             ControlBono controlBono = db.ControlBonoes.Find(id);
             db.ControlBonoes.Remove(controlBono);
             db.SaveChanges();
@@ -141,6 +191,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporte(string tipo)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
@@ -162,6 +219,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporteVertical(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;

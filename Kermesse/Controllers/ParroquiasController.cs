@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Kermesse.Models;
 using Microsoft.Reporting.WebForms;
 
@@ -20,7 +21,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Index(string dato)
         {
-            
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             var parroquia = from p in db.Parroquias select p;
 
             if (!string.IsNullOrEmpty(dato))
@@ -35,6 +42,12 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -51,6 +64,12 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
 
@@ -62,6 +81,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idParroquia,nombre,direccion,telefono,parroco,logo,sitioWeb")] Parroquia parroquia)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Parroquias.Add(parroquia);
@@ -76,6 +102,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -96,6 +129,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idParroquia,nombre,direccion,telefono,parroco,logo,sitioWeb")] Parroquia parroquia)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
                 db.Entry(parroquia).State = EntityState.Modified;
@@ -109,6 +149,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -127,6 +174,13 @@ namespace Kermesse.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             Parroquia parroquia = db.Parroquias.Find(id);
             db.Parroquias.Remove(parroquia);
             db.SaveChanges();
@@ -146,6 +200,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult VerReporte(string tipo)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;

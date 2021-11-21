@@ -21,6 +21,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Index(string dato)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             var ic = from m in db.IngresoComunidads select m;
 
             if (!string.IsNullOrEmpty(dato))
@@ -35,6 +42,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -51,6 +65,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             ViewBag.comunidad = new SelectList(db.Comunidads, "idComunidad", "nombre");
             ViewBag.kermesse = new SelectList(db.Kermesses, "idKermesse", "nombre");
             ViewBag.producto = new SelectList(db.Productoes, "idProducto", "nombre");
@@ -66,6 +87,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
 
             if (ModelState.IsValid)
             {
@@ -87,6 +115,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -110,6 +145,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idIngresoComunidad,kermesse,comunidad,producto,cantProducto,totalBonos,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] IngresoComunidad ingresoComunidad)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
 
             IngresoComunidad i = db.IngresoComunidads.Find(ingresoComunidad.idIngresoComunidad);
 
@@ -140,6 +182,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -158,6 +207,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             IngresoComunidad ingresoComunidad = db.IngresoComunidads.Find(id);
             db.IngresoComunidads.Remove(ingresoComunidad);
             db.SaveChanges();
@@ -177,7 +233,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporte(string tipo, string busq)
         {
-            
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
@@ -207,6 +270,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporteVertical(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;

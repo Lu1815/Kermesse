@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Kermesse.Models;
 using Microsoft.Reporting.WebForms;
 
@@ -20,6 +21,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             var arqueoCajaDets = db.ArqueoCajaDets.Include(a => a.ArqueoCaja1).Include(a => a.Denominacion1).Include(a => a.Moneda1);
             return View(arqueoCajaDets.ToList());
         }
@@ -28,6 +36,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -44,6 +59,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             ViewBag.arqueoCaja = new SelectList(db.ArqueoCajas, "idArqueoCaja", "idArqueoCaja");
             ViewBag.denominacion = new SelectList(db.Denominacions, "idDenominacion", "valorLetras");
             ViewBag.moneda = new SelectList(db.Monedas, "idMoneda", "nombre");
@@ -58,6 +80,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idArqueoCajaDet,arqueoCaja,moneda,denominacion,cantidad,subtotal")] ArqueoCajaDet arqueoCajaDet)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
                 db.ArqueoCajaDets.Add(arqueoCajaDet);
@@ -75,6 +104,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -98,7 +134,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idArqueoCajaDet,arqueoCaja,moneda,denominacion,cantidad,subtotal")] ArqueoCajaDet arqueoCajaDet)
         {
-            
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
+
             if (ModelState.IsValid)
             {
                 db.Entry(arqueoCajaDet).State = EntityState.Modified;
@@ -115,6 +158,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -133,6 +183,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             ArqueoCajaDet arqueoCajaDet = db.ArqueoCajaDets.Find(id);
             db.ArqueoCajaDets.Remove(arqueoCajaDet);
             db.SaveChanges();
@@ -152,6 +209,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporte(string tipo)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
@@ -173,6 +237,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporteVertical(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;

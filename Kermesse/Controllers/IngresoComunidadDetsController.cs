@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Kermesse.Models;
 using Microsoft.Reporting.WebForms;
 
@@ -20,6 +21,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Index(string dato)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             var icd = from m in db.IngresoComunidadDets select m;
 
             if (!string.IsNullOrEmpty(dato))
@@ -34,6 +42,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -50,6 +65,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             ViewBag.bono = new SelectList(db.ControlBonoes, "idBono", "nombre");
             ViewBag.ingresoComunidad = new SelectList(db.IngresoComunidads, "idIngresoComunidad", "idIngresoComunidad");
             return View();
@@ -63,7 +85,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBono")] IngresoComunidadDet ingresoComunidadDet)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
 
+            /*
             IngresoComunidadDet i = new IngresoComunidadDet();
 
             i.ingresoComunidad = ingresoComunidadDet.ingresoComunidad;
@@ -71,6 +100,7 @@ namespace Kermesse.Controllers
             i.denominacion = ingresoComunidadDet.denominacion;
             i.cantidad = ingresoComunidadDet.cantidad;
             i.subTotalBono = 0.0;
+            */
 
             if (ModelState.IsValid)
             {
@@ -88,6 +118,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -110,6 +147,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idIngresoComunidadDet,ingresoComunidad,bono,denominacion,cantidad,subTotalBono")] IngresoComunidadDet ingresoComunidadDet)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             IngresoComunidadDet i = db.IngresoComunidadDets.Find(ingresoComunidadDet.idIngresoComunidadDet);
 
             i.ingresoComunidad = ingresoComunidadDet.ingresoComunidad;
@@ -133,6 +177,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -151,6 +202,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             IngresoComunidadDet ingresoComunidadDet = db.IngresoComunidadDets.Find(id);
             db.IngresoComunidadDets.Remove(ingresoComunidadDet);
             db.SaveChanges();
@@ -170,6 +228,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporte(string tipo, string busq)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
@@ -198,6 +263,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult verReporteVertical(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;

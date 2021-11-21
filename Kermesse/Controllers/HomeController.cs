@@ -12,18 +12,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Index()
         {
-            
-            if (Session["UserID"] != null)
-            {
-                return View();
-            }
-            else
+            if (Session["UserID"] == null)
             {
                 Session.Clear();
                 FormsAuthentication.SignOut();
                 return RedirectToAction("Login", "Account");
             }
-           
+
+            return View();           
         }
     }
 }

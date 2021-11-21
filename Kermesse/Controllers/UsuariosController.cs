@@ -218,7 +218,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult VerReporte(string tipo)
+        public ActionResult VerReporte(string tipo, string busq)
         {
             if (Session["UserID"] == null)
             {
@@ -237,7 +237,14 @@ namespace Kermesse.Controllers
 
             List<Usuario> ls = new List<Usuario>();
 
-            ls = db.Usuarios.ToList();
+            var user = from u in db.Usuarios select u;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                user = user.Where(u => u.nombres.Contains(busq) || u.apellidos.Contains(busq) || u.userName.Contains(busq) || u.email.Contains(busq));
+            }
+
+            ls = user.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSUsuarios", ls);
 

@@ -41,11 +41,11 @@ namespace Kermesse.Models
         public Nullable<int> cantidad { get; set; }
         [Display(Name = "Precio sugerido")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(53, ErrorMessage = "El tama�o m�ximo es 53 caracteres")]
         public double precioVSugerido { get; set; }
         public int estado { get; set; }
 
         public virtual CategoriaProducto CategoriaProducto { get; set; }
+        [Display(Name ="Comunidad")]
         public virtual Comunidad Comunidad1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<IngresoComunidad> IngresoComunidads { get; set; }

@@ -24,7 +24,7 @@ namespace Kermesse.Controllers
 
             if (!string.IsNullOrEmpty(dato))
             {
-                prod = prod.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato));
+                prod = prod.Where(m => m.nombre.Contains(dato) || m.descripcion.Contains(dato) || m.CategoriaProducto.nombre.Contains(dato) || m.Comunidad1.nombre.Contains(dato));
             }
 
             return View(prod.ToList());
@@ -151,7 +151,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult VerReporte(string tipo)
+        public ActionResult VerReporte(string tipo, string busq)
         {
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
@@ -163,7 +163,14 @@ namespace Kermesse.Controllers
 
             List<VwProducto> ls = new List<VwProducto>();
 
-            ls = db.VwProductos.ToList();
+            var prod = from m in db.VwProductos select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                prod = prod.Where(m => m.producto.Contains(busq) || m.descripcion.Contains(busq) || m.catProd.Contains(busq) || m.comunidad.Contains(busq));
+            }
+
+            ls = prod.ToList();
 
             ReportDataSource rds = new ReportDataSource("DSProductos", ls);
 

@@ -378,5 +378,34 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VwRolOpcions">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwRolOpcion">
+        <MappingFragment StoreEntitySet="VwRolOpcion">
+          <ScalarProperty Name="idRolOpcion" ColumnName="idRolOpcion" />
+          <ScalarProperty Name="Rol" ColumnName="Rol" />
+          <ScalarProperty Name="Opción" ColumnName="Opción" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwRolUsuarios">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwRolUsuario">
+        <MappingFragment StoreEntitySet="VwRolUsuario">
+          <ScalarProperty Name="rolDescripcion" ColumnName="rolDescripcion" />
+          <ScalarProperty Name="userName" ColumnName="userName" />
+          <ScalarProperty Name="idRolUsuario" ColumnName="idRolUsuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwTasaCambios">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwTasaCambio">
+        <MappingFragment StoreEntitySet="VwTasaCambio">
+          <ScalarProperty Name="año" ColumnName="año" />
+          <ScalarProperty Name="mes" ColumnName="mes" />
+          <ScalarProperty Name="monedaC" ColumnName="monedaC" />
+          <ScalarProperty Name="monedaO" ColumnName="monedaO" />
+          <ScalarProperty Name="idTasaCambio" ColumnName="idTasaCambio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

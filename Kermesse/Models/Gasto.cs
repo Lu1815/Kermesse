@@ -33,7 +33,7 @@ namespace Kermesse.Models
         public string concepto { get; set; }
         [Display(Name = "Monto")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
+        [DataType(DataType.Currency, ErrorMessage = "Solo valores decimales")]
         public double monto { get; set; }
         public int usuarioCreacion { get; set; }
         public System.DateTime fechaCreacion { get; set; }

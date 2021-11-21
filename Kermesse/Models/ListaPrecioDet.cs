@@ -26,7 +26,7 @@ namespace Kermesse.Models
         public int producto { get; set; }
         [Display(Name = "Precio venta")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
+        [DataType(DataType.Currency, ErrorMessage = "Solo valores decimales")]
         public double precioVenta { get; set; }
 
         public virtual ListaPrecio ListaPrecio1 { get; set; }

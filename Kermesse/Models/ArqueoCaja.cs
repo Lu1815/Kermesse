@@ -27,6 +27,7 @@ namespace Kermesse.Models
         [Required(ErrorMessage = "Este campo es requerido")]
         public int kermesse { get; set; }
         [Display(Name = "Fecha de arqueo")]
+        // [DisplayFormat(DataFormatString = "{0:s}", ApplyFormatInEditMode = true)]
         public Nullable<System.DateTime> fechaArqueo { get; set; }
         [Display(Name = "Gran total")]
         public Nullable<decimal> granTotal { get; set; }

@@ -16,7 +16,7 @@
         @Html.HiddenFor(model => model.idArqueoCaja)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.kermesse, "kermesse", htmlAttributes: new { @class = "control-label col-md-2 mb-2" })
+            @Html.LabelFor(model => model.kermesse, "Kermesse", htmlAttributes: new { @class = "control-label col-md-2 mb-2" })
             <div class="col-md-10">
                 @Html.DropDownList("kermesse", null, htmlAttributes: new { @class = "form-control mb-2" })
                 @Html.ValidationMessageFor(model => model.kermesse, "", new { @class = "text-danger mb-2" })
@@ -26,7 +26,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.fechaArqueo, htmlAttributes: new { @class = "control-label col-md-2 mb-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fechaArqueo, new { htmlAttributes = new { @class = "form-control mb-2" } })
+                @Html.EditorFor(model => model.fechaArqueo, new { htmlAttributes = new { @class = "form-control mb-2", type = "datetime-local"  } })
                 @Html.ValidationMessageFor(model => model.fechaArqueo, "", new { @class = "text-danger mb-2" })
             </div>
         </div>
@@ -50,3 +50,7 @@
     </div>
 }
 
+<script>
+    let dateInString = $("input[name='fechaArqueo']").attr("value").toString();
+    // $("input[name='fechaArqueo']").val(dateInString.slice(6, 10) + "-" + dateInString.slice(3, 5) + "-" + dateInString.slice(0, 2) + "T" + dateInString.slice(11, 13) + ":" + dateInString.slice(14, 16) + ":" + dateInString.slice(17, 19));
+</script>

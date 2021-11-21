@@ -5,8 +5,10 @@ using System.Data.Entity;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Security.Cryptography;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 using Kermesse.Models;
 using Microsoft.Reporting.WebForms;
 
@@ -21,7 +23,13 @@ namespace Kermesse.Controllers
         // GET: Usuarios
         public ActionResult Index(string dato)
         {
-
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+            
             var user = from u in db.Usuarios select u;
 
             if (!string.IsNullOrEmpty(dato))
@@ -36,6 +44,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Details(int? id)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -52,6 +67,12 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create()
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
             return View();
         }
 
@@ -63,8 +84,18 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idUsuario,userName,pwd,nombres,apellidos,email,estado")] Usuario usuario)
         {
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
+                usuario.userName = usuario.userName.ToLower();
+                usuario.pwd = HashPassword(usuario.pwd);
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -77,6 +108,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit(int? id)
         {
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -97,8 +136,25 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Edit([Bind(Include = "idUsuario,userName,pwd,nombres,apellidos,email,estado")] Usuario usuario)
         {
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (ModelState.IsValid)
             {
+                if (usuario.pwd == "")
+                {
+                    usuario.userName = usuario.userName.ToLower();
+                    usuario.pwd = db.Usuarios.Find(usuario.idUsuario).pwd;
+                } else
+                {
+                    usuario.pwd = HashPassword(usuario.pwd);
+                }
+
                 db.Entry(usuario).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -110,6 +166,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Delete(int? id)
         {
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -128,6 +192,14 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult DeleteConfirmed(int id)
         {
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             Usuario usuario = db.Usuarios.Find(id);
             db.Usuarios.Remove(usuario);
             db.SaveChanges();
@@ -137,6 +209,7 @@ namespace Kermesse.Controllers
         [Authorize]
         protected override void Dispose(bool disposing)
         {
+
             if (disposing)
             {
                 db.Dispose();
@@ -147,6 +220,13 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult VerReporte(string tipo)
         {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
             LocalReport rpt = new LocalReport();
             string mt, enc, f;
             string[] s;
@@ -168,5 +248,25 @@ namespace Kermesse.Controllers
             return new FileContentResult(b, mt);
         }
 
+        private string HashPassword(string password)
+        {
+            byte[] salt;
+            byte[] buffer2;
+            if (password == null)
+            {
+                throw new ArgumentNullException("password");
+            }
+            using (Rfc2898DeriveBytes bytes = new Rfc2898DeriveBytes(password, 0x10, 0x3e8))
+            {
+                salt = bytes.Salt;
+                buffer2 = bytes.GetBytes(0x20);
+            }
+            byte[] dst = new byte[0x31];
+            Buffer.BlockCopy(salt, 0, dst, 1, 0x10);
+            Buffer.BlockCopy(buffer2, 0, dst, 0x11, 0x20);
+            return Convert.ToBase64String(dst);
+        }
+
+        
     }
 }

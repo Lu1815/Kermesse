@@ -33,6 +33,7 @@ namespace Kermesse.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ArqueoCaja arqueoCaja = db.ArqueoCajas.Find(id);
+
             if (arqueoCaja == null)
             {
                 return HttpNotFound();
@@ -59,6 +60,9 @@ namespace Kermesse.Controllers
         [Authorize]
         public ActionResult Create([Bind(Include = "idArqueoCaja,kermesse,fechaArqueo,granTotal,usuarioCreacion,fechaCreacion,usuarioModificacion,fechaModificacion,usuarioEliminacion,fechaEliminacion")] ArqueoCaja arqueoCaja)
         {
+            arqueoCaja.usuarioCreacion = int.Parse(Session["UserID"].ToString(), System.Globalization.NumberStyles.Integer);
+            arqueoCaja.fechaCreacion = DateTime.Now;
+            
             if (ModelState.IsValid)
             {
                 db.ArqueoCajas.Add(arqueoCaja);
@@ -82,6 +86,7 @@ namespace Kermesse.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ArqueoCaja arqueoCaja = db.ArqueoCajas.Find(id);
+
             if (arqueoCaja == null)
             {
                 return HttpNotFound();

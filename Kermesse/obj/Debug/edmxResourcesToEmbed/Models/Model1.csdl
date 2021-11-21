@@ -953,6 +953,9 @@
     <EntitySet Name="VwArqueoCajaDets" EntityType="BDKermesseModel.VwArqueoCajaDet" />
     <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
     <EntitySet Name="VwProductos" EntityType="BDKermesseModel.VwProducto" />
+    <EntitySet Name="VwRolOpcions" EntityType="BDKermesseModel.VwRolOpcion" />
+    <EntitySet Name="VwRolUsuarios" EntityType="BDKermesseModel.VwRolUsuario" />
+    <EntitySet Name="VwTasaCambios" EntityType="BDKermesseModel.VwTasaCambio" />
   </EntityContainer>
   <EntityType Name="VwListaPrecio">
     <Key>
@@ -1044,5 +1047,31 @@
     <Property Name="comunidad" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
     <Property Name="cantidad" Type="Int32" />
     <Property Name="precioVSugerido" Type="Double" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VwRolOpcion">
+    <Key>
+      <PropertyRef Name="idRolOpcion" />
+    </Key>
+    <Property Name="Opción" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="Rol" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+    <Property Name="idRolOpcion" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VwRolUsuario">
+    <Key>
+      <PropertyRef Name="idRolUsuario" />
+    </Key>
+    <Property Name="idRolUsuario" Type="Int32" Nullable="false" />
+    <Property Name="userName" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="rolDescripcion" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VwTasaCambio">
+    <Key>
+      <PropertyRef Name="idTasaCambio" />
+    </Key>
+    <Property Name="idTasaCambio" Type="Int32" Nullable="false" />
+    <Property Name="monedaO" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="monedaC" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="mes" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="año" Type="Int32" Nullable="false" />
   </EntityType>
 </Schema>

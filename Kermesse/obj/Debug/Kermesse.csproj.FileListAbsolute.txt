@@ -345,6 +345,10 @@ C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\bin\zh-CHS\Microsoft
 C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\obj\Debug\Kermesse.dll
 C:\Users\abner\Documents\Aplicaciones Web\Kermesse\Kermesse\obj\Debug\Kermesse.pdb
+C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.AssemblyReference.cache
+C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.cache
+C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.compiled
+C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CoreCompileInputs.cache
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Kermesse.dll.config
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Kermesse.dll
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\Kermesse.pdb
@@ -603,10 +607,6 @@ C:\Users\frank\Desktop\Kermesse\Kermesse\bin\pt\Microsoft.ReportViewer.WinForms.
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\frank\Desktop\Kermesse\Kermesse\bin\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.cache
-C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\RdlCompile.compiled
-C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CoreCompileInputs.cache
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.CopyComplete
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.dll
 C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.pdb
-C:\Users\frank\Desktop\Kermesse\Kermesse\obj\Debug\Kermesse.csproj.AssemblyReference.cache

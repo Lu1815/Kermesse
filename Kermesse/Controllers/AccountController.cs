@@ -30,13 +30,14 @@ namespace Kermesse.Controllers
             if (ModelState.IsValid)
             {
                 usuario.pwd = HashPassword(usuario.pwd);
+                usuario.estado = 1;
                 db.Usuarios.Add(usuario);
                 db.SaveChanges();
 
                 ModelState.Clear();
             }
 
-            ViewBag.Message = "El usuario " + usuario.nombres + " " + usuario.apellidos + " ha sido registrado con éxito.";
+            ViewBag.Message = "El usuario " + usuario.nombres + " " + usuario.apellidos + " ha sido registrado con éxito y está listo para verificarse. ";
             return View();
         }
 
@@ -56,8 +57,9 @@ namespace Kermesse.Controllers
         public ActionResult Login(Usuario usuario, string ReturnUrl = "/")
         {
            
-            var usr = db.Usuarios.SingleOrDefault(u => u.userName == usuario.userName);
-            if (usr != null && VerifyHashedPassword(usr.pwd, usuario.pwd))
+            var usr = db.Usuarios.SingleOrDefault(u => (u.userName == usuario.userName || u.email == usuario.userName));
+
+            if (usr != null && VerifyHashedPassword(usr.pwd, usuario.pwd) && usr.estado == 0)
             {
                 Session["UserID"] = usr.idUsuario.ToString();
                 //Session["Username"] = usr.userName.ToString();
@@ -69,7 +71,14 @@ namespace Kermesse.Controllers
             } 
             else
             {
-                ModelState.AddModelError("", "Verifique su usuario y su contraseña");
+                if (usr != null && usr.estado == 1)
+                {
+                    ModelState.AddModelError("", "Su usuario no está verificado.");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Verifique su usuario y su contraseña");
+                }
             }
 
             return View();
@@ -137,5 +146,7 @@ namespace Kermesse.Controllers
                 xor |= firstHash[i] ^ secondHash[i];
             return 0 == xor;
         }
+
+        
     }
 } 

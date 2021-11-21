@@ -27,7 +27,7 @@ namespace Kermesse.Models
         [Display(Name = "Cantidad")]
         public int cantidad { get; set; }
         [Display(Name = "Subtotal")]
-        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
+        [DataType(DataType.Currency, ErrorMessage = "Solo valores decimales")]
         public double subTotalBono { get; set; }
 
         public virtual ControlBono ControlBono { get; set; }

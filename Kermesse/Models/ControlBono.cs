@@ -30,8 +30,7 @@ namespace Kermesse.Models
         public string nombre { get; set; }
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [DataType(DataType.Currency)]
-        [StringLength(53, ErrorMessage = "El tamaño máximo es 53 caracteres")]
+        [DataType(DataType.Currency, ErrorMessage = "Solo valores decimales")]
         public double valor { get; set; }
         public int estado { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

@@ -208,7 +208,7 @@ namespace Kermesse.Controllers
         }
 
         [Authorize]
-        public ActionResult verReporte(string tipo)
+        public ActionResult verReporte(string tipo, string busq)
         {
             if (Session["UserID"] == null)
             {
@@ -226,12 +226,48 @@ namespace Kermesse.Controllers
             rpt.ReportPath = ruta;
 
             List<Moneda> ls = new List<Moneda>();
-            ls = db.Monedas.ToList();
+            var ru = from m in db.Monedas select m;
+
+            if (!string.IsNullOrEmpty(busq))
+            {
+                ru = ru.Where(m => m.nombre.Contains(busq) || m.simbolo.Contains(busq));
+            }
+
+            ls = ru.ToList();
 
             ReportDataSource rd = new ReportDataSource("DSMoneda", ls);
             rpt.DataSources.Add(rd);
 
             var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
+
+        [Authorize]
+        public ActionResult verReporteVertical(int? id)
+        {
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reports"), "RptMonedaVertical.rdlc");
+            rpt.ReportPath = ruta;
+
+            Moneda i = db.Monedas.Find(id);
+            List<Moneda> ls = new List<Moneda>();
+            ls.Add(i);
+
+            ReportDataSource rd = new ReportDataSource("DsMoneda", ls);
+            rpt.DataSources.Add(rd);
+
+            var b = rpt.Render("PDF", null, out mt, out enc, out f, out s, out w);
             return new FileContentResult(b, mt);
         }
 

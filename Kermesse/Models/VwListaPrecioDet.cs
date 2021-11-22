@@ -17,5 +17,7 @@ namespace Kermesse.Models
         public int idListaPrecioDet { get; set; }
         public string producto { get; set; }
         public double precioVenta { get; set; }
+        public int idListaPrecio { get; set; }
+        public string listaprecio { get; set; }
     }
 }

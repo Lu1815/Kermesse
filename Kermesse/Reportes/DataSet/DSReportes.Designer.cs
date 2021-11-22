@@ -6609,6 +6609,10 @@ namespace Kermesse.Reportes.DataSet {
             
             private global::System.Data.DataColumn columnprecioVenta;
             
+            private global::System.Data.DataColumn columnidListaPrecio;
+            
+            private global::System.Data.DataColumn columnlistaprecio;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public ListaPrecioDetalleDataTable() {
@@ -6660,6 +6664,22 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn idListaPrecioColumn {
+                get {
+                    return this.columnidListaPrecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn listaprecioColumn {
+                get {
+                    return this.columnlistaprecio;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -6695,11 +6715,13 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public ListaPrecioDetalleRow AddListaPrecioDetalleRow(string producto, string precioVenta) {
+            public ListaPrecioDetalleRow AddListaPrecioDetalleRow(string producto, string precioVenta, string idListaPrecio, string listaprecio) {
                 ListaPrecioDetalleRow rowListaPrecioDetalleRow = ((ListaPrecioDetalleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         producto,
-                        precioVenta};
+                        precioVenta,
+                        idListaPrecio,
+                        listaprecio};
                 rowListaPrecioDetalleRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowListaPrecioDetalleRow);
                 return rowListaPrecioDetalleRow;
@@ -6724,6 +6746,8 @@ namespace Kermesse.Reportes.DataSet {
             internal void InitVars() {
                 this.columnproducto = base.Columns["producto"];
                 this.columnprecioVenta = base.Columns["precioVenta"];
+                this.columnidListaPrecio = base.Columns["idListaPrecio"];
+                this.columnlistaprecio = base.Columns["listaprecio"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6733,6 +6757,10 @@ namespace Kermesse.Reportes.DataSet {
                 base.Columns.Add(this.columnproducto);
                 this.columnprecioVenta = new global::System.Data.DataColumn("precioVenta", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprecioVenta);
+                this.columnidListaPrecio = new global::System.Data.DataColumn("idListaPrecio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnidListaPrecio);
+                this.columnlistaprecio = new global::System.Data.DataColumn("listaprecio", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnlistaprecio);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9141,6 +9169,38 @@ namespace Kermesse.Reportes.DataSet {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string idListaPrecio {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaPrecioDetalle.idListaPrecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'idListaPrecio\' in table \'ListaPrecioDetalle\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaPrecioDetalle.idListaPrecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string listaprecio {
+                get {
+                    try {
+                        return ((string)(this[this.tableListaPrecioDetalle.listaprecioColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'listaprecio\' in table \'ListaPrecioDetalle\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableListaPrecioDetalle.listaprecioColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool IsproductoNull() {
                 return this.IsNull(this.tableListaPrecioDetalle.productoColumn);
             }
@@ -9161,6 +9221,30 @@ namespace Kermesse.Reportes.DataSet {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetprecioVentaNull() {
                 this[this.tableListaPrecioDetalle.precioVentaColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsidListaPrecioNull() {
+                return this.IsNull(this.tableListaPrecioDetalle.idListaPrecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetidListaPrecioNull() {
+                this[this.tableListaPrecioDetalle.idListaPrecioColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IslistaprecioNull() {
+                return this.IsNull(this.tableListaPrecioDetalle.listaprecioColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetlistaprecioNull() {
+                this[this.tableListaPrecioDetalle.listaprecioColumn] = global::System.Convert.DBNull;
             }
         }
         

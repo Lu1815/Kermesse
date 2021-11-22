@@ -72,11 +72,11 @@
         <EntityTypeShape EntityType="BDKermesseModel.VwArqueoCaja" Width="1.5" PointX="16.875" PointY="9.125" />
         <EntityTypeShape EntityType="BDKermesseModel.VwGasto" Width="1.5" PointX="11" PointY="2.625" />
         <EntityTypeShape EntityType="BDKermesseModel.VwArqueoCajaDet" Width="1.5" PointX="13.75" PointY="8.5" />
-        <EntityTypeShape EntityType="BDKermesseModel.VwListaPrecioDet" Width="1.5" PointX="10.375" PointY="5.75" />
         <EntityTypeShape EntityType="BDKermesseModel.VwProducto" Width="1.5" PointX="12.375" PointY="5.75" />
         <EntityTypeShape EntityType="BDKermesseModel.VwRolOpcion" Width="1.5" PointX="10.375" PointY="12.75" />
         <EntityTypeShape EntityType="BDKermesseModel.VwRolUsuario" Width="1.5" PointX="12.375" PointY="12.75" />
         <EntityTypeShape EntityType="BDKermesseModel.VwTasaCambio" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="BDKermesseModel.VwListaPrecioDet" Width="1.5" PointX="8.625" PointY="3.375" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

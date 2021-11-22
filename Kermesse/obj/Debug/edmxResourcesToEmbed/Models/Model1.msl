@@ -356,15 +356,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="VwListaPrecioDets">
-      <EntityTypeMapping TypeName="BDKermesseModel.VwListaPrecioDet">
-        <MappingFragment StoreEntitySet="VwListaPrecioDet">
-          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
-          <ScalarProperty Name="producto" ColumnName="producto" />
-          <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="VwProductos">
       <EntityTypeMapping TypeName="BDKermesseModel.VwProducto">
         <MappingFragment StoreEntitySet="VwProductos">
@@ -404,6 +395,17 @@
           <ScalarProperty Name="monedaC" ColumnName="monedaC" />
           <ScalarProperty Name="monedaO" ColumnName="monedaO" />
           <ScalarProperty Name="idTasaCambio" ColumnName="idTasaCambio" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VwListaPrecioDets">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwListaPrecioDet">
+        <MappingFragment StoreEntitySet="VwListaPrecioDet">
+          <ScalarProperty Name="listaprecio" ColumnName="listaprecio" />
+          <ScalarProperty Name="idListaPrecio" ColumnName="idListaPrecio" />
+          <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+          <ScalarProperty Name="producto" ColumnName="producto" />
+          <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -951,11 +951,11 @@
     <EntitySet Name="VwArqueoCajas" EntityType="BDKermesseModel.VwArqueoCaja" />
     <EntitySet Name="VwGastoes" EntityType="BDKermesseModel.VwGasto" />
     <EntitySet Name="VwArqueoCajaDets" EntityType="BDKermesseModel.VwArqueoCajaDet" />
-    <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
     <EntitySet Name="VwProductos" EntityType="BDKermesseModel.VwProducto" />
     <EntitySet Name="VwRolOpcions" EntityType="BDKermesseModel.VwRolOpcion" />
     <EntitySet Name="VwRolUsuarios" EntityType="BDKermesseModel.VwRolUsuario" />
     <EntitySet Name="VwTasaCambios" EntityType="BDKermesseModel.VwTasaCambio" />
+    <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
   </EntityContainer>
   <EntityType Name="VwListaPrecio">
     <Key>
@@ -1028,14 +1028,6 @@
     <Property Name="cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
     <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
   </EntityType>
-  <EntityType Name="VwListaPrecioDet">
-    <Key>
-      <PropertyRef Name="idListaPrecioDet" />
-    </Key>
-    <Property Name="idListaPrecioDet" Type="Int32" Nullable="false" />
-    <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
-    <Property Name="precioVenta" Type="Double" Nullable="false" />
-  </EntityType>
   <EntityType Name="VwProducto">
     <Key>
       <PropertyRef Name="idProducto" />
@@ -1073,5 +1065,15 @@
     <Property Name="monedaC" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
     <Property Name="mes" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
     <Property Name="año" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VwListaPrecioDet">
+    <Key>
+      <PropertyRef Name="idListaPrecioDet" />
+    </Key>
+    <Property Name="idListaPrecioDet" Type="Int32" Nullable="false" />
+    <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+    <Property Name="precioVenta" Type="Double" Nullable="false" />
+    <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
+    <Property Name="listaprecio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

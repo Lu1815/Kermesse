@@ -206,6 +206,8 @@
             <xs:sequence>
               <xs:element name="producto" msprop:Generator_ColumnVarNameInTable="columnproducto" msprop:Generator_ColumnPropNameInRow="producto" msprop:Generator_ColumnPropNameInTable="productoColumn" msprop:Generator_UserColumnName="producto" type="xs:string" minOccurs="0" />
               <xs:element name="precioVenta" msprop:Generator_ColumnVarNameInTable="columnprecioVenta" msprop:Generator_ColumnPropNameInRow="precioVenta" msprop:Generator_ColumnPropNameInTable="precioVentaColumn" msprop:Generator_UserColumnName="precioVenta" type="xs:string" minOccurs="0" />
+              <xs:element name="idListaPrecio" msprop:Generator_ColumnVarNameInTable="columnidListaPrecio" msprop:Generator_ColumnPropNameInRow="idListaPrecio" msprop:Generator_ColumnPropNameInTable="idListaPrecioColumn" msprop:Generator_UserColumnName="idListaPrecio" type="xs:string" minOccurs="0" />
+              <xs:element name="listaprecio" msprop:Generator_ColumnVarNameInTable="columnlistaprecio" msprop:Generator_ColumnPropNameInRow="listaprecio" msprop:Generator_ColumnPropNameInTable="listaprecioColumn" msprop:Generator_UserColumnName="listaprecio" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

@@ -376,12 +376,12 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecioDet' does not have a p
         <EntityType Name="VwListaPrecioDet">
           <Key>
             <PropertyRef Name="idListaPrecioDet" />
-            
-            
           </Key>
           <Property Name="idListaPrecioDet" Type="int" Nullable="false" />
           <Property Name="producto" Type="nvarchar" MaxLength="45" Nullable="false" />
           <Property Name="precioVenta" Type="float" Nullable="false" />
+          <Property Name="idListaPrecio" Type="int" Nullable="false" />
+          <Property Name="listaprecio" Type="nvarchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'DBKermesse.dbo.VwProductos' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -431,6 +431,8 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
         <EntityType Name="VwTasaCambio">
           <Key>
             <PropertyRef Name="idTasaCambio" />
+            
+            
           </Key>
           <Property Name="idTasaCambio" Type="int" Nullable="false" />
           <Property Name="monedaO" Type="nvarchar" MaxLength="45" />
@@ -974,7 +976,9 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
             <DefiningQuery>SELECT 
     [VwListaPrecioDet].[idListaPrecioDet] AS [idListaPrecioDet], 
     [VwListaPrecioDet].[producto] AS [producto], 
-    [VwListaPrecioDet].[precioVenta] AS [precioVenta]
+    [VwListaPrecioDet].[precioVenta] AS [precioVenta], 
+    [VwListaPrecioDet].[idListaPrecio] AS [idListaPrecio], 
+    [VwListaPrecioDet].[listaprecio] AS [listaprecio]
     FROM [dbo].[VwListaPrecioDet] AS [VwListaPrecioDet]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VwProductos" EntityType="Self.VwProductos" store:Type="Views" store:Schema="dbo">
@@ -2115,11 +2119,11 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
           <EntitySet Name="VwArqueoCajas" EntityType="BDKermesseModel.VwArqueoCaja" />
           <EntitySet Name="VwGastoes" EntityType="BDKermesseModel.VwGasto" />
           <EntitySet Name="VwArqueoCajaDets" EntityType="BDKermesseModel.VwArqueoCajaDet" />
-          <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
           <EntitySet Name="VwProductos" EntityType="BDKermesseModel.VwProducto" />
           <EntitySet Name="VwRolOpcions" EntityType="BDKermesseModel.VwRolOpcion" />
           <EntitySet Name="VwRolUsuarios" EntityType="BDKermesseModel.VwRolUsuario" />
           <EntitySet Name="VwTasaCambios" EntityType="BDKermesseModel.VwTasaCambio" />
+          <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
         </EntityContainer>
         <EntityType Name="VwListaPrecio">
           <Key>
@@ -2192,14 +2196,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
           <Property Name="cantidad" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="subtotal" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
         </EntityType>
-        <EntityType Name="VwListaPrecioDet">
-          <Key>
-            <PropertyRef Name="idListaPrecioDet" />
-          </Key>
-          <Property Name="idListaPrecioDet" Type="Int32" Nullable="false" />
-          <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
-          <Property Name="precioVenta" Type="Double" Nullable="false" />
-        </EntityType>
         <EntityType Name="VwProducto">
           <Key>
             <PropertyRef Name="idProducto" />
@@ -2237,6 +2233,16 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
           <Property Name="monedaC" Type="String" MaxLength="45" FixedLength="false" Unicode="true" />
           <Property Name="mes" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
           <Property Name="año" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="VwListaPrecioDet">
+          <Key>
+            <PropertyRef Name="idListaPrecioDet" />
+          </Key>
+          <Property Name="idListaPrecioDet" Type="Int32" Nullable="false" />
+          <Property Name="producto" Type="String" Nullable="false" MaxLength="45" FixedLength="false" Unicode="true" />
+          <Property Name="precioVenta" Type="Double" Nullable="false" />
+          <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
+          <Property Name="listaprecio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2599,15 +2605,6 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="VwListaPrecioDets">
-            <EntityTypeMapping TypeName="BDKermesseModel.VwListaPrecioDet">
-              <MappingFragment StoreEntitySet="VwListaPrecioDet">
-                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
-                <ScalarProperty Name="producto" ColumnName="producto" />
-                <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="VwProductos">
             <EntityTypeMapping TypeName="BDKermesseModel.VwProducto">
               <MappingFragment StoreEntitySet="VwProductos">
@@ -2647,6 +2644,17 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
                 <ScalarProperty Name="monedaC" ColumnName="monedaC" />
                 <ScalarProperty Name="monedaO" ColumnName="monedaO" />
                 <ScalarProperty Name="idTasaCambio" ColumnName="idTasaCambio" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwListaPrecioDets">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwListaPrecioDet">
+              <MappingFragment StoreEntitySet="VwListaPrecioDet">
+                <ScalarProperty Name="listaprecio" ColumnName="listaprecio" />
+                <ScalarProperty Name="idListaPrecio" ColumnName="idListaPrecio" />
+                <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
+                <ScalarProperty Name="producto" ColumnName="producto" />
+                <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

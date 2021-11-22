@@ -27,7 +27,6 @@
                             <TextRun>
                               <Value>Producto</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -60,7 +59,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </RightBorder>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -80,7 +79,6 @@
                             <TextRun>
                               <Value>Precio de venta</Value>
                               <Style>
-                                <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
                               </Style>
                             </TextRun>
@@ -113,7 +111,7 @@
                           <Style>Solid</Style>
                           <Width>1pt</Width>
                         </RightBorder>
-                        <BackgroundColor>CornflowerBlue</BackgroundColor>
+                        <BackgroundColor>LightBlue</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -137,9 +135,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!producto.Value</Value>
-                              <Style>
-                                <FontSize>11pt</FontSize>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -190,9 +186,7 @@
                           <TextRuns>
                             <TextRun>
                               <Value>=Fields!precioVenta.Value</Value>
-                              <Style>
-                                <FontSize>11pt</FontSize>
-                              </Style>
+                              <Style />
                             </TextRun>
                           </TextRuns>
                           <Style>
@@ -255,7 +249,7 @@
         </TablixRowHierarchy>
         <DataSetName>DSListaPrecioDet</DataSetName>
         <Top>0.63417in</Top>
-        <Left>1.41311in</Left>
+        <Left>0.41311in</Left>
         <Height>0.5in</Height>
         <Width>5.67379in</Width>
         <Style>
@@ -279,8 +273,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox10</rd:DefaultName>
-        <Top>1.14806in</Top>
-        <Left>1.41311in</Left>
+        <Top>1.41542in</Top>
+        <Left>0.41311in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <ZIndex>1</ZIndex>
@@ -298,128 +292,14 @@
     <Height>1.9375in</Height>
     <Style />
   </Body>
-  <Width>8.5in</Width>
+  <Width>6.5in</Width>
   <Page>
     <PageHeader>
-      <Height>2.00916in</Height>
+      <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Rectangle Name="Rectangle1">
-          <ReportItems>
-            <Textbox Name="Textbox7">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>Kermesse App</Value>
-                      <MarkupType>HTML</MarkupType>
-                      <Style>
-                        <FontFamily>Ubuntu Medium</FontFamily>
-                        <FontSize>24pt</FontSize>
-                        <Color>White</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value xml:space="preserve"> </Value>
-                      <MarkupType>HTML</MarkupType>
-                      <Style>
-                        <FontSize>24pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>White</Color>
-                      </Style>
-                    </TextRun>
-                    <TextRun>
-                      <Value>⛪</Value>
-                      <MarkupType>HTML</MarkupType>
-                      <Style>
-                        <FontFamily>Segoe UI Emoji</FontFamily>
-                        <FontSize>24pt</FontSize>
-                        <Color>White</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style>
-                    <TextAlign>Center</TextAlign>
-                  </Style>
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>Textbox6</rd:DefaultName>
-              <Top>0.12375in</Top>
-              <Left>0.41311in</Left>
-              <Height>0.48958in</Height>
-              <Width>7.73628in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
-          <KeepTogether>true</KeepTogether>
-          <Height>0.82167in</Height>
-          <Width>8.5in</Width>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <BackgroundColor>#1f4e78</BackgroundColor>
-          </Style>
-        </Rectangle>
-        <Line Name="Line1">
-          <Top>1.83208in</Top>
-          <Left>0.41311in</Left>
-          <Height>0in</Height>
-          <Width>7.73628in</Width>
-          <ZIndex>1</ZIndex>
-          <Style>
-            <Border>
-              <Style>Solid</Style>
-            </Border>
-          </Style>
-        </Line>
-        <Textbox Name="ExecutionTime">
-          <CanGrow>true</CanGrow>
-          <KeepTogether>true</KeepTogether>
-          <Paragraphs>
-            <Paragraph>
-              <TextRuns>
-                <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
-                  <Style>
-                    <FontFamily>Ubuntu Light</FontFamily>
-                    <FontSize>14pt</FontSize>
-                  </Style>
-                </TextRun>
-              </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
-            </Paragraph>
-          </Paragraphs>
-          <rd:DefaultName>ExecutionTime</rd:DefaultName>
-          <Top>1.43972in</Top>
-          <Left>0.41311in</Left>
-          <Height>0.32292in</Height>
-          <Width>7.73628in</Width>
-          <ZIndex>2</ZIndex>
-          <Style>
-            <Border>
-              <Style>None</Style>
-            </Border>
-            <PaddingLeft>2pt</PaddingLeft>
-            <PaddingRight>2pt</PaddingRight>
-            <PaddingTop>2pt</PaddingTop>
-            <PaddingBottom>2pt</PaddingBottom>
-          </Style>
-        </Textbox>
-        <Textbox Name="Textbox2">
+        <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -428,22 +308,18 @@
                 <TextRun>
                   <Value>Reporte Lista Precio Detalle</Value>
                   <Style>
-                    <FontFamily>Ubuntu Medium</FontFamily>
-                    <FontSize>20pt</FontSize>
+                    <FontSize>16pt</FontSize>
                   </Style>
                 </TextRun>
               </TextRuns>
-              <Style>
-                <TextAlign>Center</TextAlign>
-              </Style>
+              <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.93625in</Top>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.07812in</Top>
           <Left>0.41311in</Left>
-          <Height>0.37153in</Height>
-          <Width>7.73628in</Width>
-          <ZIndex>3</ZIndex>
+          <Height>0.30208in</Height>
+          <Width>3.53838in</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -454,6 +330,48 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Textbox Name="ExecutionTime">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!ExecutionTime</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>ExecutionTime</rd:DefaultName>
+          <Top>0.54688in</Top>
+          <Left>0.41311in</Left>
+          <Height>0.25in</Height>
+          <Width>1.67708in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>0.92188in</Top>
+          <Left>0.41311in</Left>
+          <Height>0in</Height>
+          <Width>5.67379in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -466,53 +384,35 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Rectangle Name="Rectangle2">
-          <ReportItems>
-            <Textbox Name="PageNumber">
-              <CanGrow>true</CanGrow>
-              <KeepTogether>true</KeepTogether>
-              <Paragraphs>
-                <Paragraph>
-                  <TextRuns>
-                    <TextRun>
-                      <Value>=Globals!PageNumber</Value>
-                      <Style>
-                        <FontSize>11pt</FontSize>
-                        <FontWeight>Bold</FontWeight>
-                        <Color>White</Color>
-                      </Style>
-                    </TextRun>
-                  </TextRuns>
-                  <Style />
-                </Paragraph>
-              </Paragraphs>
-              <rd:DefaultName>PageNumber</rd:DefaultName>
-              <Top>0.435in</Top>
-              <Left>7.12856in</Left>
-              <Height>0.25in</Height>
-              <Width>1.02083in</Width>
-              <Style>
-                <Border>
-                  <Style>None</Style>
-                </Border>
-                <PaddingLeft>2pt</PaddingLeft>
-                <PaddingRight>2pt</PaddingRight>
-                <PaddingTop>2pt</PaddingTop>
-                <PaddingBottom>2pt</PaddingBottom>
-              </Style>
-            </Textbox>
-          </ReportItems>
+        <Textbox Name="PageNumber">
+          <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
-          <Top>0.01389in</Top>
-          <Height>0.97222in</Height>
-          <Width>8.5in</Width>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=Globals!PageNumber</Value>
+                  <Style />
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>PageNumber</rd:DefaultName>
+          <Top>0.3425in</Top>
+          <Left>5.0869in</Left>
+          <Height>0.25in</Height>
+          <Width>1in</Width>
           <Style>
             <Border>
               <Style>None</Style>
             </Border>
-            <BackgroundColor>#1f4e78</BackgroundColor>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
           </Style>
-        </Rectangle>
+        </Textbox>
       </ReportItems>
       <Style>
         <Border>
@@ -520,6 +420,10 @@
         </Border>
       </Style>
     </PageFooter>
+    <LeftMargin>1in</LeftMargin>
+    <RightMargin>1in</RightMargin>
+    <TopMargin>1in</TopMargin>
+    <BottomMargin>1in</BottomMargin>
     <Style />
   </Page>
   <AutoRefresh>0</AutoRefresh>
@@ -562,7 +466,6 @@
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
-  <ConsumeContainerWhitespace>true</ConsumeContainerWhitespace>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
   <rd:ReportID>76327b57-8c43-44e3-bc9b-2fd9e5e3b948</rd:ReportID>
 </Report>

@@ -12,7 +12,7 @@
               <Width>5.76319cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>6.61049cm</Width>
+              <Width>9.75064cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -373,10 +373,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSListaPrecio</DataSetName>
-        <Top>0.625in</Top>
-        <Left>0.89329in</Left>
+        <Top>0.06944in</Top>
+        <Left>0.41311in</Left>
         <Height>1.19062cm</Height>
-        <Width>16.51cm</Width>
+        <Width>19.65015cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>
@@ -398,8 +398,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox4</rd:DefaultName>
-        <Top>1.09375in</Top>
-        <Left>0.89329in</Left>
+        <Top>0.55208in</Top>
+        <Left>0.41311in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <ZIndex>1</ZIndex>
@@ -420,7 +420,7 @@
   <Width>8.5in</Width>
   <Page>
     <PageHeader>
-      <Height>1.97791in</Height>
+      <Height>1.93624in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>

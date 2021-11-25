@@ -578,10 +578,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSIngresoComunidadDet</DataSetName>
-        <Top>0.55083in</Top>
+        <Top>0.06944in</Top>
         <Left>0.41311in</Left>
         <Height>0.5in</Height>
-        <Width>7.73628in</Width>
+        <Width>7.73629in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -603,7 +603,7 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox14</rd:DefaultName>
-        <Top>1.06472in</Top>
+        <Top>0.56944in</Top>
         <Left>0.41311in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>

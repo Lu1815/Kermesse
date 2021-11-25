@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>5.74822cm</Width>
+              <Width>4.31947cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>7.05762cm</Width>
+              <Width>15.33068cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -367,10 +367,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSListaPrecio</DataSetName>
-        <Top>1.70146cm</Top>
-        <Left>1.625in</Left>
-        <Height>1.93229cm</Height>
-        <Width>12.80583cm</Width>
+        <Top>0.17639cm</Top>
+        <Left>0.41311in</Left>
+        <Height>1.9323cm</Height>
+        <Width>19.65015cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>

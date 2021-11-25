@@ -6,10 +6,10 @@
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>7.46124cm</Width>
+              <Width>4.6302cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>8.77063cm</Width>
+              <Width>15.01995cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -591,10 +591,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DSIngresoComunidad</DataSetName>
-        <Top>0.57891cm</Top>
-        <Left>2.91042cm</Left>
+        <Top>0.17639cm</Top>
+        <Left>1.0493cm</Left>
         <Height>3cm</Height>
-        <Width>16.23187cm</Width>
+        <Width>19.65015cm</Width>
         <Style>
           <Border>
             <Style>Solid</Style>

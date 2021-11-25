@@ -2,14 +2,14 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix3">
+      <Tablix Name="Tablix1">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>1.76919in</Width>
+              <Width>2.91502in</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>1.76919in</Width>
+              <Width>2.91502in</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -18,14 +18,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox25">
+                    <Textbox Name="Textbox29">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Rol</Value>
+                              <Value>Nombre</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -35,7 +35,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox25</rd:DefaultName>
+                      <rd:DefaultName>Textbox29</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -51,14 +51,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Rol">
+                    <Textbox Name="nombre1">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Rol.Value</Value>
+                              <Value>=Fields!nombre.Value</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                               </Style>
@@ -67,7 +67,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Rol</rd:DefaultName>
+                      <rd:DefaultName>nombre1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -87,14 +87,14 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox30">
+                    <Textbox Name="Textbox13">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Opción</Value>
+                              <Value>Símbolo</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                                 <FontWeight>Bold</FontWeight>
@@ -104,7 +104,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox30</rd:DefaultName>
+                      <rd:DefaultName>Textbox13</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -120,14 +120,14 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Opción">
+                    <Textbox Name="simbolo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Opción.Value</Value>
+                              <Value>=Fields!simbolo.Value</Value>
                               <Style>
                                 <FontSize>12pt</FontSize>
                               </Style>
@@ -136,7 +136,7 @@
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Opción</rd:DefaultName>
+                      <rd:DefaultName>simbolo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Style>Solid</Style>
@@ -147,6 +147,7 @@
                         <PaddingBottom>2pt</PaddingBottom>
                       </Style>
                     </Textbox>
+                    <rd:Selected>true</rd:Selected>
                   </CellContents>
                 </TablixCell>
               </TablixCells>
@@ -161,19 +162,15 @@
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
           <TablixMembers>
-            <TablixMember>
-              <Group Name="Details" />
-            </TablixMember>
-            <TablixMember>
-              <KeepWithGroup>Before</KeepWithGroup>
-            </TablixMember>
+            <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>DsRolOpciones</DataSetName>
-        <Top>0.155in</Top>
-        <Left>2.43737in</Left>
+        <DataSetName>DsMoneda</DataSetName>
+        <Top>0.30729in</Top>
+        <Left>1.33498in</Left>
         <Height>0.5in</Height>
-        <Width>3.53838in</Width>
+        <Width>5.83004in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -181,13 +178,13 @@
         </Style>
       </Tablix>
     </ReportItems>
-    <Height>0.85417in</Height>
+    <Height>1.11458in</Height>
     <Style />
   </Body>
   <Width>8.5in</Width>
   <Page>
     <PageHeader>
-      <Height>1.67473in</Height>
+      <Height>1.88306in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -280,6 +277,7 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
+          <Left>0in</Left>
           <Height>0.82167in</Height>
           <Width>8.5in</Width>
           <ZIndex>1</ZIndex>
@@ -332,7 +330,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte Rol Opciones Vertical</Value>
+                  <Value>Reporte Moneda Vertical</Value>
                   <Style>
                     <FontFamily>Ubuntu Medium</FontFamily>
                     <FontSize>20pt</FontSize>
@@ -360,6 +358,18 @@
             <PaddingBottom>2pt</PaddingBottom>
           </Style>
         </Textbox>
+        <Line Name="Line2">
+          <Top>1.81362in</Top>
+          <Left>0.51207in</Left>
+          <Height>0in</Height>
+          <Width>7.47586in</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+            </Border>
+          </Style>
+        </Line>
       </ReportItems>
       <Style>
         <Border>
@@ -368,7 +378,7 @@
       </Style>
     </PageHeader>
     <PageFooter>
-      <Height>0.97222in</Height>
+      <Height>1in</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -409,6 +419,7 @@
             </Textbox>
           </ReportItems>
           <KeepTogether>true</KeepTogether>
+          <Top>0.02778in</Top>
           <Height>0.97222in</Height>
           <Width>8.5in</Width>
           <Style>
@@ -429,34 +440,34 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="DSReportes">
+    <DataSource Name="DSReports">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>72555f0f-2c07-4055-8c4a-bc02c5f944b0</rd:DataSourceID>
+      <rd:DataSourceID>4d78ea86-a04f-4843-a23f-26147440afa1</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DsRolOpciones">
+    <DataSet Name="DsMoneda">
       <Query>
-        <DataSourceName>DSReportes</DataSourceName>
+        <DataSourceName>DSReports</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Rol">
-          <DataField>Rol</DataField>
+        <Field Name="nombre">
+          <DataField>nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Opción">
-          <DataField>Opción</DataField>
+        <Field Name="simbolo">
+          <DataField>simbolo</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>DSReportes</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\luisf\VS-Workspace\Kermesse\Kermesse\Reportes\DataSet\DSReportes.xsd</rd:SchemaPath>
-        <rd:TableName>RolOpciones</rd:TableName>
+        <rd:DataSetName>DSReports</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\luisf\VS-Workspace\Kermesse\Kermesse\Reports\DataSet\DSReports.xsd</rd:SchemaPath>
+        <rd:TableName>Moneda</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -464,5 +475,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>d19bf142-4786-4a99-8e4f-3f76eeb82393</rd:ReportID>
+  <rd:ReportID>fd5ad66b-47dc-49e3-a4eb-6996a4eca7d8</rd:ReportID>
 </Report>

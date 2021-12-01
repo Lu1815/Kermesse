@@ -20,7 +20,7 @@ namespace Kermesse.Models
         [Display(Name = "Kermesse")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int kermesse { get; set; }
-        [Display(Name = "Categor√≠a de gasto")]
+        [Display(Name = "CategorÌa de gasto")]
         [Required(ErrorMessage = "Este campo es requerido")]
         public int catGasto { get; set; }
         [Display(Name = "Fecha")]
@@ -29,7 +29,7 @@ namespace Kermesse.Models
         public System.DateTime fechGasto { get; set; }
         [Display(Name = "Concepto")]
         [Required(ErrorMessage = "Este campo es requerido")]
-        [StringLength(70, ErrorMessage = "El tama√±o m√°ximo es 70 caracteres")]
+        [StringLength(70, ErrorMessage = "El tamaÒo m·ximo es 70 caracteres")]
         public string concepto { get; set; }
         [Display(Name = "Monto")]
         [Required(ErrorMessage = "Este campo es requerido")]

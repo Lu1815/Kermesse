@@ -289,7 +289,6 @@ namespace Kermesse.Controllers
             List<VwIngresoComunidad> ls = new List<VwIngresoComunidad>();
             ls.Add(i);
             
-
             ReportDataSource rd = new ReportDataSource("DSIngresoComunidad", ls);
             rpt.DataSources.Add(rd);
 

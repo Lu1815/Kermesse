@@ -60,5 +60,6 @@ namespace Kermesse.Models
         public virtual DbSet<VwRolUsuario> VwRolUsuarios { get; set; }
         public virtual DbSet<VwTasaCambio> VwTasaCambios { get; set; }
         public virtual DbSet<VwListaPrecioDet> VwListaPrecioDets { get; set; }
+        public virtual DbSet<VwKermesse> VwKermesses { get; set; }
     }
 }

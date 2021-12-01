@@ -356,6 +356,28 @@ warning 6002: The table/view 'DBKermesse.dbo.VwIngresoComunidadDet' does not hav
           <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwKermesse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="VwKermesse">
+          <Key>
+            <PropertyRef Name="idKermesse" />
+            <PropertyRef Name="Parroquia" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="Fecha de inicio" />
+            <PropertyRef Name="Fecha de fin" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="Usuario creador" />
+            <PropertyRef Name="Fecha de creación" />
+          </Key>
+          <Property Name="idKermesse" Type="int" Nullable="false" />
+          <Property Name="Parroquia" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Fecha de inicio" Type="datetime" Nullable="false" />
+          <Property Name="Fecha de fin" Type="datetime" Nullable="false" />
+          <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Usuario creador" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Fecha de creación" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="VwListaPrecio">
           <Key>
@@ -376,6 +398,10 @@ warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecioDet' does not have a p
         <EntityType Name="VwListaPrecioDet">
           <Key>
             <PropertyRef Name="idListaPrecioDet" />
+            
+            
+            
+            
           </Key>
           <Property Name="idListaPrecioDet" Type="int" Nullable="false" />
           <Property Name="producto" Type="nvarchar" MaxLength="45" Nullable="false" />
@@ -440,6 +466,8 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
           <Property Name="mes" Type="nvarchar" MaxLength="15" Nullable="false" />
           <Property Name="año" Type="int" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwTotalIngresoYEgreso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
           <End Role="ArqueoCaja" Type="Self.ArqueoCaja" Multiplicity="1" />
           <End Role="ArqueoCajaDet" Type="Self.ArqueoCajaDet" Multiplicity="*" />
@@ -962,6 +990,18 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
     [VwIngresoComunidadDet].[subtotal] AS [subtotal], 
     [VwIngresoComunidadDet].[comunidad] AS [comunidad]
     FROM [dbo].[VwIngresoComunidadDet] AS [VwIngresoComunidadDet]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="VwKermesse" EntityType="Self.VwKermesse" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [VwKermesse].[idKermesse] AS [idKermesse], 
+    [VwKermesse].[Parroquia] AS [Parroquia], 
+    [VwKermesse].[nombre] AS [nombre], 
+    [VwKermesse].[Fecha de inicio] AS [Fecha de inicio], 
+    [VwKermesse].[Fecha de fin] AS [Fecha de fin], 
+    [VwKermesse].[descripcion] AS [descripcion], 
+    [VwKermesse].[Usuario creador] AS [Usuario creador], 
+    [VwKermesse].[Fecha de creación] AS [Fecha de creación]
+    FROM [dbo].[VwKermesse] AS [VwKermesse]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="VwListaPrecio" EntityType="Self.VwListaPrecio" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -2124,6 +2164,7 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
           <EntitySet Name="VwRolUsuarios" EntityType="BDKermesseModel.VwRolUsuario" />
           <EntitySet Name="VwTasaCambios" EntityType="BDKermesseModel.VwTasaCambio" />
           <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
+          <EntitySet Name="VwKermesses" EntityType="BDKermesseModel.VwKermesse" />
         </EntityContainer>
         <EntityType Name="VwListaPrecio">
           <Key>
@@ -2243,6 +2284,26 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
           <Property Name="precioVenta" Type="Double" Nullable="false" />
           <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
           <Property Name="listaprecio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="VwKermesse">
+          <Key>
+            <PropertyRef Name="idKermesse" />
+            <PropertyRef Name="Parroquia" />
+            <PropertyRef Name="nombre" />
+            <PropertyRef Name="Fecha_de_inicio" />
+            <PropertyRef Name="Fecha_de_fin" />
+            <PropertyRef Name="descripcion" />
+            <PropertyRef Name="Usuario_creador" />
+            <PropertyRef Name="Fecha_de_creación" />
+          </Key>
+          <Property Name="idKermesse" Type="Int32" Nullable="false" />
+          <Property Name="Parroquia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_de_inicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Fecha_de_fin" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Usuario_creador" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Fecha_de_creación" Type="DateTime" Nullable="false" Precision="3" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2655,6 +2716,20 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
                 <ScalarProperty Name="precioVenta" ColumnName="precioVenta" />
                 <ScalarProperty Name="producto" ColumnName="producto" />
                 <ScalarProperty Name="idListaPrecioDet" ColumnName="idListaPrecioDet" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="VwKermesses">
+            <EntityTypeMapping TypeName="BDKermesseModel.VwKermesse">
+              <MappingFragment StoreEntitySet="VwKermesse">
+                <ScalarProperty Name="Fecha_de_creación" ColumnName="Fecha de creación" />
+                <ScalarProperty Name="Usuario_creador" ColumnName="Usuario creador" />
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+                <ScalarProperty Name="Fecha_de_fin" ColumnName="Fecha de fin" />
+                <ScalarProperty Name="Fecha_de_inicio" ColumnName="Fecha de inicio" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+                <ScalarProperty Name="Parroquia" ColumnName="Parroquia" />
+                <ScalarProperty Name="idKermesse" ColumnName="idKermesse" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

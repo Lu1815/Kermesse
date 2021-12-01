@@ -33,7 +33,29 @@
             </ul>
         </div>
     </div>
+    <div class="col-12 col-md-4 mb-1">
+        <div class="dropdown">
+            <button class="btn btn-primary w-100"
+                    type="button"
+                    id="reportOptions"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                Resumen Ingresos y Egresos
+            </button>
 
+            <ul class="dropdown-menu" aria-labelledby="reportOptions">
+                <li>
+                    <a href="#">@Html.ActionLink("PDF", "verReporteResumen", new { tipo = "PDF", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
+                </li>
+                <li>
+                    <a href="#">@Html.ActionLink("Word", "verReporteResumen", new { tipo = "WORD", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
+                </li>
+                <li>
+                    <a href="#">@Html.ActionLink("Excel", "verReporteResumen", new { tipo = "EXCEL", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
+                </li>
+            </ul>
+        </div>
+    </div>
     <div class="col-12 col-md-8 col-lg-4 mb-1 ml-auto">
         @* BUSCAR *@
         @using (Html.BeginForm("Index", "Comunidads", FormMethod.Post, new { @class = "" }))

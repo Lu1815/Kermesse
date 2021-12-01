@@ -409,5 +409,19 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="VwKermesses">
+      <EntityTypeMapping TypeName="BDKermesseModel.VwKermesse">
+        <MappingFragment StoreEntitySet="VwKermesse">
+          <ScalarProperty Name="Fecha_de_creación" ColumnName="Fecha de creación" />
+          <ScalarProperty Name="Usuario_creador" ColumnName="Usuario creador" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Fecha_de_fin" ColumnName="Fecha de fin" />
+          <ScalarProperty Name="Fecha_de_inicio" ColumnName="Fecha de inicio" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="Parroquia" ColumnName="Parroquia" />
+          <ScalarProperty Name="idKermesse" ColumnName="idKermesse" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -12,13 +12,15 @@ namespace Kermesse.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class RolUsuario
+    public partial class VwKermesse
     {
-        public int idRolUsuario { get; set; }
-        public int usuario { get; set; }
-        public int rol { get; set; }
-    
-        public virtual Rol Rol1 { get; set; }
-        public virtual Usuario Usuario1 { get; set; }
+        public int idKermesse { get; set; }
+        public string Parroquia { get; set; }
+        public string nombre { get; set; }
+        public System.DateTime Fecha_de_inicio { get; set; }
+        public System.DateTime Fecha_de_fin { get; set; }
+        public string descripcion { get; set; }
+        public string Usuario_creador { get; set; }
+        public System.DateTime Fecha_de_creación { get; set; }
     }
 }

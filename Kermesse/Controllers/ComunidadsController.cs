@@ -260,6 +260,39 @@ namespace Kermesse.Controllers
         }
 
 
+        public ActionResult verReporteResumen(string tipo)
+        {
+
+            if (Session["UserID"] == null)
+            {
+                Session.Clear();
+                FormsAuthentication.SignOut();
+                return RedirectToAction("Login", "Account");
+            }
+
+            LocalReport rpt = new LocalReport();
+            string mt, enc, f;
+            string[] s;
+            Warning[] w;
+
+            string ruta = Path.Combine(Server.MapPath("~/Reportes"), "RptIngresosYEgresos.rdlc");
+            rpt.ReportPath = ruta;
+
+            List<VwIngresoComunidadDet> ls = new List<VwIngresoComunidadDet>();
+            var ic = from m in db.VwIngresoComunidadDets select m;
+            ls = ic.ToList();
+            List<VwGasto> ls1 = new List<VwGasto>();
+            var ic1 = from m in db.VwGastoes select m;
+            ls1 = ic1.ToList();
+
+            ReportDataSource rd = new ReportDataSource("DSIngresos", ls);
+            rpt.DataSources.Add(rd);
+            ReportDataSource rd1 = new ReportDataSource("DSEgresos", ls);
+            rpt.DataSources.Add(rd1);
+
+            var b = rpt.Render(tipo, null, out mt, out enc, out f, out s, out w);
+            return new FileContentResult(b, mt);
+        }
 
     }
 }

@@ -328,6 +328,28 @@ warning 6002: The table/view 'DBKermesse.dbo.VwIngresoComunidadDet' does not hav
     <Property Name="comunidad" Type="nvarchar" MaxLength="45" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwKermesse' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VwKermesse">
+    <Key>
+      <PropertyRef Name="idKermesse" />
+      <PropertyRef Name="Parroquia" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="Fecha de inicio" />
+      <PropertyRef Name="Fecha de fin" />
+      <PropertyRef Name="descripcion" />
+      <PropertyRef Name="Usuario creador" />
+      <PropertyRef Name="Fecha de creación" />
+    </Key>
+    <Property Name="idKermesse" Type="int" Nullable="false" />
+    <Property Name="Parroquia" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Fecha de inicio" Type="datetime" Nullable="false" />
+    <Property Name="Fecha de fin" Type="datetime" Nullable="false" />
+    <Property Name="descripcion" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Usuario creador" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Fecha de creación" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'DBKermesse.dbo.VwListaPrecio' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="VwListaPrecio">
     <Key>
@@ -397,6 +419,8 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
     <Property Name="mes" Type="nvarchar" MaxLength="15" Nullable="false" />
     <Property Name="año" Type="int" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'DBKermesse.dbo.VwTotalIngresoYEgreso' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <Association Name="FK__ArqueoCaj__arque__6FE99F9F">
     <End Role="ArqueoCaja" Type="Self.ArqueoCaja" Multiplicity="1" />
     <End Role="ArqueoCajaDet" Type="Self.ArqueoCajaDet" Multiplicity="*" />
@@ -919,6 +943,18 @@ warning 6002: The table/view 'DBKermesse.dbo.VwTasaCambio' does not have a prima
     [VwIngresoComunidadDet].[subtotal] AS [subtotal], 
     [VwIngresoComunidadDet].[comunidad] AS [comunidad]
     FROM [dbo].[VwIngresoComunidadDet] AS [VwIngresoComunidadDet]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VwKermesse" EntityType="Self.VwKermesse" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [VwKermesse].[idKermesse] AS [idKermesse], 
+    [VwKermesse].[Parroquia] AS [Parroquia], 
+    [VwKermesse].[nombre] AS [nombre], 
+    [VwKermesse].[Fecha de inicio] AS [Fecha de inicio], 
+    [VwKermesse].[Fecha de fin] AS [Fecha de fin], 
+    [VwKermesse].[descripcion] AS [descripcion], 
+    [VwKermesse].[Usuario creador] AS [Usuario creador], 
+    [VwKermesse].[Fecha de creación] AS [Fecha de creación]
+    FROM [dbo].[VwKermesse] AS [VwKermesse]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="VwListaPrecio" EntityType="Self.VwListaPrecio" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

@@ -374,6 +374,11 @@
     <Compile Include="Models\ControlBono.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\DBKermesse.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBKermesse.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\Denominacion.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -456,6 +461,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VwGasto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\VwKermesse.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\VwListaPrecio.cs">
@@ -1095,6 +1103,13 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <EntityDeploy Include="Models\DBKermesse.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBKermesse.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DBKermesse.edmx.diagram">
+      <DependentUpon>DBKermesse.edmx</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Vendors\jquery\dist\jquery.min.map" />
     <Content Include="Vendors\bootstrap-daterangepicker\.bower.json" />
@@ -1288,6 +1303,7 @@
     <EmbeddedResource Include="Reportes\RptIngresoComunidadDet.rdlc" />
     <EmbeddedResource Include="Reportes\RptIngresoComunidadDetVertical.rdlc" />
     <EmbeddedResource Include="Reportes\RptIngresoComunidadVertical.rdlc" />
+    <EmbeddedResource Include="Reportes\RptIngresosYEgresos.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecio1.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecioDet.rdlc" />
     <EmbeddedResource Include="Reportes\RptListaPrecioDetVertical.rdlc" />

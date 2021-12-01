@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="8eb9713c7ca7427185a0a2af503564d6" Name="Diagram1" ZoomLevel="96">
+      <Diagram DiagramId="8eb9713c7ca7427185a0a2af503564d6" Name="Diagram1" ZoomLevel="85">
         <EntityTypeShape EntityType="BDKermesseModel.ArqueoCaja" Width="1.5" PointX="3" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="BDKermesseModel.ArqueoCajaDet" Width="1.5" PointX="8.25" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BDKermesseModel.CategoriaGasto" Width="1.5" PointX="3.75" PointY="32.875" IsExpanded="true" />
@@ -77,6 +77,7 @@
         <EntityTypeShape EntityType="BDKermesseModel.VwRolUsuario" Width="1.5" PointX="12.375" PointY="12.75" />
         <EntityTypeShape EntityType="BDKermesseModel.VwTasaCambio" Width="1.5" PointX="13.375" PointY="0.75" />
         <EntityTypeShape EntityType="BDKermesseModel.VwListaPrecioDet" Width="1.5" PointX="8.625" PointY="3.375" />
+        <EntityTypeShape EntityType="BDKermesseModel.VwKermesse" Width="1.5" PointX="14.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -956,6 +956,7 @@
     <EntitySet Name="VwRolUsuarios" EntityType="BDKermesseModel.VwRolUsuario" />
     <EntitySet Name="VwTasaCambios" EntityType="BDKermesseModel.VwTasaCambio" />
     <EntitySet Name="VwListaPrecioDets" EntityType="BDKermesseModel.VwListaPrecioDet" />
+    <EntitySet Name="VwKermesses" EntityType="BDKermesseModel.VwKermesse" />
   </EntityContainer>
   <EntityType Name="VwListaPrecio">
     <Key>
@@ -1075,5 +1076,25 @@
     <Property Name="precioVenta" Type="Double" Nullable="false" />
     <Property Name="idListaPrecio" Type="Int32" Nullable="false" />
     <Property Name="listaprecio" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="VwKermesse">
+    <Key>
+      <PropertyRef Name="idKermesse" />
+      <PropertyRef Name="Parroquia" />
+      <PropertyRef Name="nombre" />
+      <PropertyRef Name="Fecha_de_inicio" />
+      <PropertyRef Name="Fecha_de_fin" />
+      <PropertyRef Name="descripcion" />
+      <PropertyRef Name="Usuario_creador" />
+      <PropertyRef Name="Fecha_de_creación" />
+    </Key>
+    <Property Name="idKermesse" Type="Int32" Nullable="false" />
+    <Property Name="Parroquia" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="nombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_de_inicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Fecha_de_fin" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="descripcion" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Usuario_creador" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="Fecha_de_creación" Type="DateTime" Nullable="false" Precision="3" />
   </EntityType>
 </Schema>

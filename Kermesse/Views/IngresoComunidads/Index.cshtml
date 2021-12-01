@@ -23,7 +23,7 @@
 
             <ul class="dropdown-menu" aria-labelledby="reportOptions">
                 <li>
-                    <a href="#">@Html.ActionLink("PDF", "verReporte", new { tipo = "PDF", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target="_blank" })</a>
+                    <a href="#">@Html.ActionLink("PDF", "verReporte", new { tipo = "PDF", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
                 </li>
                 <li>
                     <a href="#">@Html.ActionLink("Word", "verReporte", new { tipo = "WORD", busq = Request.Form["dato"] }, new { @class = "dropdown-item", target = "_blank" })</a>
@@ -34,7 +34,6 @@
             </ul>
         </div>
     </div>
-
     <div class="col-12 col-md-8 col-lg-4 mb-1 ml-auto">
         @* BUSCAR *@
         @using (Html.BeginForm("Index", "IngresoComunidads", FormMethod.Post, new { @class = "" }))
@@ -46,67 +45,67 @@
     </div>
 </div>
 
-<div class="table-responsive">
+    <div class="table-responsive">
 
-    <table class="table table-bordered table-striped table-hover">
-        <thead class="table-info">
-            <tr>
-
-                <th>
-                    @Html.DisplayNameFor(model => model.Comunidad1.nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Kermesse1.nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Producto1.nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Kermesse1.nombre)
-                </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.totalBonos)
-                </th>
-                <th>
-                    Opciones
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
+        <table class="table table-bordered table-striped table-hover">
+            <thead class="table-info">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Comunidad1.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Producto1.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
-                    </td>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.totalBonos)
-                    </td>
-                    <td>
-                        <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idIngresoComunidad })">
-                            <i class="fa fa-edit"></i>
-                        </a>
-                        <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idIngresoComunidad })">
-                            <i class="fa fa-eye"></i>
-                        </a>
-                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idIngresoComunidad })">
-                            <i class="fa fa-trash"></i>
-                        </a>
-                        <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idIngresoComunidad })" target="_blank">
-                            <i class="fa fa-file-pdf-o"></i>
-                        </a>
-                    </td>
+
+                    <th>
+                        @Html.DisplayNameFor(model => model.Comunidad1.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Producto1.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Kermesse1.nombre)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.totalBonos)
+                    </th>
+                    <th>
+                        Opciones
+                    </th>
                 </tr>
-            }
-        </tbody>
-    </table>
-</div>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Comunidad1.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Producto1.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Kermesse1.nombre)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.totalBonos)
+                        </td>
+                        <td>
+                            <a class="btn btn-secondary" href="@Url.Action("Edit", new { id = item.idIngresoComunidad })">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                            <a class="btn btn-info" href="@Url.Action("Details", new { id = item.idIngresoComunidad })">
+                                <i class="fa fa-eye"></i>
+                            </a>
+                            <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.idIngresoComunidad })">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                            <a class="btn btn-primary" href="@Url.Action("verReporteVertical", new { id = item.idIngresoComunidad })" target="_blank">
+                                <i class="fa fa-file-pdf-o"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

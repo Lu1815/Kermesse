@@ -515,6 +515,12 @@
                                 <FontSize>11pt</FontSize>
                               </Style>
                             </TextRun>
+                            <TextRun>
+                              <Value>C$</Value>
+                              <Style>
+                                <FontSize>11pt</FontSize>
+                              </Style>
+                            </TextRun>
                           </TextRuns>
                           <Style>
                             <TextAlign>Left</TextAlign>
